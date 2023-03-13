@@ -1,0 +1,1664 @@
+{%  extends 'base.html' %}
+{%  load static  %}
+
+{% block styleBlock %}
+    <!-- END HEAD -->
+    <style type="text/css">
+
+        .tab_data  {
+            font-size: 1em;
+            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+        }
+        .tab_head  {
+            font-size: 1em;
+            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+            background-color: grey;
+            color: white;
+        }
+
+        .popup {
+          display: none;
+          position: absolute;
+          color: black;
+          padding: 5px;
+          //border: solid 1px #ddd;
+          background: rgba(230, 90, 116, 0.3);
+          text-align: center;
+          width: 300px;
+        }
+
+        div.load_offers
+        {
+        padding: 30px;
+        border: 2px solid #000;
+        border-radius: 15px;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        }
+
+    </style>
+{% endblock %}
+
+{%  block content    %}
+
+    <div class="col-6"><div class="popup row" id="popup" align="center">Processing ...<img src="{% static 'img/downloading.gif' %}" width="250"></div></div>
+
+    <div class="az-content az-content-dashboard">
+      <div class="container">
+        <div class="az-content-body">
+          <div class="az-dashboard-one-title">
+            <div>
+              <h2 class="az-dashboard-title">Hi, welcome back!</h2>
+<!--              <p class="az-dashboard-text">Your web analytics dashboard template.</p>-->
+                <div class="row" onload="setTimeout(function() { this.fadeOut('fast'); }, 1000);" >
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} col-12" role="alert" style="color: black; padding:10px;">
+                      {{ message|safe }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="az-content-header-right">
+              <div class="media">
+                <div class="media-body">
+                  <label>Start Date</label>
+                  <h6>Oct 10, 2018</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <div class="media">
+                <div class="media-body">
+                  <label>End Date</label>
+                  <h6>Oct 23, 2018</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <div class="media">
+                <div class="media-body">
+                  <label>Event Category</label>
+                  <h6>All Categories</h6>
+                </div><!-- media-body -->
+              </div><!-- media -->
+              <a href="" class="btn btn-purple">Export</a>
+            </div>
+          </div><!-- az-dashboard-one-title -->
+
+          <div class="az-dashboard-nav">
+            <nav class="nav">
+              <a class="nav-link {% if not coming_from %} active in{% endif %}" data-toggle="tab" href="#tab_1_1">Overview</a>
+                {% if not request.user.is_authenticated %}
+              <a class="nav-link {% if coming_from == 'login' %} active in{% endif %}" data-toggle="tab" href="#tab_1_2">Login</a>
+                {% elif request.user.is_superuser %}
+              <a class="nav-link {% if coming_from == 'load_offer' %} active in{% endif %}" data-toggle="tab" href="#tab_1_3">Load Offer</a>
+              <a class="nav-link {% if coming_from == 'vendor' %} active in{% endif %}" data-toggle="tab" href="#tab_1_4">Vendor</a>
+              <a class="nav-link {% if coming_from == 'customer' %} active in{% endif %}" data-toggle="tab" href="#tab_1_5">Customer</a>
+              <a class="nav-link {% if coming_from == 'load_rfq' %} active in{% endif %}" data-toggle="tab"  href="#tab_1_6"><i class="far fa-save"></i> Load RFQs</a>
+                {% endif %}
+<!--            </nav>-->
+
+<!--            <nav class="nav">-->
+              <a class="nav-link" data-toggle="tab"  href="#tab_1_7"><i class="far fa-file-pdf"></i> Export to PDF</a>
+              <a class="nav-link" data-toggle="tab"  href="#tab_1_8"><i class="far fa-envelope"></i>Send to Email</a>
+              <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
+            </nav>
+          </div>
+
+
+          <div class="tab-content">
+              <div class="tab-pane {% if not coming_from %} active in{% endif %}" id="tab_1_1"><h2>Overview </h2>
+                    <div class="row row-sm mg-b-20">
+                      <div class="col-lg-7 ht-lg-100p">
+                        <div class="card card-dashboard-one">
+                          <div class="card-header">
+                            <div>
+                              <h6 class="card-title">Website Audience Metrics</h6>
+                              <p class="card-text">Audience to which the users belonged while on the current date range.</p>
+                            </div>
+                            <div class="btn-group">
+                              <button class="btn active">Day</button>
+                              <button class="btn">Week</button>
+                              <button class="btn">Month</button>
+                            </div>
+                          </div><!-- card-header -->
+                          <div class="card-body">
+                            <div class="card-body-top">
+                              <div>
+                                <label class="mg-b-0">Users</label>
+                                <h2>13,956</h2>
+                              </div>
+                              <div>
+                                <label class="mg-b-0">Bounce Rate</label>
+                                <h2>33.50%</h2>
+                              </div>
+                              <div>
+                                <label class="mg-b-0">Page Views</label>
+                                <h2>83,123</h2>
+                              </div>
+                              <div>
+                                <label class="mg-b-0">Sessions</label>
+                                <h2>16,869</h2>
+                              </div>
+                            </div><!-- card-body-top -->
+                            <div class="flot-chart-wrapper">
+                              <div id="flotChart" class="flot-chart"></div>
+                            </div><!-- flot-chart-wrapper -->
+                          </div><!-- card-body -->
+                        </div><!-- card -->
+                      </div><!-- col -->
+                      <div class="col-lg-5 mg-t-20 mg-lg-t-0">
+                        <div class="row row-sm">
+                          <div class="col-sm-6">
+                            <div class="card card-dashboard-two">
+                              <div class="card-header">
+                                <h6>33.50% <i class="icon ion-md-trending-up tx-success"></i> <small>18.02%</small></h6>
+                                <p>Bounce Rate</p>
+                              </div><!-- card-header -->
+                              <div class="card-body">
+                                <div class="chart-wrapper">
+                                  <div id="flotChart1" class="flot-chart"></div>
+                                </div><!-- chart-wrapper -->
+                              </div><!-- card-body -->
+                            </div><!-- card -->
+                          </div><!-- col -->
+                          <div class="col-sm-6 mg-t-20 mg-sm-t-0">
+                            <div class="card card-dashboard-two">
+                              <div class="card-header">
+                                <h6>86k <i class="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
+                                <p>Total Users</p>
+                              </div><!-- card-header -->
+                              <div class="card-body">
+                                <div class="chart-wrapper">
+                                  <div id="flotChart2" class="flot-chart"></div>
+                                </div><!-- chart-wrapper -->
+                              </div><!-- card-body -->
+                            </div><!-- card -->
+                          </div><!-- col -->
+                          <div class="col-sm-12 mg-t-20">
+                            <div class="card card-dashboard-three">
+                              <div class="card-header">
+                                <p>All Sessions</p>
+                                <h6>16,869 <small class="tx-success"><i class="icon ion-md-arrow-up"></i> 2.87%</small></h6>
+                                <small>The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc.</small>
+                              </div><!-- card-header -->
+                              <div class="card-body">
+                                <div class="chart"><canvas id="chartBar5"></canvas></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- row -->
+                      </div><!--col -->
+                    </div><!-- row -->
+
+                    <div class="row row-sm mg-b-20">
+                      <div class="col-lg-4">
+                        <div class="card card-dashboard-pageviews">
+                          <div class="card-header">
+                            <h6 class="card-title">Page Views by Page Title</h6>
+                            <p class="card-text">This report is based on 100% of sessions.</p>
+                          </div><!-- card-header -->
+                          <div class="card-body">
+                            <div class="az-list-item">
+                              <div>
+                                <h6>Admin Home</h6>
+                                <span>/demo/admin/index.html</span>
+                              </div>
+                              <div>
+                                <h6 class="tx-primary">7,755</h6>
+                                <span>31.74% (-100.00%)</span>
+                              </div>
+                            </div><!-- list-group-item -->
+                            <div class="az-list-item">
+                              <div>
+                                <h6>Form Elements</h6>
+                                <span>/demo/admin/forms.html</span>
+                              </div>
+                              <div>
+                                <h6 class="tx-primary">5,215</h6>
+                                <span>28.53% (-100.00%)</span>
+                              </div>
+                            </div><!-- list-group-item -->
+                            <div class="az-list-item">
+                              <div>
+                                <h6>Utilities</h6>
+                                <span>/demo/admin/util.html</span>
+                              </div>
+                              <div>
+                                <h6 class="tx-primary">4,848</h6>
+                                <span>25.35% (-100.00%)</span>
+                              </div>
+                            </div><!-- list-group-item -->
+                            <div class="az-list-item">
+                              <div>
+                                <h6>Form Validation</h6>
+                                <span>/demo/admin/validation.html</span>
+                              </div>
+                              <div>
+                                <h6 class="tx-primary">3,275</h6>
+                                <span>23.17% (-100.00%)</span>
+                              </div>
+                            </div><!-- list-group-item -->
+                            <div class="az-list-item">
+                              <div>
+                                <h6>Modals</h6>
+                                <span>/demo/admin/modals.html</span>
+                              </div>
+                              <div>
+                                <h6 class="tx-primary">3,003</h6>
+                                <span>22.21% (-100.00%)</span>
+                              </div>
+                            </div><!-- list-group-item -->
+                          </div><!-- card-body -->
+                        </div><!-- card -->
+
+                      </div><!-- col -->
+                      <div class="col-lg-8 mg-t-20 mg-lg-t-0">
+                        <div class="card card-dashboard-four">
+                          <div class="card-header">
+                            <h6 class="card-title">Sessions by Channel</h6>
+                          </div><!-- card-header -->
+                          <div class="card-body row">
+                            <div class="col-md-6 d-flex align-items-center">
+                              <div class="chart"><canvas id="chartDonut"></canvas></div>
+                            </div><!-- col -->
+                            <div class="col-md-6 col-lg-5 mg-lg-l-auto mg-t-20 mg-md-t-0">
+                              <div class="az-traffic-detail-item">
+                                <div>
+                                  <span>Organic Search</span>
+                                  <span>1,320 <span>(25%)</span></span>
+                                </div>
+                                <div class="progress">
+                                  <div class="progress-bar bg-purple wd-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div><!-- progress -->
+                              </div>
+                              <div class="az-traffic-detail-item">
+                                <div>
+                                  <span>Email</span>
+                                  <span>987 <span>(20%)</span></span>
+                                </div>
+                                <div class="progress">
+                                  <div class="progress-bar bg-primary wd-20p" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div><!-- progress -->
+                              </div>
+                              <div class="az-traffic-detail-item">
+                                <div>
+                                  <span>Referral</span>
+                                  <span>2,010 <span>(30%)</span></span>
+                                </div>
+                                <div class="progress">
+                                  <div class="progress-bar bg-info wd-30p" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div><!-- progress -->
+                              </div>
+                              <div class="az-traffic-detail-item">
+                                <div>
+                                  <span>Social</span>
+                                  <span>654 <span>(15%)</span></span>
+                                </div>
+                                <div class="progress">
+                                  <div class="progress-bar bg-teal wd-15p" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div><!-- progress -->
+                              </div>
+                              <div class="az-traffic-detail-item">
+                                <div>
+                                  <span>Other</span>
+                                  <span>400 <span>(10%)</span></span>
+                                </div>
+                                <div class="progress">
+                                  <div class="progress-bar bg-gray-500 wd-10p" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div><!-- progress -->
+                              </div>
+                            </div><!-- col -->
+                          </div><!-- card-body -->
+                        </div><!-- card-dashboard-four -->
+                      </div><!-- col -->
+                    </div><!-- row -->
+
+                    <div class="row row-sm mg-b-20 mg-lg-b-0">
+                      <div class="col-lg-5 col-xl-4">
+                        <div class="row row-sm">
+                          <div class="col-md-6 col-lg-12 mg-b-20 mg-md-b-0 mg-lg-b-20">
+                            <div class="card card-dashboard-five">
+                              <div class="card-header">
+                                <h6 class="card-title">Acquisition</h6>
+                                <span class="card-text">Tells you where your visitors originated from, such as search engines, social networks or website referrals.</span>
+                              </div><!-- card-header -->
+                              <div class="card-body row row-sm">
+                                <div class="col-6 d-sm-flex align-items-center">
+                                  <div class="card-chart bg-primary">
+                                    <span class="peity-bar" data-peity='{"fill": ["#fff"], "width": 20, "height": 20 }'>6,4,7,5,7</span>
+                                  </div>
+                                  <div>
+                                    <label>Bounce Rate</label>
+                                    <h4>33.50%</h4>
+                                  </div>
+                                </div><!-- col -->
+                                <div class="col-6 d-sm-flex align-items-center">
+                                  <div class="card-chart bg-purple">
+                                    <span class="peity-bar" data-peity='{"fill": ["#fff"], "width": 21, "height": 20 }'>7,4,5,7,2</span>
+                                  </div>
+                                  <div>
+                                    <label>Sessions</label>
+                                    <h4>9,065</h4>
+                                  </div>
+                                </div><!-- col -->
+                              </div><!-- card-body -->
+                            </div><!-- card-dashboard-five -->
+                          </div><!-- col -->
+                          <div class="col-md-6 col-lg-12">
+                            <div class="card card-dashboard-five">
+                              <div class="card-header">
+                                <h6 class="card-title">Sessions</h6>
+                                <span class="card-text"> A session is the period time a user is actively engaged with your website, app, etc.</span>
+                              </div><!-- card-header -->
+                              <div class="card-body row row-sm">
+                                <div class="col-6 d-sm-flex align-items-center">
+                                  <div class="mg-b-10 mg-sm-b-0 mg-sm-r-10">
+                                    <span class="peity-donut" data-peity='{ "fill": ["#007bff", "#cad0e8"],  "innerRadius": 14, "radius": 20 }'>4/7</span>
+                                  </div>
+                                  <div>
+                                    <label>% New Sessions</label>
+                                    <h4>26.80%</h4>
+                                  </div>
+                                </div><!-- col -->
+                                <div class="col-6 d-sm-flex align-items-center">
+                                  <div class="mg-b-10 mg-sm-b-0 mg-sm-r-10">
+                                    <span class="peity-donut" data-peity='{ "fill": ["#00cccc", "#cad0e8"],  "innerRadius": 14, "radius": 20 }'>2/7</span>
+                                  </div>
+                                  <div>
+                                    <label>Pages/Session</label>
+                                    <h4>1,005</h4>
+                                  </div>
+                                </div><!-- col -->
+                              </div><!-- card-body -->
+                            </div><!-- card-dashboard-five -->
+                          </div><!-- col -->
+                        </div><!-- row -->
+                      </div><!-- col-lg-3 -->
+                      <div class="col-lg-7 col-xl-8 mg-t-20 mg-lg-t-0">
+                        <div class="card card-table-one">
+                          <h6 class="card-title">What pages do your users visit</h6>
+                          <p class="az-content-text mg-b-20">Part of this date range occurs before the new users metric had been calculated, so the old users metric is displayed.</p>
+                          <div class="table-responsive">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th class="wd-5p">&nbsp;</th>
+                                  <th class="wd-45p">Country</th>
+                                  <th>Entrances</th>
+                                  <th>Bounce Rate</th>
+                                  <th>Exits</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><i class="flag-icon flag-icon-us flag-icon-squared"></i></td>
+                                  <td><strong>United States</strong></td>
+                                  <td><strong>134</strong> (1.51%)</td>
+                                  <td>33.58%</td>
+                                  <td>15.47%</td>
+                                </tr>
+                                <tr>
+                                  <td><i class="flag-icon flag-icon-gb flag-icon-squared"></i></td>
+                                  <td><strong>United Kingdom</strong></td>
+                                  <td><strong>290</strong> (3.30%)</td>
+                                  <td>9.22%</td>
+                                  <td>7.99%</td>
+                                </tr>
+                                <tr>
+                                  <td><i class="flag-icon flag-icon-in flag-icon-squared"></i></td>
+                                  <td><strong>India</strong></td>
+                                  <td><strong>250</strong> (3.00%)</td>
+                                  <td>20.75%</td>
+                                  <td>2.40%</td>
+                                </tr>
+                                <tr>
+                                  <td><i class="flag-icon flag-icon-ca flag-icon-squared"></i></td>
+                                  <td><strong>Canada</strong></td>
+                                  <td><strong>216</strong> (2.79%)</td>
+                                  <td>32.07%</td>
+                                  <td>15.09%</td>
+                                </tr>
+                                <tr>
+                                  <td><i class="flag-icon flag-icon-fr flag-icon-squared"></i></td>
+                                  <td><strong>France</strong></td>
+                                  <td><strong>216</strong> (2.79%)</td>
+                                  <td>32.07%</td>
+                                  <td>15.09%</td>
+                                </tr>
+                                <tr>
+                                  <td><i class="flag-icon flag-icon-ph flag-icon-squared"></i></td>
+                                  <td><strong>Philippines</strong></td>
+                                  <td><strong>197</strong> (2.12%)</td>
+                                  <td>32.07%</td>
+                                  <td>15.09%</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div><!-- table-responsive -->
+                        </div><!-- card -->
+                      </div><!-- col-lg -->
+
+                    </div><!-- row -->
+              </div>
+
+                {% if not request.user.is_authenticated %}
+
+              <div class="tab-pane {% if coming_from == 'login' %} active in{% else %}fade{% endif %}" id="tab_1_2">
+
+                <div class="row">
+                  <div class="col-12 col-md-4" >
+                    <h2>Login Here</h2>
+                    <form method="post" action="{% url 'accounts:register' %}" name="login_form" id="login_form"
+                          enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <input type="hidden" name="form_of" value="login">
+                        Enter your Username & Password
+                    <div class="row"  class="form-group" >
+                      <div class="col-12">
+                          <input class="form-control" type="text" name="username" id="username" placeholder="Username" required>
+                      </div>
+                      <div class="col-12">
+                          <input class="form-control" type="password" name="password" id="login_password" placeholder="Password" required>
+                      </div>
+                    </div>
+                    <div class="row"  class="form-group" >
+                      <div class="col-6" style="padding:10px;" >
+                          &nbsp;&nbsp;<input type="checkbox" id="show_password" onclick="myFunction(document.getElementById('login_password'))">
+                        <label for="show_password"> Show Password</label>
+                      </div>
+                      <div class="col-6"  style="padding:10px;">
+                          &nbsp;&nbsp;<a href="myFunction()">Forgot Password</a>
+                      </div>
+                      <div class="col-6">
+                            <input type="hidden" id="rg_captcha_hd_lof" name="rg_captcha_hd" >
+                            <input type="hidden" id="rg_captcha_iid_lof" name="rg_captcha_iid" >
+                            <br><b style="font-size: 30px; text-align: left;"><label id='rg_captcha_lb_lof'></label></b><br>
+                            <a class="btn primary-btn text-uppercase" id="refresh_rg_captcha_lof" style="color: black; float: left;">Get Captcha >></a>
+                            <p style="color: red;"><label id='rg_captcha_msg_lof'></label></p>
+                      </div>
+                      <div class="col-6"><br>
+                            <input class="form-control" id="rg_captcha_lof" name="rg_captcha" placeholder="Enter Captcha (match case)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Captcha (match case)'" class="common-input form-control" required type="text" required><br>
+                            <button id="send_register_lof" type="submit" class="btn-purple text-uppercase" style="float: left;">Login >><span class="lnr lnr-arrow-right" ></span></button>
+                            <br><br>
+                      </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+                {% elif request.user.is_superuser %}
+              <div class="tab-pane {% if coming_from == 'load_offer' %} active in{% else %} fade{% endif %}" id="tab_1_3">
+                <div class="row">
+                  <div class="col-6"><h2>Load Offers </h2></div>
+                </div>
+
+
+                            <form action="/cpanel/load_excel/" id="form_sample_4" class="form-horizontal" method="POST"
+                                  enctype="multipart/form-data">
+                                {% csrf_token %}
+
+                                <div class="load_offers" id="sample_104">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            Spot Offers:
+                                            <br><input class="primary-btn text-uppercase"  type="file" name="spot_offers_excel_file" id="spot_offers_excel_file" >
+                                            <br><br>Vendor LeadTime Offer
+                                            <input class="primary-btn text-uppercase"  type="file" name="vendor_leadtime_offers_excel_file" id="vendor_leadtime_offers_excel_file" >
+                                        </div>
+                                        <div class="col-4">
+                                            Supplier Stock Offer:
+                                            <input class="primary-btn text-uppercase"  type="file" name="supplier_stock_offers_excel_file" id="supplier_stock_offers_excel_file" >
+                                            <br><br>Customer Excess Offer:
+                                            <input class="primary-btn text-uppercase"  type="file" name="customer_excess_offers_excel_file" id="customer_excess_offers_excel_file" >
+                                        </div>
+                                        <div class="col-4">
+                                            Customer LeadTime Offer:
+                                            <input class="primary-btn text-uppercase"  type="file" name="customer_leadtime_offers_excel_file" id="customer_leadtime_offers_excel_file" >
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <input type="hidden" id="rg_captcha_hd_ie" name="rg_captcha_hd" >
+                                            <input type="hidden" id="rg_captcha_iid_ie" name="rg_captcha_iid" >
+                                            <b style="font-size: 40px; text-align: left; vertical-align: bottom;"><label id='rg_captcha_lb_ie'></label></b><br>
+                                            <a class="btn primary-btn text-uppercase" id="refresh_rg_captcha_ie" style="color: black; float: left;">Get Captcha >></a>
+                                            <p style="color: red;"><label id='rg_captcha_msg_ie'></label></p>
+                                        </div>
+                                        <div class="col-4"><br>
+                                            <input id="rg_captcha_ie" name="rg_captcha" placeholder="Enter Captcha (match case)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Captcha (match case)'" class="common-input form-control" required type="text" required><br>
+                                            <button id="send_register_ie" type="submit" class="btn-purple text-uppercase" style="float: left;">Upload >><span class="lnr lnr-arrow-right" ></span></button>
+                                            <br><br>
+                                        </div>
+                                        <div class="col-4"><br><br>
+                                            <a class="btn primary-btn text-uppercase" id="delete_bank_data_lof" style="color: red; float: left;">Clear Import Data >></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <a class="primary-btn btn text-uppercase" id="validate_on_prod" style="color: green; float: left;">Validate with PROD >></a>
+                                        </div>
+                                        <div class="col-4">&nbsp;
+                                            <a class="primary-btn btn text-uppercase" id="push_to_prod" style="color: blue; float: left;">Push to PROD >></a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a class="primary-btn btn text-uppercase" id="view_on_prod" style="color: black; float: left;"
+                                            href="../../website/search">view on PROD >></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                            </form>
+                <div class="row">
+                  <div class="col-6" style="font-size:1.5em; padding:10px;">
+                  Showing <b style="color:green;">{{imported_offers}}</b> from a total of <b style="color:red;">{{upload_count}}</b> Uploaded records in Import Tables.
+                  </div>
+                  <div class="col-6" align="right" style="font-size:1.5em;">
+                    <div class="row">
+                  {% if imported_offers.has_other_pages %}
+                    <div class="col-12">
+                      {% if imported_offers.has_previous %}
+                        <a href="/?page={{ imported_offers.previous_page_number }}&coming_from=load_offer">&nbsp;&laquo;&nbsp;</a>
+                      {% else %}
+                        <span>&nbsp;&laquo;&nbsp;</span>
+                      {% endif %}
+                      {% for i in imported_offers.paginator.page_range %}
+                        {% if imported_offers.number == i %}
+                          <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+                        {% else %}
+                          <a href="/?page={{ i }}&coming_from=load_offer">&nbsp;{{ i }}&nbsp;</a>
+                        {% endif %}
+                      {% endfor %}
+                      {% if imported_offers.has_next %}
+                        <a href="/?page={{ imported_offers.next_page_number }}&coming_from=load_offer">&nbsp;&raquo;&nbsp;</a>
+                      {% else %}
+                        <span>&nbsp;&raquo;&nbsp;</span>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                    </div>
+                  </div>
+                </div>
+
+
+                                <table class="table table-striped table-hover table-bordered" id="sample_4">
+                                    <thead>
+                                    <tr class="tab_head">
+                                        <th style="display: none">Id</th>
+                                        <th>Edit</th>
+                                        <th>offer_type</th>
+                                        <th>nature</th>
+                                        <th>vendor</th>
+                                        <th>manufacturer</th>
+                                        <th>product</th>
+                                        <th>description</th>
+                                        <th>cost</th>
+                                        <th>lead_time</th>
+                                        <th>status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tbody_income_data">
+                                    {% for rec in imported_offers %}
+                                        <tr id="income_{{rec.id}}" class="item">
+                                            <td style="display: none"><input id="income_data_{{rec.id}}" value="{{ rec.id }}"></td>
+<!--                                            <td onclick="window.location='../../admin/helper/importoffer/{{rec.id}}/change/'" ><i class="far fa-eye"></i></td>-->
+                                            <td onclick="window.open('../../admin/helper/importoffer/{{rec.id}}/change/', '', 'width=400,height=600,top=50,left=50');" ><i class="far fa-eye"></i></td>
+                                            <td><text>{{ rec.offer_type }}</text></td>
+                                            <td><text>{{ rec.nature_code }}</text></td>
+                                            <td><text>{{ rec.vendor }}</text></td>
+                                            <td><text>{{ rec.manufacturer }}</text></td>
+                                            <td><text>{{ rec.product }}</text></td>
+                                            <td><text>{{ rec.description }}</text></td>
+                                            <td><text>{{ rec.cost |floatformat:4}}</text></td>
+                                            <td><text>{{ rec.lead_time }}</text></td>
+                                            <td><text {% if rec.status == 'Exists' %} style="color:red;" {% endif %}>{{ rec.status }}</text></td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+
+              </div>
+                {% endif %}
+
+              <div class="tab-pane  {% if coming_from == 'vendor' %} active in{% else %} fade{% endif %}" id="tab_1_4"><h2>Vendor </h2>
+                    <div class="row">
+                      <div class="col-12">
+
+                          <form method="post" action="{% url 'accounts:register' %}" name="vendor_form" id="vendor_form"
+                                enctype="multipart/form-data">
+                              {% csrf_token %}
+                              <input type="hidden" name="form_of" value="vendor">
+                              <input type="hidden" id="type_function_v" name="type_function" value="new">
+                            <div class="row"  class="form-group" >
+                              <div class="col-6" style="padding:10px;">Search a Vendor
+                                <input class="form-control" type="text" id="vendor_like" name="vendor_like"
+                                                                      value="{{form_data.vendor_like|default_if_none:''}}" placeholder="Enter Vendor ID string">
+                                <select id="vendor_id" name="vendor_id" class="form-control select2" required>
+                                  <option label="Choose one"></option>
+                                </select>
+                              </div><!-- col-4 -->
+                              <div class="col-6" >
+                                <br>
+                                <p title="Create New Vendor"
+                                   onclick="window.open('../../admin/cpanel/vendordetail/add/', '', 'width=400,height=600,top=50,left=50');"
+                                   onMouseOver="this.style.cursor='pointer'; this.style.color='red';"
+                                   onMouseOut="this.style.color='black';" >Create New &nbsp;&nbsp;<i class="fa fa-plus"></i></p>
+                                <p title="Edit Vendor" id="edit_v"
+                                   onclick="edit_window('vendor');"
+                                   onMouseOver="this.style.cursor='pointer'; this.style.color='red';"
+                                   onMouseOut="this.style.color='black';" >Edit &nbsp;&nbsp;<i class="fa fa-eye"></i></p>
+                              </div>
+                            </div>
+                            <div class="row"  class="form-group" >
+                              <div class="col-12 col-md-6">
+                                  <p class="mg-b-10">Nature Code</p>
+                                  <select id="nature_code_v" name="nature_code" class="form-control select2" required>
+                                    <option label="Choose one"></option>
+                                    {% for rec in nature_code %}
+                                    <option value="{{rec.code|upper}}">{{rec.name}}</option>
+                                    {% endfor %}
+                                  </select>
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <p class="mg-b-10" title="Refresh" id="refresh_code_word_v"
+                                    onMouseOver="this.style.cursor='pointer'; this.style.color='red';"
+                                    onMouseOut="this.style.color='black';" >
+                                  Vendor Code Name &nbsp;&nbsp;<i class="fa fa-newspaper"></i></p>
+                                  <input class="form-control" type="text" name="code_word" id="code_word_v" placeholder="Code Word" required>
+                              </div>
+                              <div class="col-12">
+                                  <p class="mg-b-10">Enter Username & Password</p>
+                                  <input class="form-control" type="text" name="username" id="vendor_username" placeholder="Username" required>
+                              </div>
+                              <div class="col-12">
+                                  <input class="form-control" type="password" name="password" id="vendor_password" placeholder="Password" required>
+                              </div>
+                              <div class="col-12" style="padding:10px;" >
+                                  &nbsp;&nbsp;<input type="checkbox" onclick="myFunction(document.getElementById('vendor_password'))"> Show Password
+                              </div>
+                            </div>
+                            <div class="row"  class="form-group" >
+                              <div class="col-6">
+                                    <input type="hidden" id="rg_captcha_hd_v" name="rg_captcha_hd" >
+                                    <input type="hidden" id="rg_captcha_iid_v" name="rg_captcha_iid" >
+                                    <br><b style="font-size: 30px; text-align: left;"><label id='rg_captcha_lb_v'></label></b><br>
+                                    <a class="btn primary-btn text-uppercase" id="refresh_rg_captcha_v" style="color: black; float: left;">Get Captcha >></a>
+                                    <p style="color: red;"><label id='rg_captcha_msg_v'></label></p>
+                              </div>
+                              <div class="col-6"><br>
+                                    <input class="form-control" id="rg_captcha_v" name="rg_captcha" placeholder="Enter Captcha (match case)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Captcha (match case)'" class="common-input form-control" required type="text" required><br>
+                                    <button id="send_register_v" type="submit" class="btn-purple text-uppercase" style="float: left;">Register >><span class="lnr lnr-arrow-right" ></span></button>
+                                    <br><br>
+                              </div>
+                            </div>
+                          </form>
+
+                      </div>
+                    </div>
+              </div>
+
+              <div class="tab-pane {% if coming_from == 'customer' %} active in{% else %} fade{% endif %}" id="tab_1_5"><h2>Customer </h2>
+                    <div class="row">
+                      <div class="col-12">
+                          <form method="post" action="{% url 'accounts:register' %}" name="customer_form" id="customer_form"
+                                enctype="multipart/form-data">
+                              {% csrf_token %}
+                              <input type="hidden" name="form_of" value="customer">
+                              <input type="hidden" id="type_function_c" name="type_function" value="new">
+                            <div class="row"  class="form-group" >
+                                <div class="col-6" style="padding:10px;">Search a Customer
+                                  <input class="form-control" type="text" id="customer_like" name="customer_like"
+                                                                        value="{{form_data.customer_like|default_if_none:''}}" placeholder="Enter Customer string">
+                                  <select id="customer_id" name="customer_id" class="form-control select2" required>
+                                    <option label="Choose one"></option>
+                                  </select>
+                                </div><!-- col-4 -->
+                                <div class="col-2" >
+                                  <br>
+                                  <p title="Create New Customer"
+                                     onclick="window.open('../../admin/cpanel/customerdetail/add/', '', 'width=400,height=600,top=50,left=50');"
+                                     onMouseOver="this.style.cursor='pointer'; this.style.color='red';"
+                                     onMouseOut="this.style.color='black';" >Create New &nbsp;&nbsp;<i class="fa fa-plus"></i></p>
+                                  <p title="Edit Vendor" id="edit_c"
+                                     onclick="edit_window('customer');"
+                                     onMouseOver="this.style.cursor='pointer'; this.style.color='red';"
+                                     onMouseOut="this.style.color='black';" >Edit &nbsp;&nbsp;<i class="fa fa-eye"></i></p>
+                                </div>
+
+                            </div>
+
+                            <div class="row"  class="form-group" >
+                                <div class="col-12 col-md-6">
+                                  <p class="mg-b-10">Nature Code</p>
+                                  <select id="nature_code_c" name="nature_code" class="form-control select2" required>
+                                    <option label="Choose one"></option>
+                                    {% for rec in nature_code %}
+                                    <option value="{{rec.code|upper}}">{{rec.name}}</option>
+                                    {% endfor %}
+                                  </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <p class="mg-b-10" title="Refresh" id="refresh_code_word_c"
+                                      onMouseOver="this.style.cursor='pointer'; this.style.color='red';"
+                                      onMouseOut="this.style.color='black';" >
+                                    Vendor Code Name &nbsp;&nbsp;<i class="fa fa-newspaper"></i></p>
+                                    <input class="form-control" type="text" name="code_word" id="code_word_c" placeholder="Code Word" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <p class="mg-b-10">Enter Username & Password</p>
+                                    <input class="form-control" type="text" name="username" id="customer_username" placeholder="Username" required>
+                                </div>
+                                <div class="col-12">
+                                    <input class="form-control" type="password" name="password" id="customer_password" placeholder="Password" required>
+                                </div>
+                            </div>
+
+                            <div class="row"  class="form-group" >
+                              <div class="col-12" style="padding:10px;" >
+                                  &nbsp;&nbsp;<input type="checkbox" onclick="myFunction(document.getElementById('customer_password'))"> Show Password
+                              </div>
+                              <div class="col-6">
+                                    <input type="hidden" id="rg_captcha_hd_c" name="rg_captcha_hd" >
+                                    <input type="hidden" id="rg_captcha_iid_c" name="rg_captcha_iid" >
+                                    <br><b style="font-size: 30px; text-align: left;"><label id='rg_captcha_lb_c'></label></b><br>
+                                    <a class="btn primary-btn text-uppercase" id="refresh_rg_captcha_c" style="color: black; float: left;">Get Captcha >></a>
+                                    <p style="color: red;"><label id='rg_captcha_msg_c'></label></p>
+                              </div>
+                              <div class="col-6"><br>
+                                    <input class="form-control" id="rg_captcha_c" name="rg_captcha" placeholder="Enter Captcha (match case)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Captcha (match case)'" class="common-input form-control" required type="text" required><br>
+                                    <button id="send_register_c" type="submit" class="btn-purple text-uppercase" style="float: left;">Register >><span class="lnr lnr-arrow-right" ></span></button>
+                                    <br><br>
+                              </div>
+                            </div>
+                          </form>
+
+                      </div>
+                    </div>
+
+              </div>
+
+              <div class="tab-pane {% if coming_from == 'load_rfq' %} active in{% else %} fade{% endif %}" id="tab_1_6"><h2>Load RFQs </h2>
+
+                    <div class="row load_offers" >
+                      <div class="col-12">
+
+                          <form method="post" action="{% url 'cpanel:load_excel' %}" name="customer_rfq_form" id="customer_rfq_form"
+                                enctype="multipart/form-data">
+                              {% csrf_token %}
+                            <div class="row">
+                                <div class="col-6">Search a Customer
+                                  <input class="form-control" type="text" id="customer_like_rfq" name="customer_like" value="{{form_data.customer_like|default_if_none:''}}" placeholder="Enter Customer string">
+                                  <select id="customer_id_rfq" name="customer_id" class="form-control select2" required>
+                                    <option label="Choose one"></option>
+                                  </select>
+                                </div>
+                                <div class="col-6">Load RFQs:
+                                  <br><input class="primary-btn text-uppercase"  type="file" name="customer_rfq_excel_file" id="customer_rfq_excel_file" style="padding:5px;" required>
+                                  <br><input class="form-control" type="text" name="rfq_number" id="rfq_number" placeholder="RFQ Id" value="" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="hidden" id="rg_captcha_hd_rfq" name="rg_captcha_hd" >
+                                    <input type="hidden" id="rg_captcha_iid_rfq" name="rg_captcha_iid" >
+                                    <label id='rg_captcha_lb_rfq' style="font-size:30px; position:absolute; bottom:0;"></label>
+                                </div>
+                                <div class="col-6"><br>
+                                    <input id="rg_captcha_rfq" name="rg_captcha" placeholder="Enter Captcha (match case)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Captcha (match case)'" class="common-input form-control" required type="text" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6"><br>
+                                    <a class="btn primary-btn text-uppercase" id="refresh_rg_captcha_rfq" style="color: black; float: left;">Get Captcha >></a>
+                                    <p style="color: red;"><label id='rg_captcha_msg_rfq'></label></p>
+                                </div>
+                                <div class="col-3"><br>
+                                    <button id="send_register_rfq" type="submit" class="btn-purple text-uppercase" style="float: left;">Upload RFQ >><span class="lnr lnr-arrow-right" ></span></button>
+                                </div>
+                                <div class="col-3"><br>
+                                    <a class="btn primary-btn text-uppercase" id="delete_bank_data_lrfq" style="color: red; float: left;">Clear Import RFQ Data >></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <a class="primary-btn btn text-uppercase" id="validate_on_prod_rfq" style="color: green; float: left;">Validate with PROD >></a>
+                                </div>
+                                <div class="col-4">&nbsp;
+                                    <a class="primary-btn btn text-uppercase" id="push_to_prod_rfq" style="color: blue; float: left;">Push to PROD >></a>
+                                </div>
+                                <div class="col-4">
+                                    <a class="primary-btn btn text-uppercase" id="view_on_prod_rfq" style="color: black; float: left;"
+                                    href="../../website/search">view on PROD >></a>
+                                </div>
+                            </div>
+
+
+                          </form>
+
+                      </div>
+                    </div>
+
+
+                <div class="row">
+                  <div class="col-6" style="font-size:1.5em; padding:10px;">
+                  Showing <b style="color:green;">{{imported_rfqs}}</b> from a total of <b style="color:red;">{{upload_rfq_count}}</b> Uploaded records in Import RFQs.
+                  </div>
+                  <div class="col-6" align="right" style="font-size:1.5em;">
+                    <div class="row">
+                  {% if imported_rfqs.has_other_pages %}
+                    <div class="col-12">
+                      {% if imported_rfqs.has_previous %}
+                        <a href="/?page={{ imported_rfqs.previous_page_number }}&coming_from=load_offer">&nbsp;&laquo;&nbsp;</a>
+                      {% else %}
+                        <span>&nbsp;&laquo;&nbsp;</span>
+                      {% endif %}
+                      {% for i in imported_rfqs.paginator.page_range %}
+                        {% if imported_rfqs.number == i %}
+                          <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+                        {% else %}
+                          <a href="/?page={{ i }}&coming_from=load_rfq">&nbsp;{{ i }}&nbsp;</a>
+                        {% endif %}
+                      {% endfor %}
+                      {% if imported_rfqs.has_next %}
+                        <a href="/?page={{ imported_rfqs.next_page_number }}&coming_from=load_rfq">&nbsp;&raquo;&nbsp;</a>
+                      {% else %}
+                        <span>&nbsp;&raquo;&nbsp;</span>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                    </div>
+                  </div>
+                </div>
+
+
+                                <table class="table table-striped table-hover table-bordered" id="sample_5">
+                                    <thead>
+                                    <tr class="tab_head">
+                                        <th style="display: none">Id</th>
+                                        <th>Edit</th>
+                                        <th>offer</th>
+                                        <th>RFQ #</th>
+                                        <th>Cust</th>
+                                        <th>Cust P/N</th>
+                                        <th>mfr</th>
+                                        <th>prod</th>
+                                        <th>desc</th>
+                                        <th>target</th>
+                                        <th>del dt</th>
+                                        <th>status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tbody_rfq_data">
+                                    {% for rec in imported_rfqs %}
+                                        <tr id="rfq_{{rec.id}}" class="item">
+                                            <td style="display: none"><input id="rfq_data_{{rec.id}}" value="{{ rec.id }}"></td>
+<!--                                            <td onclick="window.location='../../admin/helper/importoffer/{{rec.id}}/change/'" ><i class="far fa-eye"></i></td>-->
+                                            <td onclick="window.open('../../admin/helper/importrfqandpo/{{rec.id}}/change/', '', 'width=400,height=600,top=50,left=50');" ><i class="far fa-eye"></i></td>
+                                            <td><text>{{ rec.offer_type }}</text></td>
+                                            <td><text>{{ rec.rfq_number }}</text></td>
+                                            <td><text>{{ rec.customer }}</text></td>
+                                            <td><text>{{ rec.customer_part_number }}</text></td>
+                                            <td><text>{{ rec.manufacturer }}</text></td>
+                                            <td><text>{{ rec.product }}</text></td>
+                                            <td><text>{{ rec.description }}</text></td>
+                                            <td><text>{{ rec.target_price |floatformat:4}}</text></td>
+                                            <td><text>{{ rec.delivery_on }}</text></td>
+                                            <td><text {% if rec.status == 'Exists' %} style="color:red;" {% endif %}>{{ rec.status }}</text></td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+
+
+              </div>
+
+              <div class="tab-pane fade" id="tab_1_7"><h2>Export to PDF </h2>
+              </div>
+
+              <div class="tab-pane fade" id="tab_1_8"><h2>Send to EMail </h2>
+              </div>
+          </div>
+
+
+
+        </div><!-- az-content-body -->
+      </div>
+    </div><!-- az-content -->
+{% endblock %}
+
+
+{% block ScriptBlock %}
+    <script>
+        //window.onload = function () {
+            $(document).ready(function () {
+                //alert('second onload');
+                $("#refresh_rg_captcha_lof").click(function () {
+                    //alert("called");
+                    $.ajax({
+                      type:    "POST",
+                      url:     "/helper/get_captcha/",
+                      data:    {
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                      },
+                      success: function(data) {
+                            //alert('call back');
+                            var response = JSON.parse(data);
+                            // alert(response['message']);
+                            document.getElementById('rg_captcha_lb_lof').innerHTML = response['captcha'];
+                            document.getElementById('rg_captcha_hd_lof').value = response['captcha'];
+                            document.getElementById('rg_captcha_iid_lof').value = response['iid'];
+                            document.getElementById('refresh_rg_captcha_lof').innerHTML = 'Refresh';
+                      },
+                      error:   function(jqXHR, textStatus, errorThrown) {
+                            alert("Error, status = " + textStatus + ", " +
+                                  "error thrown: " + errorThrown
+                            );
+                      }
+                    });
+                });
+
+                $("#send_register_lof").click(function () {
+                    // alert();
+                    entered = document.getElementById('rg_captcha_lof').value
+                    stored = document.getElementById('rg_captcha_hd_lof').value
+                    // alert(entered + " -- " + stored);
+                    if(entered != '' && entered != stored)	{
+                        document.getElementById('rg_captcha_msg_lof').innerHTML = 'Enter matching Captcha';
+                        // alert('returning false')
+                        return false;
+                    }
+                    else if(!document.getElementById('spot_offers_excel_file').value && !document.getElementById('vendor_leadtime_offers_excel_file').value && !document.getElementById('supplier_stock_offers_excel_file').value && !document.getElementById('customer_leadtime_offers_excel_file').value && !document.getElementById('customer_excess_offers_excel_file').value)  {
+                        alert('Enter atleast one Offer document to Upload');
+                        return false;
+                    }
+                    else 	{
+                        document.getElementById('rg_captcha_msg_lof').innerHTML = '';
+                        return true;
+                    }
+                });
+
+
+                $("#delete_bank_data_lof").click(function () {
+                    //alert("called");
+                    //$(".popup").show();
+                    $.ajax({
+                      type:    "POST",
+                      url:     "/cpanel/reconcile/",
+                      data:    {
+                        'action_to_perform' : 'delete_account_data',
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                      },
+                      beforeSend: function() {
+                        //$(".popup").show();
+                        $('#popup').modal('show');
+                      },
+                      success: function(data) {
+                            //alert('call back');
+                            //$('#popup').fadeOut('fast');
+                            $('#popup').modal('hide');
+                            var response = JSON.parse(data);
+                            alert(response['message']);
+                            window.location='{% url "cpanel:index" %}?coming_from=load_offer'
+                      },
+                      error:   function(jqXHR, textStatus, errorThrown) {
+                            alert("Error, status = " + textStatus + ", " +
+                                  "error thrown: " + errorThrown
+                            );
+                      }
+                    });
+                });
+
+
+                $("#validate_on_prod").click(function () {
+                    validate_on_prod('load_offer');
+                });
+
+                $("#push_to_prod").click(function () {
+                    push_to_prod_fn('load_offer');
+                });
+
+                $("#view_on_prod").click(function () {
+                    window.location='{% url "website:search" %}'
+                });
+
+            });
+        //};
+
+    </script>
+
+    <script>
+        $(document).ready(function(){
+          $('#sample_4').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+          $('#sample_5').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+
+        });
+    </script>
+
+<script>
+    $(document).ready(function () {
+        $("#refresh_rg_captcha_ie").click(function () {
+            //alert("called");
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_captcha/",
+              data:    {
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    document.getElementById('rg_captcha_lb_ie').innerHTML = response['captcha'];
+                    document.getElementById('rg_captcha_hd_ie').value = response['captcha'];
+                    document.getElementById('rg_captcha_iid_ie').value = response['iid'];
+                    document.getElementById('refresh_rg_captcha_ie').innerHTML = 'Refresh';
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#send_register_ie").click(function () {
+            // alert();
+            entered = document.getElementById('rg_captcha_ie').value
+            stored = document.getElementById('rg_captcha_hd_ie').value
+            // alert(entered + " -- " + stored);
+            if(entered != '' && entered != stored)	{
+                document.getElementById('rg_captcha_msg_ie').innerHTML = 'Enter matching Captcha';
+                // alert('returning false')
+                return false;
+            }
+            else 	{
+                document.getElementById('rg_captcha_msg_ie').innerHTML = '';
+                return true;
+            }
+        });
+
+
+        $('#vendor_like').blur(function () {
+            like_value = document.getElementById('vendor_like').value;
+            fetch_data('vendors', like_value, $('#vendor_id'), '{{form_data.vendor_id}}');
+        });
+
+        $("#vendor_id").change(function () {
+            //alert("called");
+            var username = document.getElementById('vendor_username');
+            var code_word = document.getElementById('code_word_v');
+            var nature_code = document.getElementById('nature_code_v');
+            var vc_id = document.getElementById('vendor_id').value;
+            //alert(vc_id);
+            if(vc_id != '')  {
+              $.ajax({
+                type:    "POST",
+                url:     "/helper/get_vc_details/",
+                data:    {
+                  'vc_id': vc_id,
+                  'vc_for': 'Vendor',
+                  'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(data) {
+                      var response = JSON.parse(data);
+                      // alert(response['message']);
+                      if(response['status'] == 'Found')     {
+                          alert('User already exists !');
+                          username.value = response['username'];
+                          code_word.value = response['code_word'];
+                          nature_code.value = response['nature_code'];
+                          document.getElementById('type_function_v').value = 'edit'
+                          $('#vendor_username').attr('readonly', true);
+                      }
+                      else {
+                          username.value = '';
+                          code_word.value = '';
+                          nature_code.value = '';
+                          document.getElementById('type_function_v').value = 'new'
+                          $('#vendor_username').attr('readonly', false);
+                      }
+                },
+                error:   function(jqXHR, textStatus, errorThrown) {
+                      alert("Error, status = " + textStatus + ", " +
+                            "error thrown: " + errorThrown
+                      );
+                }
+              });
+            }
+            else {
+                username.value = '';
+                code_word.value = '';
+                nature_code.value = '';
+            }
+        });
+
+        $("#refresh_rg_captcha_v").click(function () {
+            //alert("called");
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_captcha/",
+              data:    {
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    document.getElementById('rg_captcha_lb_v').innerHTML = response['captcha'];
+                    document.getElementById('rg_captcha_hd_v').value = response['captcha'];
+                    document.getElementById('rg_captcha_iid_v').value = response['iid'];
+                    document.getElementById('refresh_rg_captcha_v').innerHTML = 'Refresh';
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+
+        $("#refresh_code_word_v").click(function () {
+          $("#nature_code_v").trigger('change');
+        });
+
+        $("#nature_code_v").change(function () {
+            //alert("called");
+            var username = document.getElementById('vendor_username');
+            var code_word = document.getElementById('code_word_v');
+            var nature_code = document.getElementById('nature_code_v').value
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_code_word/",
+              data:    {
+                'nature_code': nature_code,
+                'code_for': 'Vendor',
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    if(nature_code)     {
+                      if(document.getElementById('type_function_v').value == 'new')    {
+                        username.value = response['code_word'];
+                        code_word.value = response['code_word'];
+                      }
+                      else {
+                        code_word.value = response['code_word'];
+                      }
+                    }
+                    else {
+                        username.value = '';
+                        code_word.value = '';
+                    }
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#send_register_v").click(function () {
+            // alert();
+            entered = document.getElementById('rg_captcha_v').value
+            stored = document.getElementById('rg_captcha_hd_v').value
+            // alert(entered + " -- " + stored);
+            if(entered != '' && entered != stored)	{
+                document.getElementById('rg_captcha_msg_v').innerHTML = 'Enter matching Captcha';
+                // alert('returning false')
+                return false;
+            }
+        });
+
+        $('#customer_like').blur(function () {
+            like_value = document.getElementById('customer_like').value;
+            fetch_data('customers', like_value, $('#customer_id'), '{{form_data.customer_id}}');
+        });
+
+        $("#customer_id").change(function () {
+            //alert("called");
+            var username = document.getElementById('customer_username');
+            var code_word = document.getElementById('code_word_c');
+            var nature_code = document.getElementById('nature_code_c');
+            var rfq_number = document.getElementById('rfq_number');
+            rfq_number.value = '';
+            var vc_id = document.getElementById('customer_id').value;
+            //alert(vc_id);
+            if(vc_id != '')  {
+              $.ajax({
+                type:    "POST",
+                url:     "/helper/get_vc_details/",
+                data:    {
+                  'vc_id': vc_id,
+                  'vc_for': 'Customer',
+                  'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(data) {
+                      var response = JSON.parse(data);
+                      // alert(response['message']);
+                      if(response['status'] == 'Found')     {
+                          alert('User already exists !');
+                          username.value = response['username'];
+                          code_word.value = response['code_word'];
+                          nature_code.value = response['nature_code'];
+                          document.getElementById('type_function_c').value = 'edit'
+                          $('#customer_username').attr('readonly', true);
+                      }
+                      else {
+                          username.value = '';
+                          code_word.value = '';
+                          nature_code.value = '';
+                          document.getElementById('type_function_c').value = 'new'
+                          $('#customer_username').attr('readonly', false);
+                      }
+                      rfq_number.value = response['rfq_number'];
+                },
+                error:   function(jqXHR, textStatus, errorThrown) {
+                      alert("Error, status = " + textStatus + ", " +
+                            "error thrown: " + errorThrown
+                      );
+                }
+              });
+            }
+            else {
+                username.value = '';
+                code_word.value = '';
+                nature_code.value = '';
+            }
+        });
+
+        $("#refresh_rg_captcha_c").click(function () {
+            //alert("called");
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_captcha/",
+              data:    {
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    document.getElementById('rg_captcha_lb_c').innerHTML = response['captcha'];
+                    document.getElementById('rg_captcha_hd_c').value = response['captcha'];
+                    document.getElementById('rg_captcha_iid_c').value = response['iid'];
+                    document.getElementById('refresh_rg_captcha_c').innerHTML = 'Refresh';
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#refresh_code_word_c").click(function () {
+          $("#nature_code_c").trigger('change');
+        });
+
+        $("#nature_code_c").change(function () {
+            //alert("called");
+            var username = document.getElementById('customer_username');
+            var code_word = document.getElementById('code_word_c');
+            var nature_code = document.getElementById('nature_code_c').value
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_code_word/",
+              data:    {
+                'nature_code': nature_code,
+                'code_for': 'Customer',
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    if(nature_code)     {
+                      if(document.getElementById('type_function_c').value == 'new')    {
+                        username.value = response['code_word'];
+                        code_word.value = response['code_word'];
+                      }
+                      else {
+                        code_word.value = response['code_word'];
+                      }
+                    }
+                    else {
+                        username.value = '';
+                        code_word.value = '';
+                    }
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#send_register_c").click(function () {
+            // alert();
+            entered = document.getElementById('rg_captcha_c').value
+            stored = document.getElementById('rg_captcha_hd_c').value
+            // alert(entered + " -- " + stored);
+            if(entered != '' && entered != stored)	{
+                document.getElementById('rg_captcha_msg_c').innerHTML = 'Enter matching Captcha';
+                // alert('returning false')
+                return false;
+            }
+        });
+
+        $("#upload_rfq").click(function () {
+            // alert();
+            entered = document.getElementById('rg_captcha_c').value
+            stored = document.getElementById('rg_captcha_hd_c').value
+            // alert(entered + " -- " + stored);
+            if(entered == '')	{
+                document.getElementById('rg_captcha_msg_c').innerHTML = 'Enter Captcha';
+                // alert('returning false')
+                return false;
+            }
+            else if(entered != '' && entered != stored)	{
+                document.getElementById('rg_captcha_msg_c').innerHTML = 'Enter matching Captcha';
+                // alert('returning false')
+                return false;
+            }
+        });
+
+    });
+
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#refresh_rg_captcha_rfq").click(function () {
+            //alert("called");
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_captcha/",
+              data:    {
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    document.getElementById('rg_captcha_lb_rfq').innerHTML = response['captcha'];
+                    document.getElementById('rg_captcha_hd_rfq').value = response['captcha'];
+                    document.getElementById('rg_captcha_iid_rfq').value = response['iid'];
+                    document.getElementById('refresh_rg_captcha_rfq').innerHTML = 'Refresh';
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#send_register_rfq").click(function () {
+            // alert();
+            entered = document.getElementById('rg_captcha_rfq').value
+            stored = document.getElementById('rg_captcha_hd_rfq').value
+            // alert(entered + " -- " + stored);
+            if(entered != '' && entered != stored)	{
+                document.getElementById('rg_captcha_msg_rfq').innerHTML = 'Enter matching Captcha';
+                // alert('returning false')
+                return false;
+            }
+            else 	{
+                document.getElementById('rg_captcha_msg_rfq').innerHTML = '';
+                return true;
+            }
+        });
+
+        $('#customer_like_rfq').blur(function () {
+            like_value = document.getElementById('customer_like_rfq').value;
+            fetch_data('customers', like_value, $('#customer_id_rfq'), '{{form_data.customer_id}}');
+        });
+
+        $("#customer_id_rfq").change(function () {
+            //alert("called");
+            var rfq_number = document.getElementById('rfq_number');
+            var vc_id = document.getElementById('customer_id_rfq').value;
+            if(vc_id != '')  {
+              $.ajax({
+                type:    "POST",
+                url:     "/helper/get_vc_details/",
+                data:    {
+                  'vc_id': vc_id,
+                  'vc_for': 'Customer',
+                  'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(data) {
+                      var response = JSON.parse(data);
+                      rfq_number.value = response['rfq_number'];
+                },
+                error:   function(jqXHR, textStatus, errorThrown) {
+                      alert("Error, status = " + textStatus + ", " +
+                            "error thrown: " + errorThrown
+                      );
+                }
+              });
+            }
+            else {
+                rfq_number.value = '';
+            }
+        });
+
+        $("#delete_bank_data_lrfq").click(function () {
+            //alert("called");
+            //$(".popup").show();
+            $.ajax({
+              type:    "POST",
+              url:     "/cpanel/reconcile/",
+              data:    {
+                'action_to_perform' : 'delete_rfq_data',
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              beforeSend: function() {
+                //$(".popup").show();
+                $('#popup').modal('show');
+              },
+              success: function(data) {
+                    //alert('call back');
+                    //$('#popup').fadeOut('fast');
+                    $('#popup').modal('hide');
+                    var response = JSON.parse(data);
+                    alert(response['message']);
+                    window.location='{% url "cpanel:index" %}?coming_from=load_rfq'
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#validate_on_prod_rfq").click(function () {
+            validate_on_prod('load_rfq');
+        });
+
+        $("#push_to_prod_rfq").click(function () {
+            push_to_prod_fn('load_rfq');
+        });
+
+    });
+</script>
+
+
+<script>
+    function is_username_exists(username, whois)     {
+            //alert("called "+username.value);
+            $.ajax({
+              type:    "POST",
+              url:     "{% url 'accounts:register'%}",
+              data:    {
+                'form_of': 'is_username_exists',
+                'username': username.value,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    if(response['is_username_exists'])  {
+                        alert('Username already exists');
+                        username.value = '';
+                        username.focus();
+                        return false;
+                    }
+                    else  {
+                      if(whois == 'vendor')  {
+                        $('#vendor_form').submit()
+                      }
+                      else if(whois == 'customer')  {
+                        $('#customer_form').submit()
+                      }
+                    }
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+
+    }
+</script>
+
+
+<script>
+    function myFunction(x) {
+      //var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+</script>
+
+
+<script>
+    function fetch_data(from_value, like_value, object_ref, selected_value)       {
+        //alert(from_value +", "+ like_value +", "+ object_ref +", "+ selected_value);
+        if(like_value != '')  {
+            $.ajax({
+                type: 'POST',
+                url: '/helper/fetch_data/',
+                data: {
+                    'from': from_value,
+                    'like': like_value,
+                    'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+                },
+                success: function (response) {
+                    var response = JSON.parse(response);
+                    object_ref.empty();
+                    object_ref.append('<option label="Choose one"></option>');
+                    for (var i = 0; i < response.length; i++) {
+                        if(response[i].id == selected_value)   {
+                            object_ref.append('<option value="' + response[i].id + '" selected>' + response[i].name + '</option>');
+                        }
+                        else  {
+                            object_ref.append('<option value="' + response[i].id + '">' + response[i].name + '</option>');
+                        }
+                    }
+                },
+                error: function (xhr, msg, err) {
+                    {#alert(err);#}
+                }
+            });
+        }
+    }
+</script>
+
+<script>
+    function edit_window(whois) {
+        if(whois == 'vendor') {
+          vc_id = document.getElementById('vendor_id').value;
+          if(vc_id != '')  {
+            window.open('../../admin/cpanel/vendordetail/'+vc_id+'/change/', '', 'width=400,height=600,top=50,left=50');
+          }
+          else {
+            alert('Select a Vendor');
+          }
+        }
+        else if(whois == 'customer') {
+          vc_id = document.getElementById('customer_id').value;
+          if(vc_id != '')  {
+            window.open('../../admin/cpanel/customerdetail/'+vc_id+'/change/', '', 'width=400,height=600,top=50,left=50');
+          }
+          else {
+            alert('Select a Customer');
+          }
+        }
+    }
+</script>
+
+<script>
+    function validate_on_prod(coming_from)    {
+      //$(".popup").show();
+      $.ajax({
+        type:    "POST",
+        url:     "/cpanel/reconcile/",
+        data:    {
+          'action_to_perform' : 'validate_on_prod',
+          'coming_from': coming_from,
+          'csrfmiddlewaretoken': '{{ csrf_token }}'
+        },
+        beforeSend: function() {
+          //$(".popup").show();
+          $('#popup').modal('show');
+        },
+        success: function(data) {
+            //$('#popup').fadeOut('fast');
+              $('#popup').modal('hide');
+              var response = JSON.parse(data);
+              alert(response['message']);
+              window.location='{% url "cpanel:index" %}?coming_from='+coming_from
+        },
+        error:   function(jqXHR, textStatus, errorThrown) {
+              alert("Error, status = " + textStatus + ", " + "error thrown: " + errorThrown
+              );
+        }
+      });
+
+    }
+
+    function push_to_prod_fn(coming_from)    {
+      //alert('calling ajx');
+      $.ajax({
+          type:    "POST",
+          url:     "/cpanel/reconcile/",
+          data:    {
+            'action_to_perform' : 'push_to_prod',
+            'coming_from' : coming_from,
+            'csrfmiddlewaretoken': '{{ csrf_token }}'
+          },
+          beforeSend: function() {
+            //$(".popup").show();
+            $('#popup').modal('show');
+          },
+          success: function(data) {
+                //$('#popup').fadeOut('fast');
+                $('#popup').modal('hide');
+                var response = JSON.parse(data);
+                alert(response['message']);
+                window.location='{% url "cpanel:index" %}?coming_from='+coming_from
+          },
+          error:   function(jqXHR, textStatus, errorThrown) {
+                alert("Error, status = " + textStatus + ", " + "error thrown: " + errorThrown
+                );
+          }
+      });
+    }
+</script>
+
+{% endblock %}

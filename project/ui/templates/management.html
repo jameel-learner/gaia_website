@@ -1,0 +1,110 @@
+{%  extends 'base.html' %}
+{%  load static  %}
+
+{% block styleBlock %}
+    <!-- END HEAD -->
+    <style type="text/css">
+
+        .popup {
+          display: none;
+          position: absolute;
+          color: black;
+          padding: 5px;
+          border: solid 1px #ddd;
+          background: rgba(230, 90, 116, 0.3);
+          text-align: center;
+          width: 10%;
+        }
+
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        div.dataTables_wrapper div.dataTables_filter label {
+            font-weight: normal;
+            white-space: nowrap;
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 30px;
+        }
+
+        div.dataTables_wrapper div.dataTables_length {
+            padding-right: 40px;
+            padding-top: 10px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        .approve-toggle {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #de0b0b;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .approve-toggle:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .approve-toggle {
+            background-color: #226f02;
+        }
+
+        input:focus + .approve-toggle {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .approve-toggle:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+    </style>
+
+{% endblock %}
+
+{%  block content    %}
+
+    <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+      <div class="container">
+        <div class="az-content-body  d-flex flex-column">
+            <h2>About Us</h2>
+            <p>
+                CRM SourceDirect is a straight edge organization with a dedicated solution for cost-saving. There is always a demand to reduce and manage costs, which opens the door for the globally skilled and expert procurement service provider. CRM SourceDirect is here to help the electronics manufacturing, PC, and Server Components Industry to achieve that significant change by bringing the customer and suppliers together. We work closely with our customers and suppliers to ensure that we continuously building partnerships that are commercially beneficial to all.
+<br><br>Skilled and Experienced procurement sourcing will increase the efficiency and output of an organization, resulting in a rise in productivity and strong strategic partnerships with key partners and suppliers within the relevant industry area. Whilst gaining these numerous advantages, effective Sourcing and procurement also result in marked savings and deliver better procurement services than internal procurement departments can offer.
+<br><br>Complex purchase procedures require a vast network of connections and contacts. CRM SourceDirect can deliver access to thousands of suppliers across the globe with the specialized product line and performance ratings. CRM SourceDirect integrated database with the global insight of the component availability status, pricing trend can provide a quick analysis to choose a potential supplier with authentic parts.
+<br><br>CRM SourceDirect provides the ability to control key prices for the most important components
+
+            </p>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

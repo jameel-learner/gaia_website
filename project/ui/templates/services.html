@@ -1,0 +1,115 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+	{%  block content    %}
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'ui/images/bg_2.jpg' %}');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+           <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
+           <h1 class="mb-0 bread">Services</h1>
+         </div>
+       </div>
+     </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+      <div class="container">
+       <div class="row justify-content-center pb-5">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+         <span class="subheading">Our Services</span>
+         <h2 class="mb-4">Customized Solution for Every Business</h2>
+       </div>
+     </div>
+     <div class="row justify-content-center">
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="services">
+          <div class="icon"><span class="flaticon-ux"></span></div>
+          <div class="media-body">
+              <h3 class="heading mb-3"><a href="{% url 'ui:services' 1 %}" >Procurement Services</a></h3>
+            <p>Our Procurement services are for OEM, EMS, Design Houses, Authorized & independent distributors of Electronics Components, Service & Repair of Laptop, Server, and Datacenters.</p>
+          </div>
+          <a href="{% url 'ui:services' 1 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="services">
+          <div class="icon"><span class="flaticon-web-programming"></span></div>
+          <div class="media-body">
+              <h3 class="heading mb-3"><a href="{% url 'ui:services' 2 %}" >Design Services</a></h3>
+            <p>CRM SourceDirect is a leading engineering design firm committed to helping professional firms dealing with product engineering and semiconductor design services.</p>
+          </div>
+          <a href="{% url 'ui:services' 2 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="services">
+          <div class="icon"><span class="flaticon-branding"></span></div>
+          <div class="media-body">
+              <h3 class="heading mb-3"><a href="{% url 'ui:services' 3 %}" >QC Standards</a></h3>
+            <p>CRM SourceDirect is a leading engineering design firm committed to helping professional firms dealing with product engineering and semiconductor design services.</p>
+          </div>
+          <a href="{% url 'ui:services' 3 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="services">
+          <div class="icon"><span class="flaticon-stats"></span></div>
+          <div class="media-body">
+              <h3 class="heading mb-3"><a href="{% url 'ui:services' 4 %}" >Sales Outsourcing</a></h3>
+            <p>Our sales outsourcing services are for authorized and independent distributors of Electronics components, PC and Server Components.</p>
+          </div>
+          <a href="{% url 'ui:services' 4 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="services">
+          <div class="icon"><span class="flaticon-good-review"></span></div>
+          <div class="media-body">
+              <h3 class="heading mb-3"><a href="{% url 'ui:services' 5 %}" >Compliance Services</a></h3>
+            <p>Industries are anticipating more government regulations to emerge that will have a significant impact on business decisions.</p>
+          </div>
+          <a href="{% url 'ui:services' 5 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="services">
+          <div class="icon"><span class="flaticon-customer-service"></span></div>
+          <div class="media-body">
+              <h3 class="heading mb-3"><a href="{% url 'ui:services' 6 %}" >Inventory Liquidation Services</a></h3>
+            <p>Excess & Obsolete inventory is the most common problem in supply chain. However, Excess inventory does not have to become a liability.</p>
+          </div>
+          <a href="{% url 'ui:services' 6 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+        </div>
+      </div>
+    </div>
+    </div>
+    </section>
+
+    <section class="ftco-intro ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <div class="img"  style="background-image: url({% static 'ui/images/bg_4.jpg' %});">
+                        <div class="overlay"></div>
+                            <h2>Subscribe to our Newsletter</h2>
+                            <p>A small river named Duden flows by their place</p>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                <form action="#" class="subscribe-form">
+                                    <div class="form-group d-flex">
+                                        <input type="text" class="form-control" placeholder="Enter email address">
+                                        <input type="submit" value="Subscribe" class="submit px-3">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	{% endblock %}

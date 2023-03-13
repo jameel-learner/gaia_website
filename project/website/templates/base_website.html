@@ -1,0 +1,66 @@
+{%  load static  %}
+
+    <div class="az-header">
+      <div class="container">
+        <div class="az-header-left">
+          <a href="/" class="az-logo"><img src="{% static 'img/logo_wide.png' %}" width="250"> </a>
+          <a href="" id="azMenuShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+        </div><!-- az-header-left -->
+        <div class="az-header-menu">
+          <div class="az-header-menu-header">
+            <a href="/" class="az-logo"><span></span> Source Direct</a>
+            <a href="" class="close">&times;</a>
+          </div><!-- az-header-menu-header -->
+          <ul class="nav">
+            <li class="nav-item {% if on_page == 'home' %} active show{% endif %}">
+              <a href="/" class="nav-link"><i class="typcn typcn-calculator"></i> Home</a>
+            </li>
+            <li class="nav-item {% if on_page == 'about_us' %} active show{% endif %}">
+              <a href="/" class="nav-link"><i class="typcn typcn-database"></i> About Us</a>
+<!--              <nav class="az-menu-sub">-->
+<!--                <a href="page-signup.html" class="nav-link">About Us</a>-->
+<!--                <a href="page-signin.html" class="nav-link">Compliance Engineering</a>-->
+<!--                <a href="page-signup.html" class="nav-link">Product Engineering</a>-->
+<!--                <a href="page-signin.html" class="nav-link">QC Partner</a>-->
+<!--                <a href="/?coming_from=login" class="nav-link">Login In</a>-->
+<!--                <a href="/?coming_from=login" class="nav-link">Sign Up</a>-->
+<!--              </nav>-->
+            </li>
+            <li class="nav-item {% if on_page == 'services' %} active show{% endif %}">
+              <a href="{% url 'ui:services' 0 %}" class="nav-link"><i class="typcn typcn-bookmark"></i> Services</a>
+<!--              <a href="" class="nav-link with-sub"><i class="typcn typcn-news"></i> Services</a>-->
+<!--              <nav class="az-menu-sub">-->
+<!--                <a href="{% url 'ui:services' 1 %}" class="nav-link">Procurement Services</a>-->
+<!--                <a href="{% url 'ui:services' 2 %}" class="nav-link">Excess Inventory Liquidation Services </a>-->
+<!--                <a href="{% url 'ui:services' 3 %}" class="nav-link">Sales Outsourcing</a>-->
+<!--                <a href="{% url 'ui:services' 4 %}" class="nav-link">Design Services </a>-->
+<!--              </nav>-->
+            </li>
+<!--            <li class="nav-item {% if on_page == 'management' %} active show{% endif %}">-->
+<!--              <a href="{% url 'ui:management' %}" class="nav-link"><i class="typcn typcn-bookmark"></i> Management</a>-->
+<!--            </li>-->
+            <li class="nav-item {% if on_page == 'crm' %} active show{% endif %}">
+              <a href="{% url 'ui:crm' %}" class="nav-link"><i class="typcn typcn-calculator"></i> CRM</a>
+            </li>
+            <li class="nav-item {% if on_page == 'contact_us' %} active show{% endif %}">
+              <a href="{% url 'ui:contact_us' %}" class="nav-link"><i class="typcn typcn-contacts"></i> Contact Us</a>
+            </li>
+
+
+          </ul>
+        </div><!-- az-header-menu -->
+
+
+        <div class="az-header-right">
+          <a href="#" class="az-header-search-link"><i class="far fa-file-alt"></i></a>
+          <a href="{% url 'website:search'%}" class="az-header-search-link"><i class="fas fa-search"></i></a>
+          <div class="az-header-message">
+            <a href="#"><i class="typcn typcn-messages"></i></a>
+          </div><!-- az-header-message -->
+          <div class="az-header-notification">
+            <a href="/?coming_from=login" class="new" title="Login"><i class="typcn typcn-power-outline"></i></a>
+
+          </div><!-- az-header-notification -->
+        </div><!-- az-header-right -->
+      </div><!-- container -->
+    </div><!-- az-header -->

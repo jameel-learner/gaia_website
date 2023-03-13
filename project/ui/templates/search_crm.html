@@ -1,0 +1,1076 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+	{% block styleBlock %}
+		<!-- END HEAD -->
+		<style type="text/css">
+
+			.tab_data  {
+				font-size: 1em;
+				font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+			}
+			.tab_head  {
+				font-size: 1em;
+				font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+				background-color: grey;
+				color: white;
+			}
+
+			.popup {
+			  display: none;
+			  position: fixed;
+			  left: 10%;
+			  top: 70%;
+    		  color: black;
+			  padding: 5px;
+			  border: solid 1px #ddd;
+			  background: rgba(230, 90, 116, 0.3);
+			  text-align: center;
+			  width: 10%;
+			  z-index: 999999;
+			}
+
+			.custom-file-upload {
+				border: 1px solid #ccc;
+				display: inline-block;
+				padding: 6px 12px;
+				cursor: pointer;
+			}
+
+			div.dataTables_wrapper div.dataTables_filter label {
+				font-weight: normal;
+				white-space: nowrap;
+				text-align: left;
+				padding-top: 10px;
+				padding-left: 30px;
+			}
+
+			div.dataTables_wrapper div.dataTables_length {
+				padding-right: 40px;
+				padding-top: 10px;
+			}
+
+			.switch {
+				position: relative;
+				display: inline-block;
+				width: 60px;
+				height: 34px;
+			}
+
+			.switch input {
+				display: none;
+			}
+
+			.approve-toggle {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #de0b0b;
+				-webkit-transition: .4s;
+				transition: .4s;
+			}
+
+			.approve-toggle:before {
+				position: absolute;
+				content: "";
+				height: 26px;
+				width: 26px;
+				left: 4px;
+				bottom: 4px;
+				background-color: white;
+				-webkit-transition: .4s;
+				transition: .4s;
+			}
+
+			input:checked + .approve-toggle {
+				background-color: #226f02;
+			}
+
+			input:focus + .approve-toggle {
+				box-shadow: 0 0 1px #2196F3;
+			}
+
+			input:checked + .approve-toggle:before {
+				-webkit-transform: translateX(26px);
+				-ms-transform: translateX(26px);
+				transform: translateX(26px);
+			}
+
+		</style>
+
+	{% endblock %}
+
+
+	{%  block content    %}
+	<div class="popup" id="popup" >Popup text</div>
+
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'ui/images/bg_3.jpg' %}');">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end">
+				<div class="col-md-9 ftco-animate pb-5">
+					<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>CRM <i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">Search our CRM</h1>
+				</div>
+			</div>
+		</div>
+	<label id="Top"></label>
+	</section>
+
+	<section class="ftco-section bg-light">
+		<div class="container">
+
+			<div><label style="font-size:10px; color:#">
+				<span style="color:#E65A74;">Enter a search string</span> and <span style="color:#E65A74;">'Tab' out</span> to load matching result set into the drop downs below.<br>
+				<span style="color:#E65A74;">Make a selection</span> and hit the <span style="color:#E65A74;">'Search' <i class="fa fa-search"></i></span> &nbsp;button to Filter our CRM data set.<br>
+				Reset your search criterion using <span style="color:#E65A74;">'Reset' <i class="fa fa-calendar"></i></span> &nbsp;button.
+			</label></div>
+			<div class="">
+			  <form id="search_form" name="search_form" action="{% url 'website:search' %}#Top" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+			  <div class="row row-sm mg-b-20">
+				{% if request.user.is_superuser %}
+				<div class="col-lg-4 mg-t-20 mg-lg-t-0" style="padding:10px;">
+				  <input class="form-control" type="text" id="vendor_like" name="vendor_like"
+														value="{{form_data.vendor_like|default_if_none:''}}" placeholder="Enter Vendor ID string">
+				  <select id="vendor_id" name="vendor_id" class="form-control select2">
+					<option label="Choose one"></option>
+				  </select>
+				</div><!-- col-4 -->
+				{% endif %}
+
+				<div class="col-lg-4 mg-t-20 mg-lg-t-0" style="padding:10px;">
+				  <input class="form-control" type="text" id="manufacturer_like" name="manufacturer_like"
+														value="{{form_data.manufacturer_like|default_if_none:''}}" placeholder="Enter Manufacturer string">
+				  <select id="manufacturer_id" name="manufacturer_id" class="form-control select2">
+					<option label="Choose one"></option>
+				  </select>
+				</div><!-- col-4 -->
+
+				<div class="col-lg-4 mg-t-20 mg-lg-t-0" style="padding:10px;">
+				  <input class="form-control" type="text" id="product_like" name="product_like"
+														value="{{form_data.product_like|default_if_none:''}}" placeholder="Enter Part Number string">
+				  <select id="product_id" name="product_id" class="form-control select2">
+					<option label="Choose one"></option>
+				  </select>
+				</div><!-- col-4 -->
+
+				<div class="col-lg-4 mg-t-20 mg-lg-t-0" style="padding:10px;">
+				  <input class="form-control" type="text" id="customer_po_like" name="customer_po_like"
+														value="{{form_data.customer_po_like|default_if_none:''}}" placeholder="Enter Customer PO or PO Status string">
+				  <select id="customer_po" name="customer_po" class="form-control select2">
+					<option label="Choose one"></option>
+				  </select>
+				</div><!-- col-4 -->
+
+				{% if request.user.is_superuser %}
+				<div class="col-lg-4 mg-t-20 mg-lg-t-0" style="padding:10px;">
+				  <input class="form-control" type="text" id="customer_like" name="customer_like"
+														value="{{form_data.customer_like|default_if_none:''}}" placeholder="Enter Customer string">
+				  <select id="customer_id" name="customer_id" class="form-control select2">
+					<option label="Choose one"></option>
+				  </select>
+				</div><!-- col-4 -->
+				{% endif %}
+
+				<div class="col-lg-4 mg-t-20 mg-lg-t-0">
+	<!--              <p class="mg-b-10">Description</p>-->
+					<br>
+				  <div class="input-group">
+	<!--                <input id="description" name="description" type="text" class="form-control" placeholder="Search for...">-->
+					<span class="input-group-btn">
+					  <button id="search_button" class="btn btn-primary" type="submit" title="Search">
+						  <i class="fa fa-search"></i></button>
+					  <button id="reset_button" class="btn btn-primary" type="button" title="Reset">
+						  <i class="fa fa-calendar"></i></button>
+					</span>
+				  </div><!-- input-group -->
+				</div><!-- col-4 -->
+
+			  </div>
+			  </form>
+
+			</div>
+
+
+				<div class="az-content-body pd-lg-l-40 d-flex flex-column">
+					<!--    Main Search Result Section -->
+
+					  <div class="portlet light portlet-fit portlet-form ">
+						<div class="portlet-body">
+
+							<div class="portlet light ">
+								<div class="portlet-body">
+									<ul class="nav nav-tabs">
+										<li style="padding:10px;"><a href="#tab_1_1" data-toggle="tab"> Spot Offers <b style="color:red;">{{count_of.spot_offers}}</b> </a></li>
+										<li style="padding:10px;"><a href="#tab_1_2" data-toggle="tab"> LeadTime Offers <b style="color:red;">{{count_of.vendor_leadtime_offers}}</b>  </a></li>
+										<li style="padding:10px;"><a href="#tab_1_5" data-toggle="tab" > Stock Offers <b style="color:red;">{{count_of.supplier_stock_offers}}</b>  </a></li>
+										<li style="padding:10px;"><a href="#tab_1_3" data-toggle="tab" > Excess Stock Offers <b style="color:red;">{{count_of.customer_excess_offers}}</b>  </a></li>
+										{% if request.user.is_authenticated %}
+										<li style="padding:10px;"><a href="#tab_1_4" data-toggle="tab"> Customer LeadTime Offers <b style="color:red;">{{count_of.customer_leadtime_offers}}</b>  </a></li>
+										<li style="padding:10px;"><a href="#tab_1_6" data-toggle="tab"> Customer POs <b style="color:red;">{{count_of.customer_po_offers}}</b>  </a></li>
+										<li style="padding:10px;"><a href="#tab_1_7" data-toggle="tab" > RFQs <b style="color:red;">{{count_of.customer_rfq_offers}}</b>  </a></li>
+										{% endif %}
+									</ul>
+									<div class="tab-content">
+										{% if form_data.coming_from == 'spot_offers' %}
+										<div class="tab-pane active in" id="tab_1_1"><b style="color:blue; margin-left: 15px;">Spot Pricing </b>
+										{% else %}
+										<div class="tab-pane" id="tab_1_1"><b style="color:blue; margin-left: 15px;">Spot Pricing </b>
+										{% endif %}
+												<div class="row">
+												  <div class="col-12" style="font-size:1.0em; padding:10px; margin-left: 20px;">
+												  {% if spot_offers.has_other_pages %}
+													  {% if spot_offers.has_previous %}
+														<a href="javascript:pagination_from_search('spot_offers', '1');">First </a>
+														<a href="javascript:pagination_from_search('spot_offers', '{{spot_offers.previous_page_number}}');">&nbsp;&laquo;&nbsp;</a>
+													  {% else %}
+														<span>Start &nbsp;&laquo;&nbsp;</span>
+													  {% endif %}
+													  {% for i in spot_offers.paginator.page_range %}
+														{% if spot_offers.number == i %}
+														  <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+														{% else %}
+				<!--                                          <a href="javascript:pagination_from_search('spot_offers', '{{i}}');">&nbsp;{{ i }}&nbsp;</a>-->
+														{% endif %}
+													  {% endfor %}
+													  {% if spot_offers.has_next %}
+														<a href="javascript:pagination_from_search('spot_offers', '{{spot_offers.next_page_number}}');">&nbsp;&raquo;&nbsp;</a>
+														<a href="javascript:pagination_from_search('spot_offers', '{{spot_offers.paginator.num_pages}}');">&nbsp;Last&nbsp;</a>
+													  {% else %}
+														<span>&nbsp;&raquo;&nbsp;End</span>
+													  {% endif %}
+												  {% endif %}
+												  </div>
+												</div>
+
+												<table class="table table-striped table-hover table-bordered" id="spot_offers_datatable">
+													<thead>
+													<tr >
+														<th style="display: none">Id</th>
+														<th class='tab_head'>DATE</th>
+														<th class='tab_head'>MFR_NAME</th>
+														<th class='tab_head'>MFR P/N</th>
+														<th class='tab_head'>DC</th>
+														<th class='tab_head'>VENDOR</th>
+														<th class='tab_head'>DESC</th>
+														<th class='tab_head'>QTY</th>
+										{% if request.user.is_authenticated %}
+														<th class='tab_head'>COST (USD)</th>
+										{% endif %}
+														<th class='tab_head'>LEADTIME</th>
+														<th class='tab_head'>SPQ/MOQ</th>
+														<th class='tab_head'>PACKAGE</th>
+														<th class='tab_head'>VALID TILL</th>
+														<th class='tab_head'>EX_WORKS</th>
+														<th class='tab_head'>COMMENTS</th>
+													</tr>
+													</thead>
+
+													<tbody id="spot_offers_tbody">
+													{% for rec in spot_offers %}
+														<tr class="item">
+															<td style="display: none"><input id="spot_offers_{{rec.id}}" value="{{ rec.id }}"></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.created_on.date|date:"Y-m-d" }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{rec.manufacturer}}" >{{ rec.manufacturer|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:150px;"><text title="{{rec.product}}" >{{ rec.product|truncatechars:15 }}</text></td>
+															<td class='tab_data'><text>{{ rec.date_code }}</text></td>
+															<td class='tab_data' ><text title="{{rec.vendor}}" onclick="fetch_name_of('spot_offers', 'vendor','{{rec.id}}');">{{ rec.vendor|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{rec.description}}" >{{ rec.description|truncatechars:10 }}</text></td>
+															<td class='tab_data'><text>{{ rec.quantity }}</text></td>
+										{% if request.user.is_authenticated %}
+															<td class='tab_data'><text>{% if rec.cost == -1 %}Contact{%else%}{{rec.cost|floatformat:4}}{%endif%}</text></td>
+										{% endif %}
+															<td class='tab_data'><text>{{ rec.lead_time }}</text></td>
+															<td class='tab_data'><text>{{ rec.spq_moq }}</text></td>
+															<td class='tab_data'><text>{{ rec.package }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.valid_till|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text>{{ rec.ex_works }}</text></td>
+															<td class='tab_data'><text title="{{rec.remark}}" >{{ rec.remark|truncatechars:10 }}</text></td>
+														</tr>
+													{% endfor %}
+													</tbody>
+												</table>
+										</div>
+
+
+										{% if form_data.coming_from == 'vendor_leadtime_offers' %}
+										<div class="tab-pane active in" id="tab_1_2"><b style="color:blue;margin-left: 15px;">Lead Time Offers </b>
+										{% else %}
+										<div class="tab-pane" id="tab_1_2"><b style="color:blue;margin-left: 15px;">Lead Time Offers </b>
+										{% endif %}
+												<div class="row">
+												  <div class="col-12" style="font-size:1.0em; padding:10px; margin-left: 20px;">
+												  {% if vendor_leadtime_offers.has_other_pages %}
+													  {% if vendor_leadtime_offers.has_previous %}
+														<a href="javascript:pagination_from_search('vendor_leadtime_offers', '1');">First </a>
+														<a href="javascript:pagination_from_search('vendor_leadtime_offers', '{{vendor_leadtime_offers.previous_page_number}}');">&nbsp;&laquo;&nbsp;</a>
+													  {% else %}
+														<span>Start &nbsp;&laquo;&nbsp;</span>
+													  {% endif %}
+													  {% for i in vendor_leadtime_offers.paginator.page_range %}
+														{% if vendor_leadtime_offers.number == i %}
+														  <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+														{% else %}
+				<!--                                          <a href="javascript:pagination_from_search('vendor_leadtime_offers', '{{i}}');">&nbsp;{{ i }}&nbsp;</a>-->
+														{% endif %}
+													  {% endfor %}
+													  {% if vendor_leadtime_offers.has_next %}
+														<a href="javascript:pagination_from_search('vendor_leadtime_offers', '{{vendor_leadtime_offers.next_page_number}}');">&nbsp;&raquo;&nbsp;</a>
+														<a href="javascript:pagination_from_search('vendor_leadtime_offers', '{{vendor_leadtime_offers.paginator.num_pages}}');">&nbsp;Last&nbsp;</a>
+													  {% else %}
+														<span>&nbsp;&raquo;&nbsp;End</span>
+													  {% endif %}
+												  {% endif %}
+												  </div>
+												</div>
+
+												<table class="table table-striped table-hover table-bordered" id="vendor_leadtime_offers_datatable">
+													<thead>
+													<tr>
+														<th style="display: none">Id</th>
+														<th class='tab_head'>DATE</th>
+														<th class='tab_head'>MFR_NAME</th>
+														<th class='tab_head'>MFR P/N</th>
+														<th class='tab_head'>DC</th>
+														<th class='tab_head'>VENDOR</th>
+														<th class='tab_head'>DESC</th>
+														<th class='tab_head'>QTY</th>
+										{% if request.user.is_authenticated %}
+														<th class='tab_head'>COST (USD)</th>
+										{% endif %}
+														<th class='tab_head'>LEADTIME</th>
+														<th class='tab_head'>SPQ/MOQ</th>
+														<th class='tab_head'>PACKAGE</th>
+														<th class='tab_head'>VALID TILL</th>
+														<th class='tab_head'>EX_WORKS</th>
+														<th class='tab_head'>COMMENTS</th>
+													</tr>
+													</thead>
+
+													<tbody id="vendor_leadtime_offers_tbody">
+													{% for rec in vendor_leadtime_offers %}
+														<tr id="vendor_leadtime_offers_row{{ rec.id }}" class="item" >
+															<td style="display: none"><input id="vendor_leadtime_offers_{{rec.id}}" value="{{ rec.id }}"></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.created_on.date|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{rec.manufacturer}}" >{{ rec.manufacturer|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:150px;"><text title="{{rec.product}}" >{{ rec.product|truncatechars:15 }}</text></td>
+															<td class='tab_data'><text>{{ rec.date_code }}</text></td>
+															<td class='tab_data'><text title="{{rec.vendor}}"  onclick="fetch_name_of('vendor_leadtime_offers', 'vendor','{{rec.id}}');">{{ rec.vendor|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{rec.description}}" >{{ rec.description|truncatechars:10 }}</text></td>
+															<td class='tab_data'><text>{{ rec.quantity }}</text></td>
+										{% if request.user.is_authenticated %}
+															<td class='tab_data'><text>{% if rec.cost == -1 %}Contact{%else%}{{rec.cost|floatformat:4}}{%endif%}</text></td>
+										{% endif %}
+															<td class='tab_data'><text>{{ rec.lead_time }}</text></td>
+															<td class='tab_data'><text>{{ rec.spq_moq }}</text></td>
+															<td class='tab_data'><text>{{ rec.package }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.valid_till|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text>{{ rec.ex_works }}</text></td>
+															<td class='tab_data'><text title="{{rec.remark}}" >{{ rec.remark|truncatechars:10 }}</text></td>
+														</tr>
+													{% endfor %}
+													</tbody>
+												</table>
+										</div>
+
+
+										{% if form_data.coming_from == 'supplier_stock_offers' %}
+										<div class="tab-pane active in" id="tab_1_5"><b style="color:blue;margin-left: 15px;">Stock Offers </b>
+										{% else %}
+										<div class="tab-pane" id="tab_1_5"><b style="color:blue;margin-left: 15px;">Stock Offers </b>
+										{% endif %}
+												<div class="row">
+												  <div class="col-12" style="font-size:1.0em; padding:10px;margin-left: 20px;">
+												  {% if supplier_stock_offers.has_other_pages %}
+													  {% if supplier_stock_offers.has_previous %}
+														<a href="javascript:pagination_from_search('supplier_stock_offers', '1');">First </a>
+														<a href="javascript:pagination_from_search('supplier_stock_offers', '{{supplier_stock_offers.previous_page_number}}');">&nbsp;&laquo;&nbsp;</a>
+													  {% else %}
+														<span>Start &nbsp;&laquo;&nbsp;</span>
+													  {% endif %}
+													  {% for i in supplier_stock_offers.paginator.page_range %}
+														{% if supplier_stock_offers.number == i %}
+														  <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+														{% else %}
+				<!--                                          <a href="javascript:pagination_from_search('supplier_stock_offers', '{{i}}');">&nbsp;{{ i }}&nbsp;</a>-->
+														{% endif %}
+													  {% endfor %}
+													  {% if supplier_stock_offers.has_next %}
+														<a href="javascript:pagination_from_search('supplier_stock_offers', '{{supplier_stock_offers.next_page_number}}');">&nbsp;&raquo;&nbsp;</a>
+														<a href="javascript:pagination_from_search('supplier_stock_offers', '{{supplier_stock_offers.paginator.num_pages}}');">&nbsp;Last&nbsp;</a>
+													  {% else %}
+														<span>&nbsp;&raquo;&nbsp;End</span>
+													  {% endif %}
+												  {% endif %}
+												  </div>
+												</div>
+
+												<table class="table table-striped table-hover table-bordered" id="supplier_stock_offers_datatable">
+													<thead>
+													<tr>
+														<th style="display: none">Id</th>
+														<th class='tab_head'>DATE</th>
+														<th class='tab_head'>MFR_NAME</th>
+														<th class='tab_head'>MFR P/N</th>
+														<th class='tab_head'>DC</th>
+														<th class='tab_head'>VENDOR</th>
+														<th class='tab_head'>DESC</th>
+														<th class='tab_head'>QTY</th>
+										{% if request.user.is_authenticated %}
+														<th class='tab_head'>COST (USD)</th>
+										{% endif %}
+														<th class='tab_head'>LEADTIME</th>
+														<th class='tab_head'>SPQ/MOQ</th>
+														<th class='tab_head'>PACKAGE</th>
+														<th class='tab_head'>VALID TILL</th>
+														<th class='tab_head'>EX_WORKS</th>
+														<th class='tab_head'>COMMENTS</th>
+													</tr>
+													</thead>
+
+													<tbody id="supplier_stock_offers_tbody">
+													{% for rec in supplier_stock_offers %}
+														<tr id="supplier_stock_offers_row{{ rec.id }}" class="item" >
+															<td style="display: none"><input id="supplier_stock_offers_{{rec.id}}" value="{{ rec.id }}"></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.created_on.date|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{rec.manufacturer}}">{{ rec.manufacturer|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:150px;"><text title="{{rec.product}}" >{{ rec.product|truncatechars:15 }}</text></td>
+															<td class='tab_data'><text>{{ rec.date_code }}</text></td>
+															<td class='tab_data'><text title="{{rec.vendor}}" onclick="fetch_name_of('supplier_stock_offers', 'vendor','{{rec.id}}');">{{ rec.vendor|truncatechars:10  }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{rec.description}}" >{{ rec.description|truncatechars:10  }}</text></td>
+															<td class='tab_data'><text>{{ rec.quantity }}</text></td>
+										{% if request.user.is_authenticated %}
+															<td class='tab_data'><text>{% if rec.cost == -1 %}Contact{%else%}{{rec.cost|floatformat:4}}{%endif%}</text></td>
+										{% endif %}
+															<td class='tab_data'><text>{{ rec.lead_time }}</text></td>
+															<td class='tab_data'><text>{{ rec.spq_moq }}</text></td>
+															<td class='tab_data'><text>{{ rec.package }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.valid_till|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text>{{ rec.ex_works }}</text></td>
+															<td class='tab_data'><text title="{{rec.remark}}" >{{ rec.remark|truncatechars:10 }}</text></td>
+														</tr>
+													{% endfor %}
+													</tbody>
+												</table>
+										</div>
+
+
+										{% if form_data.coming_from == 'customer_excess_offers' %}
+										<div class="tab-pane active in" id="tab_1_3"><b style="color:blue;margin-left: 15px;">Excess Stock Offers </b>
+										{% else %}
+										<div class="tab-pane" id="tab_1_3"><b style="color:blue;margin-left: 15px;">Excess Stock Offers </b>
+										{% endif %}
+												<div class="row">
+												  <div class="col-12" style="font-size:1.0em; padding:10px;margin-left: 20px;">
+												  {% if customer_excess_offers.has_other_pages %}
+													  {% if customer_excess_offers.has_previous %}
+														<a href="javascript:pagination_from_search('customer_excess_offers', '1');">First </a>
+														<a href="javascript:pagination_from_search('customer_excess_offers', '{{customer_excess_offers.previous_page_number}}');">&nbsp;&laquo;&nbsp;</a>
+													  {% else %}
+														<span>Start &nbsp;&laquo;&nbsp;</span>
+													  {% endif %}
+													  {% for i in customer_excess_offers.paginator.page_range %}
+														{% if customer_excess_offers.number == i %}
+														  <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+														{% else %}
+				<!--                                          <a href="javascript:pagination_from_search('customer_excess_offers', '{{i}}');">&nbsp;{{ i }}&nbsp;</a>-->
+														{% endif %}
+													  {% endfor %}
+													  {% if customer_excess_offers.has_next %}
+														<a href="javascript:pagination_from_search('customer_excess_offers', '{{customer_excess_offers.next_page_number}}');">&nbsp;&raquo;&nbsp;</a>
+														<a href="javascript:pagination_from_search('customer_excess_offers', '{{customer_excess_offers.paginator.num_pages}}');">&nbsp;Last&nbsp;</a>
+													  {% else %}
+														<span>&nbsp;&raquo;&nbsp;End</span>
+													  {% endif %}
+												  {% endif %}
+												  </div>
+												</div>
+
+												<table class="table table-striped table-hover table-bordered" id="customer_excess_offers_datatable">
+													<thead>
+													<tr>
+														<th style="display: none">Id</th>
+														<th class='tab_head'>DATE</th>
+														<th class='tab_head'>MFR_NAME</th>
+														<th class='tab_head'>MFR P/N</th>
+														<th class='tab_head'>DC</th>
+														<th class='tab_head'>CUSTOMER</th>
+														<th class='tab_head'>DESC</th>
+														<th class='tab_head'>QTY</th>
+										{% if request.user.is_authenticated %}
+														<th class='tab_head'>COST (USD)</th>
+										{% endif %}
+														<th class='tab_head'>LEADTIME</th>
+														<th class='tab_head'>SPQ/MOQ</th>
+														<th class='tab_head'>PACKAGE</th>
+														<th class='tab_head'>VALID TILL</th>
+														<th class='tab_head'>EX_WORKS</th>
+														<th class='tab_head'>COMMENTS</th>
+													</tr>
+													</thead>
+
+													<tbody id="customer_excess_offers_tbody">
+													{% for rec in customer_excess_offers %}
+														<tr id="customer_excess_offers_row{{ rec.id }}" class="item" >
+															<td style="display: none"><input id="customer_excess_offers_{{rec.id}}" value="{{ rec.id }}"></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.created_on.date|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{ rec.manufacturer }}">{{ rec.manufacturer|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:150px;"><text title="{{ rec.product }}">{{ rec.product|truncatechars:15 }}</text></td>
+															<td class='tab_data'><text>{{ rec.date_code }}</text></td>
+															<td class='tab_data'><text title="{{ rec.customer }}" onclick="fetch_name_of('customer_excess_offers', 'customer','{{rec.id}}');">{{ rec.customer|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{ rec.description }}">{{ rec.description|truncatechars:10 }}</text></td>
+															<td class='tab_data'><text>{{ rec.quantity }}</text></td>
+										{% if request.user.is_authenticated %}
+															<td class='tab_data'><text>{% if rec.cost == -1 %}Contact{%else%}{{rec.cost|floatformat:4}}{%endif%}</text></td>
+										{% endif %}
+															<td class='tab_data'><text>{{ rec.lead_time }}</text></td>
+															<td class='tab_data'><text>{{ rec.spq_moq }}</text></td>
+															<td class='tab_data'><text>{{ rec.package }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.valid_till|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text>{{ rec.ex_works }}</text></td>
+															<td class='tab_data'><text title="{{ rec.remark }}">{{ rec.remark|truncatechars:10 }}</text></td>
+														</tr>
+													{% endfor %}
+													</tbody>
+												</table>
+										</div>
+
+									{% if request.user.is_authenticated %}
+
+										{% if form_data.coming_from == 'customer_leadtime_offers' %}
+										<div class="tab-pane active in" id="tab_1_4"><b style="color:blue;margin-left: 15px;">Customer Lead Time Offers </b>
+										{% else %}
+										<div class="tab-pane" id="tab_1_4"><b style="color:blue;margin-left: 15px;">Customer Lead Time Offers </b>
+										{% endif %}
+												<div class="row">
+												  <div class="col-12" style="font-size:1.0em; padding:10px;margin-left: 20px;">
+												  {% if customer_leadtime_offers.has_other_pages %}
+													  {% if customer_leadtime_offers.has_previous %}
+														<a href="javascript:pagination_from_search('customer_leadtime_offers', '1');">First </a>
+														<a href="javascript:pagination_from_search('customer_leadtime_offers', '{{customer_leadtime_offers.previous_page_number}}');">&nbsp;&laquo;&nbsp;</a>
+													  {% else %}
+														<span>Start &nbsp;&laquo;&nbsp;</span>
+													  {% endif %}
+													  {% for i in customer_leadtime_offers.paginator.page_range %}
+														{% if customer_leadtime_offers.number == i %}
+														  <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+														{% else %}
+				<!--                                          <a href="javascript:pagination_from_search('customer_leadtime_offers', '{{i}}');">&nbsp;{{ i }}&nbsp;</a>-->
+														{% endif %}
+													  {% endfor %}
+													  {% if customer_leadtime_offers.has_next %}
+														<a href="javascript:pagination_from_search('customer_leadtime_offers', '{{customer_leadtime_offers.next_page_number}}');">&nbsp;&raquo;&nbsp;</a>
+														<a href="javascript:pagination_from_search('customer_leadtime_offers', '{{customer_leadtime_offers.paginator.num_pages}}');">&nbsp;Last&nbsp;</a>
+													  {% else %}
+														<span>&nbsp;&raquo;&nbsp;End</span>
+													  {% endif %}
+												  {% endif %}
+												  </div>
+												</div>
+
+												<table class="table table-striped table-hover table-bordered" id="customer_leadtime_offers_datatable">
+													<thead>
+													<tr>
+														<th style="display: none">Id</th>
+														<th class='tab_head'>DATE</th>
+														<th class='tab_head'>MFR_NAME</th>
+														<th class='tab_head'>MFR P/N</th>
+														<th class='tab_head'>DC</th>
+														<th class='tab_head'>CUSTOMER</th>
+														<th class='tab_head'>DESC</th>
+														<th class='tab_head'>QTY</th>
+										{% if request.user.is_authenticated %}
+														<th class='tab_head'>COST (USD)</th>
+										{% endif %}
+														<th class='tab_head'>LEADTIME</th>
+														<th class='tab_head'>SPQ/MOQ</th>
+														<th class='tab_head'>PACKAGE</th>
+														<th class='tab_head'>VALID TILL</th>
+														<th class='tab_head'>EX_WORKS</th>
+														<th class='tab_head'>COMMENTS</th>
+													</tr>
+													</thead>
+
+													<tbody id="customer_leadtime_offers_tbody">
+													{% for rec in customer_leadtime_offers %}
+														<tr id="customer_leadtime_offers_row{{ rec.id }}" class="item" >
+															<td style="display: none"><input id="customer_leadtime_offers_{{rec.id}}" value="{{ rec.id }}"></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.created_on.date|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{ rec.manufacturer }}" >{{ rec.manufacturer|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:150px;"><text title="{{ rec.product }}" >{{ rec.product|truncatechars:15 }}</text></td>
+															<td class='tab_data'><text>{{ rec.date_code }}</text></td>
+															<td class='tab_data'><text title="{{ rec.customer }}" onclick="fetch_name_of('customer_leadtime_offers', 'customer','{{rec.id}}');">{{ rec.customer|truncatechars:10 }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text title="{{ rec.description }}" >{{ rec.description|truncatechars:10 }}</text></td>
+															<td class='tab_data'><text>{{ rec.quantity }}</text></td>
+										{% if request.user.is_authenticated %}
+															<td class='tab_data'><text>{% if rec.cost == -1 %}Contact{%else%}{{rec.cost|floatformat:4}}{%endif%}</text></td>
+										{% endif %}
+															<td class='tab_data'><text>{{ rec.lead_time }}</text></td>
+															<td class='tab_data'><text>{{ rec.spq_moq }}</text></td>
+															<td class='tab_data'><text>{{ rec.package }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.valid_till|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text>{{ rec.ex_works }}</text></td>
+															<td class='tab_data'><text title="{{ rec.remark }}" >{{ rec.remark|truncatechars:10 }}</text></td>
+														</tr>
+													{% endfor %}
+													</tbody>
+												</table>
+										</div>
+
+										{% if form_data.coming_from == 'customer_po_offers' %}
+										<div class="tab-pane active in" id="tab_1_6"><b style="color:blue;margin-left: 15px;">Customer POs </b>
+										{% else %}
+										<div class="tab-pane" id="tab_1_6"><b style="color:blue;margin-left: 15px;">Customer POs </b>
+										{% endif %}
+												<div class="row">
+												  <div class="col-12" style="font-size:1.0em; padding:10px;margin-left: 20px;">
+												  {% if customer_po_offers.has_other_pages %}
+													  {% if customer_po_offers.has_previous %}
+														<a href="javascript:pagination_from_search('customer_po_offers', '1');">First </a>
+														<a href="javascript:pagination_from_search('customer_po_offers', '{{customer_po_offers.previous_page_number}}');">&nbsp;&laquo;&nbsp;</a>
+													  {% else %}
+														<span>Start &nbsp;&laquo;&nbsp;</span>
+													  {% endif %}
+													  {% for i in customer_po_offers.paginator.page_range %}
+														{% if customer_po_offers.number == i %}
+														  <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+														{% else %}
+				<!--                                          <a href="javascript:pagination_from_search('customer_po_offers', '{{i}}');">&nbsp;{{ i }}&nbsp;</a>-->
+														{% endif %}
+													  {% endfor %}
+													  {% if customer_po_offers.has_next %}
+														<a href="javascript:pagination_from_search('customer_po_offers', '{{customer_po_offers.next_page_number}}');">&nbsp;&raquo;&nbsp;</a>
+														<a href="javascript:pagination_from_search('customer_po_offers', '{{customer_po_offers.paginator.num_pages}}');">&nbsp;Last&nbsp;</a>
+													  {% else %}
+														<span>&nbsp;&raquo;&nbsp;End</span>
+													  {% endif %}
+												  {% endif %}
+												  </div>
+												</div>
+
+												<table class="table table-striped table-hover table-bordered" id="customer_pos_datatable">
+													<thead>
+													<tr>
+														<th style="display: none">Id</th>
+														<th class='tab_head'>DATE</th>
+														<th class='tab_head'>CUSTOMER</th>
+														<th class='tab_head'>PO NUMBER</th>
+														<th class='tab_head'>PO STATUS</th>
+														<th class='tab_head'>DELIVERY ON</th>
+														<th class='tab_head'>VALID TILL</th>
+														<th class='tab_head'>COMMENTS</th>
+													</tr>
+													</thead>
+
+													<tbody id="customer_pos_tbody">
+													{% for rec in customer_po_offers %}
+														<tr id="customer_pos_row{{ rec.id }}" class="item" >
+															<td style="display: none"><input id="customer_pos_{{rec.id}}" value="{{ rec.id }}"></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.created_on.date|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text title="{{rec.customer}}"  onclick="fetch_name_of('customer_po_offers', 'customer','{{rec.id}}');">{{ rec.customer|truncatechars:10 }}</text></td>
+															<td class='tab_data'><text>{{ rec.po_number }}</text></td>
+															<td class='tab_data'><text>{{ rec.po_status }}</text></td>
+															<td class='tab_data'><text>{{ rec.delivery_on }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.valid_till|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text title="{{rec.remark}}" >{{ rec.remark|truncatechars:10 }}</text></td>
+														</tr>
+													{% endfor %}
+													</tbody>
+												</table>
+										</div>
+
+
+										{% if form_data.coming_from == 'customer_rfq_offers' %}
+										<div class="tab-pane active in" id="tab_1_7"><b style="color:blue;margin-left: 15px;">Customer RFQs </b>
+										{% else %}
+										<div class="tab-pane " id="tab_1_7"><b style="color:blue;margin-left: 15px;">Customer RFQs </b>
+										{% endif %}
+												<div class="row">
+												  <div class="col-12" style="font-size:1.0em; padding:10px;margin-left: 20px;">
+												  {% if customer_rfq_offers.has_other_pages %}
+													  {% if customer_rfq_offers.has_previous %}
+														<a href="javascript:pagination_from_search('customer_rfq_offers', '1');">First </a>
+														<a href="javascript:pagination_from_search('customer_rfq_offers', '{{customer_rfq_offers.previous_page_number}}');">&nbsp;&laquo;&nbsp;</a>
+													  {% else %}
+														<span>Start &nbsp;&laquo;&nbsp;</span>
+													  {% endif %}
+													  {% for i in customer_rfq_offers.paginator.page_range %}
+														{% if customer_rfq_offers.number == i %}
+														  <span>&nbsp;{{ i }}&nbsp;<span class="sr-only">(current)</span></span>
+														{% else %}
+				<!--                                          <a href="javascript:pagination_from_search('customer_rfq_offers', '{{i}}');">&nbsp;{{ i }}&nbsp;</a>-->
+														{% endif %}
+													  {% endfor %}
+													  {% if customer_rfq_offers.has_next %}
+														<a href="javascript:pagination_from_search('customer_rfq_offers', '{{customer_rfq_offers.next_page_number}}');">&nbsp;&raquo;&nbsp;</a>
+														<a href="javascript:pagination_from_search('customer_rfq_offers', '{{customer_rfq_offers.paginator.num_pages}}');">&nbsp;Last&nbsp;</a>
+													  {% else %}
+														<span>&nbsp;&raquo;&nbsp;End</span>
+													  {% endif %}
+												  {% endif %}
+												  </div>
+												</div>
+
+												<table class="table table-striped table-hover table-bordered" id="rfqs_datatable">
+													<thead>
+													<tr>
+														<th style="display: none">Id</th>
+														<th class='tab_head'>DATE</th>
+														<th class='tab_head'>CUSTOMER</th>
+														<th class='tab_head'>RFQ NUMBER</th>
+														<th class='tab_head'>RFQ STATUS</th>
+														<th class='tab_head'>DELIVERY ON</th>
+														<th class='tab_head'>VALID TILL</th>
+														<th class='tab_head'>COMMENTS</th>
+													</tr>
+													</thead>
+
+													<tbody id="customer_rfqs_tbody">
+													{% for rec in customer_rfq_offers %}
+														<tr id="customer_rfqs_row{{ rec.id }}" class="item" onclick="show_rfq_details({{rec.id}});">
+															<td style="display: none"><input id="customer_rfqs_{{rec.id}}" value="{{ rec.id }}"></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.created_on.date|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text title="{{ rec.customer }}" onclick="fetch_name_of('customer_rfq_offers', 'customer','{{rec.id}}');">{{ rec.customer|truncatechars:10  }}</text></td>
+															<td class='tab_data'><text>{{ rec.rfq_number }}</text></td>
+															<td class='tab_data'><text>{{ rec.rfq_status }}</text></td>
+															<td class='tab_data'><text>{{ rec.delivery_on }}</text></td>
+															<td class='tab_data' style="min-width:100px;"><text>{{ rec.valid_till|date:"Y-m-d"  }}</text></td>
+															<td class='tab_data'><text title="{{ rec.remark }}" >{{ rec.remark|truncatechars:10 }}</text></td>
+														</tr>
+													{% endfor %}
+													</tbody>
+												</table>
+
+										</div>
+
+									{% endif %}
+
+									</div>
+								</div>
+							</div>
+
+							<div class="form-body">
+							</div>
+						</div>
+					</div>
+
+				</div>
+			<!--    Main search Result End -->
+
+		</div>
+	</section>
+
+	{% endblock %}
+
+{% block ScriptBlock %}
+
+    <script>
+      // Additional code for adding placeholder in search box of select2
+      (function($) {
+        var Defaults = $.fn.select2.amd.require('select2/defaults');
+
+        $.extend(Defaults.defaults, {
+          searchInputPlaceholder: ''
+        });
+
+        var SearchDropdown = $.fn.select2.amd.require('select2/dropdown/search');
+
+        var _renderSearchDropdown = SearchDropdown.prototype.render;
+
+        SearchDropdown.prototype.render = function(decorated) {
+
+          // invoke parent method
+          var $rendered = _renderSearchDropdown.apply(this, Array.prototype.slice.apply(arguments));
+
+          this.$search.attr('placeholder', this.options.get('searchInputPlaceholder'));
+
+          return $rendered;
+        };
+
+      })(window.jQuery);
+    </script>
+
+    <script>
+      $(function(){
+        $(document).ready(function(){
+          $('.select2').select2({
+            placeholder: 'Choose one',
+            searchInputPlaceholder: 'Search'
+          });
+
+          $('.select2-no-search').select2({
+            minimumResultsForSearch: Infinity,
+            placeholder: 'Choose one'
+          });
+        });
+      });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+          $('#spot_offers_datatable').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $('#vendor_leadtime_offers_datatable').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $('#customer_excess_offers_datatable').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $('#customer_leadtime_offers_datatable').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $('#supplier_stock_offers_datatable').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $('#customer_pos_datatable').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $('#rfqs_datatable').dataTable({
+              filter: true,
+              scroller: true,
+              "pagingType": "full_numbers",
+          });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+        	// Moved to ui_base.html as well, since product search is not added to Top Header common across all pages
+            //alert('calling fetch_data');
+            $('#product_like').blur(function () {
+                like_value = document.getElementById('product_like').value;
+                fetch_data('products', like_value, $('#product_id'), '{{form_data.product_id}}');
+            });
+
+            $('#manufacturer_like').blur(function () {
+                like_value = document.getElementById('manufacturer_like').value;
+                fetch_data('manufacturers', like_value, $('#manufacturer_id'), '{{form_data.manufacturer_id}}');
+            });
+
+            $('#vendor_like').blur(function () {
+                like_value = document.getElementById('vendor_like').value;
+                fetch_data('vendors', like_value, $('#vendor_id'), '{{form_data.vendor_id}}');
+            });
+
+            $('#customer_like').blur(function () {
+                like_value = document.getElementById('customer_like').value;
+                fetch_data('customers', like_value, $('#customer_id'), '{{form_data.customer_id}}');
+            });
+
+            $('#customer_po_like').blur(function () {
+                like_value = document.getElementById('customer_po_like').value;
+                fetch_data('customers', like_value, $('#customer_po'), '{{form_data.customer_po}}');
+            });
+
+        });
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        {% if form_data %}
+          $("#vendor_id").val('{{form_data.vendor_id}}').trigger('change') ;
+          $("#manufacturer_id").val('{{form_data.manufacturer_id}}').trigger('change') ;
+          $("#product_id").val('{{form_data.product_id}}').trigger('change') ;
+          $("#customer_po").val('{{form_data.customer_po}}').trigger('change') ;
+          $("#customer_id").val('{{form_data.customer_id}}').trigger('change') ;
+
+          $("#vendor_like").val('{{form_data.vendor_like|default_if_none:''}}').trigger('blur') ;
+          $("#manufacturer_like").val('{{form_data.manufacturer_like|default_if_none:''}}').trigger('blur') ;
+          $("#product_like").val('{{form_data.product_like|default_if_none:''}}').trigger('blur') ;
+          $("#customer_po_like").val('{{form_data.customer_po_like|default_if_none:''}}').trigger('change') ;
+          $("#customer_like").val('{{form_data.customer_like|default_if_none:''}}').trigger('blur') ;
+        {% endif %}
+
+        $("#reset_button").click(function () {
+          $("#vendor_id").val('').trigger('change') ;
+          $("#manufacturer_id").val('').trigger('change') ;
+          $("#product_id").val('').trigger('change') ;
+          $("#customer_po").val('').trigger('change') ;
+          $("#customer_id").val('').trigger('change') ;
+
+          $("#vendor_like").val('').trigger('change') ;
+          $("#manufacturer_like").val('').trigger('change') ;
+          $("#product_like").val('').trigger('change') ;
+          $("#customer_like").val('').trigger('change') ;
+        });
+
+        $("#search_button").click(function () {
+          //alert("called");
+          vendor_id = document.getElementById('vendor_id').value;
+          manufacturer_id = document.getElementById('manufacturer_id').value;
+          product_id = document.getElementById('product_id').value;
+          customer_po = document.getElementById('customer_po').value;
+          customer_id = document.getElementById('customer_id').value;
+          description = document.getElementById('description').value;
+          //alert("v:"+vendor_id+"-m:"+manufacturer_id+"-p:"+product_id+"-po:"+customer_po+"-c:"+customer_id+"-d:"+description);
+          if(vendor_id || manufacturer_id || product_id || customer_po || customer_id || description)   {
+            //alert("calling vendor filter");
+            return true;
+          }
+          return false;
+        });
+
+      });
+    </script>
+
+    {% if request.user.is_superuser %}
+    <script>
+        function fetch_name_of(fetch_from, name_of, id)  {
+            //alert(name_of + " -- " + id);
+            $.ajax({
+                type: 'POST',
+                url: '/helper/fetch_name_of_from/',
+                data: {
+                    'name_of': name_of,
+                    'fetch_from': fetch_from,
+                    'id': id,
+                    'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+                },
+                success: function (response) {
+                    var response = JSON.parse(response);
+                      $(".popup").html(response['name']);
+                      $(".popup").show();
+                      setTimeout(function() {
+                          $('#popup').fadeOut('fast');
+                      }, 1000);
+                },
+                error: function (xhr, msg, err) {
+                    {#alert(err);#}
+                }
+            });
+
+        }
+    </script>
+    {% endif %}
+
+
+<!-- $('#product_id') '{{form_data.product_id}}' -->
+    <script>
+	// Moved to ui_base.html as well, since product search is not added to Top Header common across all pages
+    function fetch_data(from_value, like_value, object_ref, selected_value)       {
+        //alert(from_value +", "+ like_value +", "+ object_ref +", "+ selected_value);
+        if(like_value != '')  {
+            $.ajax({
+                type: 'POST',
+                url: '/helper/fetch_data/',
+                data: {
+                    'from': from_value,
+                    'like': like_value,
+                    'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+                },
+                success: function (response) {
+                    var response = JSON.parse(response);
+                    object_ref.empty();
+                    object_ref.append('<option label="Choose one"></option>');
+                    for (var i = 0; i < response.length; i++) {
+                        if(response[i].id == selected_value)   {
+                            object_ref.append('<option value="' + response[i].id + '" selected>' + response[i].name + '</option>');
+                        }
+                        else  {
+                            object_ref.append('<option value="' + response[i].id + '">' + response[i].name + '</option>');
+                        }
+                    }
+                },
+                error: function (xhr, msg, err) {
+                    {#alert(err);#}
+                }
+            });
+        }
+    }
+    </script>
+
+    <script>
+    function pagination_from_search(offer_type, page)       {
+        //alert(offer_type+" -- "+page);
+        //document.search_form.action = "{% url 'website:search' %}?page="+page+"&coming_from="+offer_type+"#Top";
+        //alert(document.search_form.action);
+        //$("#search_form").submit();
+
+        var path = "{% url 'website:search' %}?page="+page+"&coming_from="+offer_type+"#Top";
+        var method = 'POST';
+        var params = {
+        	{% for k,v in form_data.items %}
+        	'{{k}}' : '{{v|default_if_none:""}}',
+        	{% endfor %}
+        };
+        params['coming_from'] = offer_type;
+        params['page'] = page;
+		//alert('params : ' + params);
+		var form = document.getElementById('search_form');
+		form.method = method;
+		form.action = path;
+		for (var key in params) {
+			//alert(key);
+			//if (params.hasOwnProperty(key)) {
+				var hiddenField = document.createElement('input');
+				hiddenField.type = 'hidden';
+				hiddenField.name = key;
+				if (key == offer_type+"_same_page")
+					hiddenField.value = params['page'];
+				else
+					hiddenField.value = params[key];
+				form.appendChild(hiddenField);
+			//}
+		}
+<!--		document.body.appendChild(form);-->
+		form.submit();
+    }
+    </script>
+
+    <script>
+        var popupWindow = null;
+        function show_rfq_details(rfq_id)   {
+            //alert(rfq_id);
+            if(popupWindow && !popupWindow.closed)
+               popupWindow.focus();
+            else
+                popupWindow = window.open('../../website/show_rfq_details/'+rfq_id+'/', 'oneTab', 'location=yes,height=500,width=800,scrollbars=yes,status=yes');
+        }
+        function parent_disable() {
+            if(popupWindow && !popupWindow.closed)
+                popupWindow.focus();
+            }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,491 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+	{%  block content    %}
+
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'ui/images/bg_1.jpg' %}');">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end">
+				<div class="col-md-9 ftco-animate pb-5">
+					<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>About us <i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">About Us</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-about img">
+		<div class="container">
+			<div class="row d-flex">
+				<div class="col-md-12 about-intro">
+					<div class="row d-flex">
+						<div class="col-md-6 d-flex align-items-stretch">
+							<div class="img d-flex align-items-center align-self-stretch justify-content-center" style="background-image:url({% static 'ui/images/about-1.jpg' %});">
+								<div class="year-stablish text-center">
+									<div class="icon2"><span class="flaticon-graduated"></span></div>
+									<div class="text">
+										<strong class="number" data-number="25">0</strong>
+										<span>Year Of<br> Experienced</span>
+									</div>
+								</div>
+								<div class="img-2 d-flex align-items-center justify-content-center" style="background-image:url({% static 'ui/images/about.jpg' %});">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 pl-md-5 py-5">
+							<div class="row justify-content-start pb-3">
+								<div class="col-md-12 heading-section ftco-animate">
+									<span class="subheading">Welcome to CRM SourceDirect</span>
+									<h2 class="mb-4">A straight edge organization with a dedicated solution for cost-saving.</h2>
+									<p>
+                                        There is always a demand to reduce and manage costs, which opens the door for the globally skilled and expert procurement service provider. CRM SourceDirect is here to help the electronics manufacturing, PC, and Server Components Industry to achieve that significant change by bringing the customer and suppliers together. We work closely with our customers and suppliers to ensure that we continuously building partnerships that are commercially beneficial to all.
+                                        <br><br>
+                                        Skilled and Experienced procurement sourcing will increase the efficiency and output of an organization, resulting in a rise in productivity and strong strategic partnerships with key partners and suppliers within the relevant industry area. Whilst gaining these numerous advantages, effective Sourcing and procurement also result in marked savings and deliver better procurement services than internal procurement departments can offer.
+                                        <br><br>
+                                        Complex purchase procedures require a vast network of connections and contacts. CRM SourceDirect can deliver access to thousands of suppliers across the globe with the specialized product line and performance ratings. CRM SourceDirect integrated database with the global insight of the component availability status, pricing trend can provide a quick analysis to choose a potential supplier with authentic parts.
+                                        <br><br>
+                                        CRM SourceDirect provides the ability to control key prices for the most important components
+                                        <br>
+                                    </p>
+									<div class="row mb-4">
+										<div class="col-md-6 ftco-animate">
+											<div class="services-2 d-flex align-items-center">
+												<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-conversation"></span></div>
+												<div class="media-body">
+													<h3 class="heading">Expert<br> Team</h3>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6 ftco-animate">
+											<div class="services-2 d-flex align-items-center">
+												<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-light-bulb"></span></div>
+												<div class="media-body">
+													<h3 class="heading">Solution<br> For Business</h3>
+												</div>
+											</div>
+										</div>
+									</div>
+									<p><a href="{% url 'ui:contact_us' %}" class="btn btn-primary">Get in touch with us</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!--
+	<section class="ftco-section bg-darken">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-3 pr-md-4 pb-lg-0 pb-4">
+					<div class="heading-section heading-section-white ftco-animate text-center text-lg-left">
+						<span class="subheading">Team &amp; Staff</span>
+						<h2>Our Team</h2>
+						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-4 coco-animate d-flex">
+							<div class="staff">
+								<div class="img-wrap d-flex align-items-stretch">
+									<div class="img align-self-stretch" style="background-image: url({% static 'ui/images/staff-1.jpg' %});"></div>
+								</div>
+								<div class="text pt-3 px-3 pb-4 text-center">
+									<h3>Lloyd Wilson</h3>
+									<span class="position">Web Developer</span>
+									<div class="faded">
+										<ul class="ftco-social text-center">
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 ftco-animate d-flex">
+							<div class="staff">
+								<div class="img-wrap d-flex align-items-stretch">
+									<div class="img align-self-stretch" style="background-image: url({% static 'ui/images/staff-2.jpg' %});"></div>
+								</div>
+								<div class="text pt-3 px-3 pb-4 text-center">
+									<h3>Lloyd Wilson</h3>
+									<span class="position">Web Developer</span>
+									<div class="faded">
+										<ul class="ftco-social text-center">
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 ftco-animate d-flex">
+							<div class="staff">
+								<div class="img-wrap d-flex align-items-stretch">
+									<div class="img align-self-stretch" style="background-image: url({% static 'ui/images/staff-3.jpg' %});"></div>
+								</div>
+								<div class="text pt-3 px-3 pb-4 text-center">
+									<h3>Lloyd Wilson</h3>
+									<span class="position">Web Developer</span>
+									<div class="faded">
+										<ul class="ftco-social text-center">
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4 coco-animate d-flex">
+							<div class="staff">
+								<div class="img-wrap d-flex align-items-stretch">
+									<div class="img align-self-stretch" style="background-image: url({% static 'ui/images/staff-4.jpg' %});"></div>
+								</div>
+								<div class="text pt-3 px-3 pb-4 text-center">
+									<h3>Lloyd Wilson</h3>
+									<span class="position">Web Developer</span>
+									<div class="faded">
+										<ul class="ftco-social text-center">
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 ftco-animate d-flex">
+							<div class="staff">
+								<div class="img-wrap d-flex align-items-stretch">
+									<div class="img align-self-stretch" style="background-image: url({% static 'ui/images/staff-5.jpg' %});"></div>
+								</div>
+								<div class="text pt-3 px-3 pb-4 text-center">
+									<h3>Lloyd Wilson</h3>
+									<span class="position">Web Developer</span>
+									<div class="faded">
+										<ul class="ftco-social text-center">
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 ftco-animate d-flex">
+							<div class="staff">
+								<div class="img-wrap d-flex align-items-stretch">
+									<div class="img align-self-stretch" style="background-image: url({% static 'ui/images/staff-6.jpg' %});"></div>
+								</div>
+								<div class="text pt-3 px-3 pb-4 text-center">
+									<h3>Lloyd Wilson</h3>
+									<span class="position">Web Developer</span>
+									<div class="faded">
+										<ul class="ftco-social text-center">
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a></li>
+											<li class="ftco-animate"><a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static 'ui/images/bg_4.jpg' %});">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 d-flex counter-wrap ftco-animate">
+					<div class="block-18 d-flex align-items-center">
+						<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-file"></span></div>
+						<div class="text pl-3">
+							<strong class="number" data-number="4800">0</strong>
+							<span>Project Completed</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex counter-wrap ftco-animate">
+					<div class="block-18 d-flex align-items-center">
+						<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-waiter"></span></div>
+						<div class="text pl-3">
+							<strong class="number" data-number="1000">0</strong>
+							<span>Our Staff</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex counter-wrap ftco-animate">
+					<div class="block-18 d-flex align-items-center">
+						<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-customer-service"></span></div>
+						<div class="text pl-3">
+							<strong class="number" data-number="350">0</strong>
+							<span>Services Provide</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex counter-wrap ftco-animate">
+					<div class="block-18 d-flex align-items-center">
+						<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-good-review"></span></div>
+						<div class="text pl-3">
+							<strong class="number" data-number="7650">0</strong>
+							<span>Happy Customers</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-faqs services-section">
+		<div class="container">
+			<div class="row d-flex">
+				<div class="col-md-6 mb-5 md-md-0">
+					<div class="img w-100 mb-4" style="background-image: url({% static 'ui/images/about-2.jpg' %});"></div>
+					<h2 class="heading-section2 mb-3">Why Choose Us for Your Next Project?</h2>
+					<div class="services-3">
+						<h3>Creative Ideas</h3>
+						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+					</div>
+					<div class="services-3">
+						<h3>Better Strategy with High Quality Business</h3>
+						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+					</div>
+				</div>
+				<div class="col-md-6 heading-section pl-md-5 ftco-animate d-flex align-items-center">
+					<div class="w-100 mb-4 mb-md-0">
+						<span class="subheading">Freequesntly Ask Question</span>
+						<h2 class="mb-5">Frequently Ask Question</h2>
+						<div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
+							<div class="card">
+								<div class="card-header p-0" id="headingOne">
+									<h2 class="mb-0">
+										<button href="#collapseOne" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
+											<p class="mb-0">How to fixed a problem?</p>
+											<i class="fa" aria-hidden="true"></i>
+										</button>
+									</h2>
+								</div>
+								<div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+									<div class="card-body py-3 px-0">
+										<ol>
+											<li>Far far away, behind the word mountains</li>
+											<li>Consonantia, there live the blind texts</li>
+											<li>When she reached the first hills of the Italic Mountains</li>
+											<li>Bookmarksgrove, the headline of Alphabet Village</li>
+											<li>Separated they live in Bookmarksgrove right</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header p-0" id="headingTwo" role="tab">
+									<h2 class="mb-0">
+										<button href="#collapseTwo" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
+											<p class="mb-0">How to manage your Website?</p>
+											<i class="fa" aria-hidden="true"></i>
+										</button>
+									</h2>
+								</div>
+								<div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="card-body py-3 px-0">
+										<ol>
+											<li>Far far away, behind the word mountains</li>
+											<li>Consonantia, there live the blind texts</li>
+											<li>When she reached the first hills of the Italic Mountains</li>
+											<li>Bookmarksgrove, the headline of Alphabet Village</li>
+											<li>Separated they live in Bookmarksgrove right</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header p-0" id="headingThree" role="tab">
+									<h2 class="mb-0">
+										<button href="#collapseThree" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
+											<p class="mb-0">How to grow your investments funds?</p>
+											<i class="fa" aria-hidden="true"></i>
+										</button>
+									</h2>
+								</div>
+								<div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="card-body py-3 px-0">
+										<ol>
+											<li>Far far away, behind the word mountains</li>
+											<li>Consonantia, there live the blind texts</li>
+											<li>When she reached the first hills of the Italic Mountains</li>
+											<li>Bookmarksgrove, the headline of Alphabet Village</li>
+											<li>Separated they live in Bookmarksgrove right</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header p-0" id="headingFour" role="tab">
+									<h2 class="mb-0">
+										<button href="#collapseFour" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
+											<p class="mb-0">What are those requirements for businesses?</p>
+											<i class="fa" aria-hidden="true"></i>
+										</button>
+									</h2>
+								</div>
+								<div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="card-body py-3 px-0">
+										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section testimony-section bg-light">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row pb-4">
+				<div class="col-md-7 heading-section heading-section-white ftco-animate">
+					<span class="subheading">Testimonial</span>
+					<h2 class="mb-4">What Are Clients Says</h2>
+				</div>
+			</div>
+		</div>
+		<div class="container container-2">
+			<div class="row ftco-animate">
+				<div class="col-md-12">
+					<div class="carousel-testimony owl-carousel">
+						<div class="item">
+							<div class="testimony-wrap py-4">
+								<div class="text">
+									<p class="star">
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<div class="d-flex align-items-center">
+										<div class="user-img" style="background-image: url({% static 'ui/images/person_1.jpg' %})"></div>
+										<div class="pl-3">
+											<p class="name">Roger Scott</p>
+											<span class="position">Marketing Manager</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap py-4">
+								<div class="text">
+									<p class="star">
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<div class="d-flex align-items-center">
+										<div class="user-img" style="background-image: url({% static 'ui/images/person_2.jpg' %})"></div>
+										<div class="pl-3">
+											<p class="name">Roger Scott</p>
+											<span class="position">Marketing Manager</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap py-4">
+								<div class="text">
+									<p class="star">
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<div class="d-flex align-items-center">
+										<div class="user-img" style="background-image: url({% static 'ui/images/person_3.jpg' %})"></div>
+										<div class="pl-3">
+											<p class="name">Roger Scott</p>
+											<span class="position">Marketing Manager</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap py-4">
+								<div class="text">
+									<p class="star">
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<div class="d-flex align-items-center">
+										<div class="user-img" style="background-image: url({% static 'ui/images/person_1.jpg' %})"></div>
+										<div class="pl-3">
+											<p class="name">Roger Scott</p>
+											<span class="position">Marketing Manager</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap py-4">
+								<div class="text">
+									<p class="star">
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<div class="d-flex align-items-center">
+										<div class="user-img" style="background-image: url({% static 'ui/images/person_2.jpg' %})"></div>
+										<div class="pl-3">
+											<p class="name">Roger Scott</p>
+											<span class="position">Marketing Manager</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+-->
+
+	{% endblock %}

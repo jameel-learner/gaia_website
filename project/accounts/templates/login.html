@@ -1,0 +1,347 @@
+{%  extends 'base.html' %}
+{%  load static  %}
+
+{%  block content    %}
+
+
+    <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
+      <div class="container" >
+        <div class="row">
+          <div class="col-12 col-md-4" >
+            <h2>Login Here</h2>
+            <form method="post" action="{% url 'accounts:register' %}" name="login_form" id="login_form"
+                  enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <input type="hidden" name="form_of" value="login">
+            <div class="row"  class="form-group" >
+              <div class="col-12">
+                  <input class="form-control" type="text" name="username" id="username" placeholder="Username" required>
+              </div>
+              <div class="col-12">
+                  <input class="form-control" type="password" name="password" id="login_password" placeholder="Password" required>
+              </div>
+            </div>
+            <div class="row"  class="form-group" >
+              <div class="col-6" style="padding:10px;" >
+                  &nbsp;&nbsp;<input type="checkbox" onclick="myFunction(document.getElementById('login_password'))"> Show Password
+              </div>
+              <div class="col-6"  style="padding:10px;">
+                  &nbsp;&nbsp;<a href="myFunction()">Forgot Password</a>
+              </div>
+              <div class="col-6">
+                    <input type="hidden" id="rg_captcha_hd_ie" name="rg_captcha_hd" >
+                    <input type="hidden" id="rg_captcha_iid_ie" name="rg_captcha_iid" >
+                    <br><b style="font-size: 30px; text-align: left;"><label id='rg_captcha_lb_ie'></label></b><br>
+                    <a class="btn primary-btn text-uppercase" id="refresh_rg_captcha_ie" style="color: black; float: left;">Get Captcha >></a>
+                    <p style="color: red;"><label id='rg_captcha_msg_ie'></label></p>
+              </div>
+              <div class="col-6"><br>
+                    <input class="form-control" id="rg_captcha_ie" name="rg_captcha" placeholder="Enter Captcha (match case)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Captcha (match case)'" class="common-input form-control" required type="text" required><br>
+                    <button id="send_register_ie" type="submit" class="btn-purple text-uppercase" style="float: left;">Login >><span class="lnr lnr-arrow-right" ></span></button>
+                    <br><br>
+              </div>
+            </div>
+            </form>
+          </div>
+
+          <div class="col-12 col-md-8" >
+            <h2>Register Now</h2>
+              <div class="row">
+              <div class="col-6">
+                  As a Vendor
+                  <form method="post" action="{% url 'accounts:register' %}" name="vendor_form" id="vendor_form"
+                        enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <input type="hidden" name="form_of" value="vendor">
+                    <div class="row"  class="form-group" >
+                      <div class="col-12">
+                          <input class="form-control" type="text" name="name" id="vendor_name" placeholder="Vendor Name" required>
+                      </div>
+                      <div class="col-12">
+                          <input class="form-control" type="text" name="username" id="vendor_username" placeholder="Username" required>
+                      </div>
+                      <div class="col-12">
+                          <input class="form-control" type="password" name="password" id="vendor_password" placeholder="Password" required>
+                      </div>
+                      <div class="col-12" style="padding:10px;" >
+                          &nbsp;&nbsp;<input type="checkbox" onclick="myFunction(document.getElementById('vendor_password'))"> Show Password
+                      </div>
+                      <div class="col-12">
+                          <p class="mg-b-10">Nature Code</p>
+                          <select id="nature_code_v" name="nature_code" class="form-control select2" required>
+                            <option label="Choose one"></option>
+                            {% for rec in nature_code %}
+                            <option value="{{rec.code|upper}}">{{rec.name}}</option>
+                            {% endfor %}
+                          </select>
+                      </div>
+                    </div>
+                    <div class="row"  class="form-group" >
+                      <div class="col-6">
+                            <input type="hidden" id="rg_captcha_hd_v" name="rg_captcha_hd" >
+                            <input type="hidden" id="rg_captcha_iid_v" name="rg_captcha_iid" >
+                            <br><b style="font-size: 30px; text-align: left;"><label id='rg_captcha_lb_v'></label></b><br>
+                            <a class="btn primary-btn text-uppercase" id="refresh_rg_captcha_v" style="color: black; float: left;">Get Captcha >></a>
+                            <p style="color: red;"><label id='rg_captcha_msg_v'></label></p>
+                      </div>
+                      <div class="col-6"><br>
+                            <input class="form-control" id="rg_captcha_v" name="rg_captcha" placeholder="Enter Captcha (match case)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Captcha (match case)'" class="common-input form-control" required type="text" required><br>
+                            <button id="send_register_v" type="submit" class="btn-purple text-uppercase" style="float: left;">Register >><span class="lnr lnr-arrow-right" ></span></button>
+                            <br><br>
+                      </div>
+                    </div>
+                  </form>
+
+              </div>
+              <div class="col-6">
+                  As a Customer
+                  <form method="post" action="{% url 'accounts:register' %}" name="customer_form" id="customer_form"
+                        enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <input type="hidden" name="form_of" value="customer">
+                    <div class="row"  class="form-group" >
+                      <div class="col-12">
+                          <input class="form-control" type="text" name="name" id="customer_name" placeholder="Customer Name" required>
+                      </div>
+                      <div class="col-12">
+                          <input class="form-control" type="text" name="username" id="customer_username" placeholder="Username" required>
+                      </div>
+                      <div class="col-12">
+                          <input class="form-control" type="password" name="password" id="customer_password" placeholder="Password" required>
+                      </div>
+                    </div>
+                    <div class="row"  class="form-group" >
+                      <div class="col-12" style="padding:10px;" >
+                          &nbsp;&nbsp;<input type="checkbox" onclick="myFunction(document.getElementById('customer_password'))"> Show Password
+                      </div>
+                      <div class="col-6">
+                            <input type="hidden" id="rg_captcha_hd_c" name="rg_captcha_hd" >
+                            <input type="hidden" id="rg_captcha_iid_c" name="rg_captcha_iid" >
+                            <br><b style="font-size: 30px; text-align: left;"><label id='rg_captcha_lb_c'></label></b><br>
+                            <a class="btn primary-btn text-uppercase" id="refresh_rg_captcha_c" style="color: black; float: left;">Get Captcha >></a>
+                            <p style="color: red;"><label id='rg_captcha_msg_c'></label></p>
+                      </div>
+                      <div class="col-6"><br>
+                            <input class="form-control" id="rg_captcha_c" name="rg_captcha" placeholder="Enter Captcha (match case)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Captcha (match case)'" class="common-input form-control" required type="text" required><br>
+                            <button id="send_register_c" type="submit" class="btn-purple text-uppercase" style="float: left;">Register >><span class="lnr lnr-arrow-right" ></span></button>
+                            <br><br>
+                      </div>
+                    </div>
+                  </form>
+
+              </div>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+{% block ScriptBlock %}
+
+<script>
+    function myFunction(x) {
+      //var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#refresh_rg_captcha_ie").click(function () {
+            //alert("called");
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_captcha/",
+              data:    {
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    document.getElementById('rg_captcha_lb_ie').innerHTML = response['captcha'];
+                    document.getElementById('rg_captcha_hd_ie').value = response['captcha'];
+                    document.getElementById('rg_captcha_iid_ie').value = response['iid'];
+                    document.getElementById('refresh_rg_captcha_ie').innerHTML = 'Refresh';
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#send_register_ie").click(function () {
+            // alert();
+            entered = document.getElementById('rg_captcha_ie').value
+            stored = document.getElementById('rg_captcha_hd_ie').value
+            // alert(entered + " -- " + stored);
+            if(entered != '' && entered != stored)	{
+                document.getElementById('rg_captcha_msg_ie').innerHTML = 'Enter matching Captcha';
+                // alert('returning false')
+                return false;
+            }
+            else 	{
+                document.getElementById('rg_captcha_msg_ie').innerHTML = '';
+                return true;
+            }
+        });
+
+
+        $("#refresh_rg_captcha_v").click(function () {
+            //alert("called");
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_captcha/",
+              data:    {
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    document.getElementById('rg_captcha_lb_v').innerHTML = response['captcha'];
+                    document.getElementById('rg_captcha_hd_v').value = response['captcha'];
+                    document.getElementById('rg_captcha_iid_v').value = response['iid'];
+                    document.getElementById('refresh_rg_captcha_v').innerHTML = 'Refresh';
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#nature_code_v").change(function () {
+            //alert("called");
+            var username = document.getElementById('vendor_username');
+            var nature_code = document.getElementById('nature_code_v').value
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_captcha/",
+              data:    {
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    if(nature_code)     {
+                        username.value = nature_code + response['iid'];
+                    }
+                    else {
+                        username.value = '';
+                    }
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#send_register_v").click(function () {
+            // alert();
+            entered = document.getElementById('rg_captcha_v').value
+            stored = document.getElementById('rg_captcha_hd_v').value
+            // alert(entered + " -- " + stored);
+            if(entered != '' && entered != stored)	{
+                document.getElementById('rg_captcha_msg_v').innerHTML = 'Enter matching Captcha';
+                // alert('returning false')
+                return false;
+            }
+            else 	{
+                document.getElementById('rg_captcha_msg_v').innerHTML = '';
+                is_username_exists(document.getElementById('vendor_username'));
+                //return true;
+            }
+        });
+
+
+        $("#refresh_rg_captcha_c").click(function () {
+            //alert("called");
+            $.ajax({
+              type:    "POST",
+              url:     "/helper/get_captcha/",
+              data:    {
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    document.getElementById('rg_captcha_lb_c').innerHTML = response['captcha'];
+                    document.getElementById('rg_captcha_hd_c').value = response['captcha'];
+                    document.getElementById('rg_captcha_iid_c').value = response['iid'];
+                    document.getElementById('refresh_rg_captcha_c').innerHTML = 'Refresh';
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+        });
+
+        $("#send_register_c").click(function () {
+            // alert();
+            entered = document.getElementById('rg_captcha_c').value
+            stored = document.getElementById('rg_captcha_hd_c').value
+            // alert(entered + " -- " + stored);
+            if(entered != '' && entered != stored)	{
+                document.getElementById('rg_captcha_msg_c').innerHTML = 'Enter matching Captcha';
+                // alert('returning false')
+                return false;
+            }
+            else 	{
+                document.getElementById('rg_captcha_msg_c').innerHTML = '';
+                return true;
+            }
+        });
+
+    });
+
+</script>
+
+
+<script>
+    function is_username_exists(username)     {
+            //alert("called "+username.value);
+            $.ajax({
+              type:    "POST",
+              url:     "{% url 'accounts:register'%}",
+              data:    {
+                'form_of': 'is_username_exists',
+                'username': username.value,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+              },
+              success: function(data) {
+                    var response = JSON.parse(data);
+                    // alert(response['message']);
+                    if(response['is_username_exists'])  {
+                        alert('Username already exists');
+                        username.value = '';
+                        username.focus();
+                        return true;
+                    }
+              },
+              error:   function(jqXHR, textStatus, errorThrown) {
+                    alert("Error, status = " + textStatus + ", " +
+                          "error thrown: " + errorThrown
+                    );
+              }
+            });
+
+    }
+</script>
+
+{% endblock %}

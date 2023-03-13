@@ -1,0 +1,199 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+	{%  block content    %}
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'ui/images/services_proc.jpg' %}');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+           <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
+           <h1 class="mb-0 bread">Procurement Services</h1>
+         </div>
+       </div>
+     </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 d-flex align-self-stretch ftco-animate">
+                    <div class="services">
+                        <div class="icon"><span class="flaticon-ux"></span></div>
+                        <div class="media-body">
+                            <h3 class="heading mb-3">Procurement Services</h3>
+                            <p>
+                                Our Procurement services are for OEM, EMS, Design Houses,  Authorized & independent distributors of Electronics Components, Service & Repair of Laptop, Server, and Datacenters. Using our global vendor's database of Asia,  Europe, America and the other part of the world, we can obtain the lowest prices in the global marketplace. Our global network of vendors also enables us to track down components that are often hard to source.
+                                <br><br>
+                                Counterfeiting Component is a serious risk to the electronics products manufacturers. we have strict processes and criteria in place that govern our procurement and consequently avoid this risk for our customers. We buy from a supplier who can provide us Full Traceability or a complete QC testing report from approved testing laboratories.
+                                <br><br>
+                                Our procurement and supply chain consulting experience and extensive market knowledge means that we can quickly identify where and how you can make considerable savings in procurement. We show you suitable sources of supply and unlock the potential by managing your entire purchasing and cost negotiations with suppliers.
+                                <br><br>
+                                We offer transparent cost to the customer without adding a profit margin in return we will charge minimal service fees. We act as an extended team for the customer, which leads to measurable cost-cutting and tangible savings. We provide operational cost advantages by building dedicated, highly trained, SLA-driven purchasing team. We bring a significant amount of expertise (functional, industry, and category) gained from multiple clients, sectors, and geographies, which a dedicated enterprise team can find hard to match.
+                            </p>
+                        </div>
+    <!--                        <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+	<section class="ftco-section ftco-faqs services-section">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row d-flex">
+				<div class="col-md-12 heading-section pl-md-5 ftco-animate d-flex align-items-center">
+					<div class="w-100 mb-4 mb-md-0">
+						<span class="subheading">Other Services</span>
+						<div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
+                            <div class="row">
+<!--                                <div class="card services col-6">-->
+<!--                                    <div class="card-header p-0" id="headingOne">-->
+<!--                                        <h2 class="mb-0">-->
+<!--                                            <button href="#collapseOne" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">-->
+<!--                                                <p class="mb-0">Procurement Services</p>-->
+<!--                                                <i class="fa" aria-hidden="true"></i>-->
+<!--                                            </button>-->
+<!--                                        </h2>-->
+<!--                                    </div>-->
+<!--                                    <div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">-->
+<!--                                        <div class="card-body py-3 px-0">-->
+<!--                                            <p>Our Procurement services are for OEM, EMS, Design Houses,  Authorized & independent distributors of Electronics Components, Service & Repair of Laptop, Server, and Datacenters. Using our global vendor's database of Asia,  Europe, America and the other part of the world, we can obtain the lowest prices in the global marketplace. Our global network of vendors also enables us to track down components that are often hard to source.</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <a href="{% url 'ui:services' 1 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>-->
+<!--                                </div>-->
+
+                                <div class="card services col-6">
+                                    <div class="card-header p-0" id="headingTwo" role="tab">
+                                        <h2 class="mb-0">
+                                            <button href="#collapseTwo" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
+                                                <p class="mb-0">Design Services</p>
+                                                <i class="fa" aria-hidden="true"></i>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div class="collapse show" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="card-body py-3 px-0">
+                                            <p>CRM SourceDirect is a leading engineering design firm committed to helping professional firms dealing with product engineering and semiconductor design services. we provide you round-the-clock support to achieve success. </p>
+                                            <ol>
+                                                <li style="color:#E65A74;">Product Engineering </li>
+                                                <li style="color:#E65A74;">Digital Engineering</li>
+                                                <li style="color:#E65A74;">Quality Engineering</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'ui:services' 2 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+                                </div>
+
+                                <div class="card services col-6">
+                                    <div class="card-header p-0" id="headingThree" role="tab">
+                                        <h2 class="mb-0">
+                                            <button href="#collapseThree" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseThree">
+                                                <p class="mb-0">QC Standards</p>
+                                                <i class="fa" aria-hidden="true"></i>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div class="collapse show" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="card-body py-3 px-0">
+                                            <ol >
+                                                <li style="color:#E65A74;">Counterfeit Component Detection</li>
+                                                <li style="color:#E65A74;">Independent Failure Analysis</li>
+                                                <li style="color:#E65A74;">Electrical Component Testing</li>
+                                                <li style="color:#E65A74;">Lifecycle and Reliability Testing</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'ui:services' 3 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+                                </div>
+
+                                <div class="card services col-6">
+                                    <div class="card-header p-0" id="headingFour" role="tab">
+                                        <h2 class="mb-0">
+                                            <button href="#collapseFour" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseFour">
+                                                <p class="mb-0">Sales Outsourcing</p>
+                                                <i class="fa" aria-hidden="true"></i>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div class="collapse show" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="card-body py-3 px-0">
+                                            <p>Our sales outsourcing services are for authorized and independent distributors of Electronics components, PC and Server Components. Sales outsourcing services enable companies to take advantage of untapped opportunities by leveraging skilled salespeople and other experts. </p>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'ui:services' 4 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+                                </div>
+
+                                <div class="card services col-6">
+                                    <div class="card-header p-0" id="headingFive" role="tab">
+                                        <h2 class="mb-0">
+                                            <button href="#collapseFive" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseFive">
+                                                <p class="mb-0">Compliance Services</p>
+                                                <i class="fa" aria-hidden="true"></i>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div class="collapse show" id="collapseFive" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="card-body py-3 px-0">
+                                            <p>Industries are anticipating more government regulations to emerge that will have a significant impact on business decisions. Whether disclosing your conflict minerals due diligence, detailing hazardous substances or ensuring the absence of child labor in the supply chain, new legislative and regulatory requirements are going to increase in the years to come.</p>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'ui:services' 5 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+                                </div>
+
+                                <div class="card services col-6">
+                                    <div class="card-header p-0" id="headingSix" role="tab">
+                                        <h2 class="mb-0">
+                                            <button href="#collapseSix" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseSix">
+                                                <p class="mb-0">Inventory Liquidation Services</p>
+                                                <i class="fa" aria-hidden="true"></i>
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div class="collapse show" id="collapseSix" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="card-body py-3 px-0">
+                                            <p>Excess & Obsolete inventory is the most common problem in supply chain. However, Excess inventory does not have to become a liability. Rather than incur more inventory carrying cost on excess inventory, CRM SourceDirect can practically help our customers to liquidate inventory without any charges.</p>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'ui:services' 6 %}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span></a>
+                                </div>
+
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+    <section class="ftco-intro ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <div class="img"  style="background-image: url({% static 'ui/images/bg_4.jpg' %});">
+                        <div class="overlay"></div>
+                            <h2>Subscribe to our Newsletter</h2>
+                            <p>A small river named Duden flows by their place</p>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                <form action="#" class="subscribe-form">
+                                    <div class="form-group d-flex">
+                                        <input type="text" class="form-control" placeholder="Enter email address">
+                                        <input type="submit" value="Subscribe" class="submit px-3">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	{% endblock %}

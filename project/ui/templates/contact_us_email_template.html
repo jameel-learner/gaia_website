@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM SourceDirect LLP</title>
+    <style type="text/css">
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 2px;
+            background-color: #fff;
+            font-family: 'Arial';
+        }
+
+        .table th,
+        .table td {
+            padding: 3px;
+            vertical-align: top;
+            //border-top: 1px solid #000;
+            text-align: left;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            //border-bottom: 1px solid #000;
+        }
+
+        .table tbody + tbody {
+            border-top: 1px solid #000;
+        }
+
+        .table .table {
+            background-color: #fff;
+        }
+
+        .list-group {
+            display: block;
+            width: 100%;
+            list-style: none;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .th {
+            font-size: 2.5em;
+        }
+
+        .tr {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<br><br>
+
+<table border="0" class="table" >
+    <tr>
+        <td align="center" width="100%" text-align="center">
+            <img style="width: 70px;height: 70px;"  src='https://www.crmsourcedirect.com/static/ui/images/logo.png'   class="img-responsive"><br>
+        </td>
+    </tr>
+    <tr>
+        <td align="left" width="100%" class="tr">
+            <b>From </b><br> {{ name|default_if_none:"" }} <br>
+            {{ email|default_if_none:"" }} | {{ mobile_number|default_if_none:"" }} <br>
+        </td>
+    </tr>
+    <tr>
+        <td align="left" width="100%" class="tr">
+            <b>Subject </b><br> {{ subject|default_if_none:"" }}<br>
+        </td>
+    </tr>
+    <tr>
+        <td align="left" width="100%" class="tr">
+            <b>Message </b><br> {{ message|default_if_none:"" }}<br>
+        </td>
+    </tr>
+
+
+</table>
+
+
+</body>
+</html>
