@@ -38,7 +38,7 @@
 	line-height: 1.5;
 	font-weight: 700;
     &:hover{
-        color: #10D0A1;
+        color: #8D2E82;     //#10D0A1;
     }
 }
 .mean-container .mean-nav ul li a.mean-expand {
@@ -71,7 +71,7 @@
 	border-top: 0;
 }
 .mean-container .mean-nav ul li a.mean-expand.mean-clicked{
-    color: #10D0A1;
+    color: #8D2E82;     //#10D0A1;
 }
 .mean-container .mean-nav ul li a.mean-expand.mean-clicked i{
 	transform: rotate(45deg);
