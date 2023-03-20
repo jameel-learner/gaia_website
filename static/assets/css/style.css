@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*-----------------------------------------------------------------------------------
 
-    Theme Name: Bioxlab - Laboratory & Science Research
+    Theme Name: GAIA Healthcare - Laboratory & Science Research
     Author: Theme Pure
     Support: basictheme@gmail.com
     Description: Template Name  – HTML5 Template
@@ -39,15 +39,22 @@
 /*----------------------------------------*/
 /*  01. THEME DEFAULT CSS START
 /*----------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Days+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Days+One&display=swap"); */
 :root {
   /**
   @font family declaration
   */
+  --tp-ff-body: 'KoHo', sans-serif;
+  --tp-ff-heading: 'KoHo', sans-serif;
+  --tp-ff-p: 'KoHo', sans-serif;
+  --tp-ff-fontawesome: "Font Awesome 6 Pro";
+/**
   --tp-ff-body: 'Archivo', sans-serif;
   --tp-ff-heading: 'Days One', sans-serif;
   --tp-ff-p: 'Archivo', sans-serif;
   --tp-ff-fontawesome: "Font Awesome 6 Pro";
+**/
   /**
   @color declaration
   */
@@ -670,6 +677,10 @@ input[type=color] {
   background-color: var(--tp-icon-blue);
 }
 
+.theme-dark-bg {
+  background-color: var(--tp-theme-secondary);
+}
+
 .white-bg {
   background: var(--tp-common-white);
 }
@@ -679,7 +690,8 @@ input[type=color] {
 }
 
 .breadcrumb__area {
-  padding: 200px 0;
+  max-height: 500px;
+  height: 500px;
 }
 .breadcrumb__overlay {
   position: relative;
@@ -1150,10 +1162,11 @@ input[type=color] {
   transition: all 0.3s ease-out 0s;
 }
 .main-menu ul > li .sub-menu > li > a:hover {
-  color: var(--tp-theme-secondary);
-  font-weight: 800;
+  color: var(--tp-theme-pink);
+  font-weight: 700;
   background: var(--tp-theme-primary);
   border-radius: 5px;
+  font-size: 16px;
 }
 .main-menu ul > li .sub-menu > li > a::before {
   display: none;
@@ -1585,7 +1598,7 @@ input[type=color] {
   margin-bottom: 10px;
 }
 .header-left-contact a {
-  font-family: "Days One";
+  font-family: var(--tp-ff-body);           //"Days One";
   font-weight: 400;
   font-size: 30px;
   color: var(--tp-common-white);
@@ -2460,7 +2473,7 @@ input[type=color] {
   }
 }
 .slider-content__title {
-  font-size: 57px;
+  font-size: 57px;      font-weight: 700;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .slider-content__title {
@@ -3345,7 +3358,7 @@ div.tp-srv-link a {
 .about__exprience h3 {
   font-size: 115px;
   color: var(--tp-common-white);
-  font-family: days one;
+  font-family: var(--tp-ff-body);           //days one;
   line-height: 1;
 }
 @media (max-width: 767px) {
@@ -3671,7 +3684,7 @@ div.tp-srv-link a {
 }
 .counter__title {
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .experience-item span {
@@ -3733,8 +3746,9 @@ div.tp-srv-link a {
   content: "";
   width: 100%;
   height: 0%;
-  background: linear-gradient(179.97deg, rgba(14, 99, 255, 0) 20.71%, #171C8F 90.16%);
-  //background: linear-gradient(179.97deg, rgba(14, 99, 255, 0) 20.71%, #0E63FF 90.16%);
+  //background: linear-gradient(179.97deg, rgba(14, 99, 255, 0) 20.71%, #8D2E82 90.16%);
+  //background: linear-gradient(179.97deg, rgba(14, 99, 255, 0) 20.71%, #171C8F 90.16%);
+  background: linear-gradient(179.97deg, rgba(14, 99, 255, 0) 20.71%, #171151 90.16%);
   left: 0px;
   right: 0;
   bottom: 0px;
@@ -4066,6 +4080,18 @@ div.tp-srv-link a {
 .visitor-form__input input:hover {
   border: 1px solid var(--tp-icon-green);
 }
+.visitor-form__input_select {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #EFF1F6;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  padding: 0 20px;
+}
+.visitor-form__input_select:hover {
+  border: 1px solid var(--tp-icon-green);
+}
+
 .visitor-form__input textarea {
   width: 100%;
   height: 170px;
@@ -4133,9 +4159,11 @@ div.tp-srv-link a {
 }
 
 .visitor-info-bg {
-  background-color: var(--tp-common-white);
+  //color: var(--tp-common-white);
+  background: rgba(110, 110, 112, 0.6);
   padding: 42px 62px 0px 62px;
   margin-bottom: -90px;
+  border-radius: 5px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .visitor-info-bg {
@@ -4670,7 +4698,7 @@ div.tp-srv-link a {
   margin-bottom: 35px;
 }
 .tp-testi__avata-title {
-  font-family: "Archivo";
+  font-family: var(--tp-ff-body);       //"Archivo";
   font-weight: 600;
   font-size: 18px;
 }
@@ -5248,6 +5276,9 @@ div.tp-srv-link a {
 .tp-blog:hover .tp-blog__title a {
   background-size: 0% 1px, 100% 1px;
 }
+.tp-blog:hover .tp-blog__title_w a {
+  background-size: 0% 1px, 100% 1px;
+}
 .tp-blog:hover .tp-blog__date {
   transform: rotateY(360deg);
 }
@@ -5298,7 +5329,7 @@ div.tp-srv-link a {
   font-size: 12px;
   font-weight: 400;
   display: block;
-  font-family: "Archivo";
+  font-family: var(--tp-ff-body);       //"Archivo";
   color: var(--tp-text-body);
 }
 .tp-blog__content {
@@ -5340,8 +5371,20 @@ div.tp-srv-link a {
   transition: background-size 0.4s linear;
   line-height: 1.4;
 }
+.tp-blog__title_w a {
+  background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF);
+  display: inline;
+  background-size: 0% 1px, 0 1px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s linear;
+  line-height: 1.4;
+}
 @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .tp-blog__title a br {
+    display: none;
+  }
+  .tp-blog__title_w a br {
     display: none;
   }
 }
@@ -5743,7 +5786,7 @@ div.tp-srv-link a {
   font-size: 16px;
   line-height: 1;
   margin-bottom: 8px;
-  font-family: "Archivo";
+  font-family: var(--tp-ff-body);       //"Archivo";
   font-weight: 500;
 }
 .postbox__comment-name span {
@@ -5918,8 +5961,8 @@ div.tp-srv-link a {
 }
 .sidebar__search-input-2 button {
   position: absolute;
-  top: 50%;
-  right: 0;
+  top: 40%;
+  right: 10px;
   transform: translateY(-50%);
   padding: 16px 25px;
 }
@@ -5936,7 +5979,7 @@ div.tp-srv-link a {
   margin-bottom: 5px;
 }
 .rc__post-title {
-  font-family: "Archivo";
+  font-family: var(--tp-ff-body);           //"Archivo";
   font-weight: 500;
   font-size: 16px;
   color: #141515;
@@ -6484,7 +6527,7 @@ div.tp-srv-link a {
 }
 .faq-accordion .accordion-button::after {
   position: absolute;
-  font-family: "Font Awesome 5 pro";
+  font-family: var(--tp-ff-fontawesome);            //"Font Awesome 5 pro";
   top: 50%;
   right: 45px;
   transform: translateY(-50%);
@@ -6699,7 +6742,7 @@ div.tp-srv-link a {
   letter-spacing: 0.02em;
 }
 .product-model-title {
-  font-family: "Archivo";
+  font-family: var(--tp-ff-body);           //"Archivo";
   font-weight: 600;
   font-size: 14px;
   line-height: 15px;
@@ -7161,7 +7204,7 @@ td.product-thumbnail img {
   top: 13px;
   position: absolute;
   color: #6f7172;
-  font-family: "Font Awesome 5 Pro";
+  font-family: var(--tp-ff-fontawesome);        //"Font Awesome 5 Pro";
   font-weight: 700;
 }
 
@@ -7819,11 +7862,14 @@ p.checkout-coupon input[type=text]:focus {
   margin-bottom: 0;
 }
 .footer-widget__links ul li a {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--tp-text-1);
 }
 .footer-widget__links ul li a:hover {
-  color: var(--tp-icon-green);
+  //color: var(--tp-icon-green);
+  color: var(--tp-theme-pink);
+  font-weight: 700;
+  font-size: 16px;
 }
 .footer-widget__info ul li {
   margin-bottom: 5px;
@@ -7834,11 +7880,12 @@ p.checkout-coupon input[type=text]:focus {
   margin-bottom: 0;
 }
 .footer-widget__info ul li a {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--tp-text-1);
 }
 .footer-widget__info ul li a:hover {
   color: var(--tp-icon-green);
+  font-weight: 700;
 }
 .footer-widget__newsletter form input {
   width: 100%;
@@ -8080,7 +8127,7 @@ p.checkout-coupon input[type=text]:focus {
 }
 .tp-footer-widget__links ul li a:hover {
   color: var(--tp-theme-blue);
-  font-weight: 800;
+  font-weight: 700;
 }
 .tp-footer-widget__list ul li {
   color: var(--tp-text-2);
@@ -8315,5 +8362,13 @@ p.checkout-coupon input[type=text]:focus {
 /*# sourceMappingURL=style.css.map */
 
 .p10    {   padding:10px;     }
+.p15    {   padding:15px;     }
+.p20    {   padding:20px;     }
 .p5    {   padding:5px;     }
 .ht100    {   height:100px;     }
+
+.dropdown_wrapper{
+width:200px;
+padding:20px;
+height: 150px;
+}

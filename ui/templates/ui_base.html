@@ -11,6 +11,10 @@
       <!-- Place favicon.ico in the root directory -->
       <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/logo/favicon.png' %}">
 
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
       <!-- CSS here -->
       <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
@@ -26,32 +30,20 @@
       <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
       <style>
-         #left_slider01       {             left: 40px;         }
-         #right_slider01       {             left: 140px;         }
-         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
-            #left_slider01       {             left: 40px;         }
-            #right_slider01       {             left: 140px;         }
+         ::-webkit-scrollbar {
+            width: 7px;
          }
-         @media only screen and (min-width: 992px) and (max-width: 1199px) {
-            #left_slider01       {              left: 0px;         }
-            #right_slider01       {             left: 80px;         }
+         ::-webkit-scrollbar-track {
+            background: transparent;
          }
-         @media (max-width: 767px) {
-            #left_slider01 img      {             width:100%;   top: 10px;      }
+         ::-webkit-scrollbar-thumb {
+            //background-color: rgb(245, 130, 49);
+            background-color: rgb(141, 46, 130);
+            border-radius: 20px;
+            border: transparent;
          }
-
-      ::-webkit-scrollbar {
-         width: 7px;
-      }
-      ::-webkit-scrollbar-track {
-         background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-         //background-color: rgb(245, 130, 49);
-         background-color: rgb(141, 46, 130);
-         border-radius: 20px;
-         border: transparent;
-      }
+         {% block styleBlock %}
+         {% endblock %}
 
       </style>
    </head>
@@ -76,7 +68,7 @@
       <header class="d-none d-xl-block">
          <div class="header-custom" id="header-sticky">
             <div class="header-logo-box p5">
-               <a href="index.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo"></a>
+               <a href="../../../../"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo"></a>
             </div>
             <div class="header-menu-box">
 <!--               <div class="header-menu-top">-->
@@ -102,60 +94,61 @@
                         <div class="main-menu main-menu-second">
                            <nav id="mobile-menu">
                               <ul>
-                                 <li class="has-dropdown"><a class="active" href="index.html">Home</a>
+                                 <li class="has-dropdown"><a class="active" href="../../../../#section_slider">Home</a>
                                     <ul class="sub-menu">
-                                       <li><a href="index.html">About Us</a></li>
-                                       <li><a href="index-2.html">Mission & Vision</a></li>
-                                       <li><a href="index-3.html">Leadership Team</a></li>
-                                       <li><a href="index-3.html">Our Strategy</a></li>
-                                       <li><a href="index-3.html">Company History</a></li>
-                                       <li><a href="index-3.html">MD’s Message</a></li>
+                                       <li><a href="{% url 'ui:about_us' %}#section_about">About Us</a></li>
+                                       <li><a href="{% url 'ui:about_us' %}#section_mission">Mission & Vision</a></li>
+                                       <li><a href="{% url 'ui:about_us' %}#section_team">Leadership Team</a></li>
+                                       <li><a href="{% url 'ui:strategy' %}">Our Strategy</a></li>
+                                       <li><a href="{% url 'ui:history_all' %}">Company History</a></li>
+                                       <li><a href="{% url 'ui:md_message' %}">MD’s Message</a></li>
                                     </ul>
                                  </li>
-                                 <li class="has-dropdown"><a href="about.html">Products</a>
+                                 <li class="has-dropdown"><a href="../../../../#section_product">Products</a>
                                     <ul class="sub-menu">
-                                       <li><a href="about.html">Pediatrics</a></li>
-                                       <li><a href="team-01.html">Gynaecology</a></li>
-                                       <li><a href="team-02.html">Cardiology/Diabetes</a></li>
-                                       <li><a href="team-details.html">General Practice</a></li>
-                                       <li><a href="portfolio-details.html">Gastroenterology</a></li>
-                                       <li><a href="priceing-plan.html">Dermatology</a></li>
-                                       <li><a href="shop.html">Opthalmology</a></li>
+                                       <li><a href="{% url 'ui:shop' %}">GAIA Products Gallery</a></li>
+                                       <li><a href="{% url 'ui:shop_all' 'Pediatrics' %}">Pediatrics</a></li>
+                                       <li><a href="{% url 'ui:shop_all' 'Gynaecology' %}">Gynaecology</a></li>
+                                       <li><a href="{% url 'ui:shop_all' 'Cardiology-Diabetes' %}">Cardiology/Diabetes</a></li>
+                                       <li><a href="{% url 'ui:shop_all' 'General-Practice' %}">General Practice</a></li>
+                                       <li><a href="{% url 'ui:shop_all' 'Gastroenterology' %}">Gastroenterology</a></li>
+                                       <li><a href="{% url 'ui:shop_all' 'Dermatology' %}">Dermatology</a></li>
+                                       <li><a href="{% url 'ui:shop_all' 'Opthalmology' %}">Opthalmology</a></li>
 <!--                                       <li><a href="shop-details.html">Product Details</a></li>-->
 <!--                                       <li><a href="cart.html">Cart</a></li>-->
 <!--                                       <li><a href="checkout.html">Checkout</a></li>-->
 <!--                                       <li><a href="faq.html">FAQ's</a></li>-->
                                     </ul>
                                  </li>
-                                 <li class="has-dropdown"><a href="services-01.html">Business</a>
+                                 <li class="has-dropdown"><a href="../../../../#section_business">Business</a>
                                     <ul class="sub-menu">
-                                       <li><a href="services-01.html">Business Partners</a></li>
-                                       <li><a href="services-02.html">GAIA Healthcare DMCC</a></li>
-                                       <li><a href="services-03.html">GAIA Healthcare FZ LLC</a></li>
-                                       <li><a href="services-details.html">PDC Drug Store</a></li>
-                                       <li><a href="services-details.html">Retail Pharma</a></li>
+                                       <li><a href="{% url 'ui:business' 'Business-Partners' %}">Business Partners</a></li>
+                                       <li><a href="{% url 'ui:business' 'GAIA-Healthcare-DMCC' %}">GAIA Healthcare DMCC</a></li>
+                                       <li><a href="{% url 'ui:business' 'GAIA-Healthcare-FZ-LLC' %}">GAIA Healthcare FZ LLC</a></li>
+                                       <li><a href="{% url 'ui:business' 'PDC-Drug-Store' %}">PDC Drug Store</a></li>
+                                       <li><a href="{% url 'ui:business' 'Retail-Pharma' %}">Retail Pharma</a></li>
                                     </ul>
                                  </li>
-                                 <li class="has-dropdown"><a href="services-01.html">Partnering</a>
+                                 <li class="has-dropdown"><a href="../../../../#section_partnering">Partnering</a>
                                     <ul class="sub-menu">
-                                       <li><a href="services-01.html">Pre-Licensing (GCC)</a></li>
-                                       <li><a href="services-02.html">Out Licensing</a></li>
+                                       <li><a href="{% url 'ui:partnering' 'Pre-Licensing-GCC' %}">Pre-Licensing (GCC)</a></li>
+                                       <li><a href="{% url 'ui:partnering' 'Out-Licensing' %}">Out Licensing</a></li>
 <!--                                       <li><a href="services-03.html">GAIA Healthcare FZ LLC</a></li>-->
 <!--                                       <li><a href="services-details.html">PDC Drug Store</a></li>-->
 <!--                                       <li><a href="services-details.html">Retail Pharma</a></li>-->
                                     </ul>
                                  </li>
 <!--                                 <li><a href="research.html">Research</a></li>-->
-                                 <li class="has-dropdown"><a href="blog.html">Contact</a>
+                                 <li class="has-dropdown"><a href="../../../../#section_form">Contact</a>
                                     <ul class="sub-menu">
-                                       <li><a href="blog.html">Query related to Product</a></li>
-                                       <li><a href="blog-details.html">PDC Design Store</a></li>
-                                       <li><a href="blog-details.html">Query related to Pharmaco Vigilance (PV)</a></li>
-                                       <li><a href="blog-details.html">Applying for Job</a></li>
-                                       <li><a href="blog-details.html">Contact Details </a></li>
+                                       <li><a href="{% url 'ui:contact_us' 'Query-related-to-Product' %}#section_contact" >Query related to Product</a></li>
+                                       <li><a href="{% url 'ui:contact_us' 'PDC-Drug-Store' %}#section_contact">PDC Drug Store</a></li>
+                                       <li><a href="{% url 'ui:contact_us' 'Query-related-to-Pharmaco-Vigilance-PV' %}#section_contact" >Query related to Pharmaco Vigilance (PV)</a></li>
+                                       <li><a href="{% url 'ui:contact_us' 'Applying-for-Job' %}#section_contact">Applying for Job</a></li>
+                                       <li><a href="{% url 'ui:contact_us' 'Contact-Details' %}#section_contact">Contact Details </a></li>
                                     </ul>
                                  </li>
-                                 <li><a href="contact.html">Media</a></li>
+                                 <li><a href="../../../../#section_media">Media</a></li>
                               </ul>
                            </nav>
                         </div>
@@ -164,63 +157,63 @@
                         <div class="header-cart-order d-flex align-items-center justify-content-end">
                            <div class="header-cart-list  d-flex align-items-center justify-content-end mr-50">
                               <button class="tp-menu-toggle mr-40"><i class="fa-solid fa-list"></i></button>
-                              <div class="tp-cart-icon-area">
-                                 <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
-                                 <div class="tpcarticon">
-                                    <ul>
-                                       <li>
-                                          <div class="tpcarticon__item">
-                                             <div class="tpcarticon__img">
-                                                <img src="{% static 'assets/img/shop/shop-05.jpg' %}" alt="">
-                                             </div>
-                                             <div class="tpcarticon__content">
-                                                <span class="tpcarticon__content-title"><a href="shop.html">Stethoscope Superb</a>
-                                                </span>
-                                                <div class="tpcarticon__cart-price">
-                                                   <span class="new">$162.8</span>
-                                                   <span><del>$229.9</del></span>
-                                                </div>
-                                             </div>
-                                             <div class="tpcarticon__del">
-                                                <a href="#"><i class="far fa-trash-alt"></i></a>
-                                             </div>
-                                          </div>
-                                       </li>
-                                       <li>
-                                          <div class="tpcarticon__item">
-                                             <div class="tpcarticon__img">
-                                                <img src="{% static 'assets/img/shop/shop-09.jpg' %}" alt="">
-                                             </div>
-                                             <div class="tpcarticon__content">
-                                                <span class="tpcarticon__content-title"><a href="shop.html">Sphygmomanometer</a>
-                                                </span>
-                                                <div class="tpcarticon__cart-price">
-                                                   <span class="new">$139.9</span>
-                                                   <span><del>$229.9</del></span>
-                                                </div>
-                                             </div>
-                                             <div class="tpcarticon__del">
-                                                <a href="#"><i class="far fa-trash-alt"></i></a>
-                                             </div>
-                                          </div>
-                                       </li>
-                                       <li>
-                                          <div class="tpcarticon__total-price">
-                                             <span class="f-left">Total:</span>
-                                             <span class="f-right">$300.0</span>
-                                         </div>
-                                       </li>
-                                       <li>
-                                          <div class="tpcarticon__checkout-link">
-                                             <a href="cart.html">Shopping Cart</a>
-                                             <a class="sec-red-btn" href="checkout.html">Checkout</a>
-                                         </div>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
+<!--                              <div class="tp-cart-icon-area">-->
+<!--                                 <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>-->
+<!--                                 <div class="tpcarticon">-->
+<!--                                    <ul>-->
+<!--                                       <li>-->
+<!--                                          <div class="tpcarticon__item">-->
+<!--                                             <div class="tpcarticon__img">-->
+<!--                                                <img src="{% static 'assets/img/shop/shop-05.jpg' %}" alt="">-->
+<!--                                             </div>-->
+<!--                                             <div class="tpcarticon__content">-->
+<!--                                                <span class="tpcarticon__content-title"><a href="shop.html">Stethoscope Superb</a>-->
+<!--                                                </span>-->
+<!--                                                <div class="tpcarticon__cart-price">-->
+<!--                                                   <span class="new">$162.8</span>-->
+<!--                                                   <span><del>$229.9</del></span>-->
+<!--                                                </div>-->
+<!--                                             </div>-->
+<!--                                             <div class="tpcarticon__del">-->
+<!--                                                <a href="#"><i class="far fa-trash-alt"></i></a>-->
+<!--                                             </div>-->
+<!--                                          </div>-->
+<!--                                       </li>-->
+<!--                                       <li>-->
+<!--                                          <div class="tpcarticon__item">-->
+<!--                                             <div class="tpcarticon__img">-->
+<!--                                                <img src="{% static 'assets/img/shop/shop-09.jpg' %}" alt="">-->
+<!--                                             </div>-->
+<!--                                             <div class="tpcarticon__content">-->
+<!--                                                <span class="tpcarticon__content-title"><a href="shop.html">Sphygmomanometer</a>-->
+<!--                                                </span>-->
+<!--                                                <div class="tpcarticon__cart-price">-->
+<!--                                                   <span class="new">$139.9</span>-->
+<!--                                                   <span><del>$229.9</del></span>-->
+<!--                                                </div>-->
+<!--                                             </div>-->
+<!--                                             <div class="tpcarticon__del">-->
+<!--                                                <a href="#"><i class="far fa-trash-alt"></i></a>-->
+<!--                                             </div>-->
+<!--                                          </div>-->
+<!--                                       </li>-->
+<!--                                       <li>-->
+<!--                                          <div class="tpcarticon__total-price">-->
+<!--                                             <span class="f-left">Total:</span>-->
+<!--                                             <span class="f-right">$300.0</span>-->
+<!--                                         </div>-->
+<!--                                       </li>-->
+<!--                                       <li>-->
+<!--                                          <div class="tpcarticon__checkout-link">-->
+<!--                                             <a href="cart.html">Shopping Cart</a>-->
+<!--                                             <a class="sec-red-btn" href="checkout.html">Checkout</a>-->
+<!--                                         </div>-->
+<!--                                       </li>-->
+<!--                                    </ul>-->
+<!--                                 </div>-->
+<!--                              </div>-->
                            </div>
-                           <a class="header-bottom-btn" href="about.html">Book Appointment</a>
+                           <a class="header-bottom-btn" href="{% url 'ui:contact_us' 'Contact-Details' %}#section_contact">Book Appointment</a>
                         </div>
                      </div>
                   </div>
@@ -310,114 +303,222 @@
 
       <!-- footer-area -->
       <footer>
-         <div class="footer-area pt-105">
-            <div class="tp-footer-top pb-25">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-4 col-md-6">
-                        <div class="tp-footer-widget footer-2-col-1 mb-40 wow fadeInUp" data-wow-delay=".2s">
-                           <div class="tp-footer-widget__content mb-95">
-                              <i>FEEL FREE TO CONTACT US</i>
-                              <h4 class="tp-footer-widget__contact mb-20"><a href="tel:61383766284">61 383 766 284</a></h4>
-                              <a href="mailto:noreply@envato.com">noreply@envato.com</a>
-                           </div>
-                           <div class="tp-footer-widget__sub-sec">
-                              <span class="tp-footer-widget__sub-title mb-5">Career</span>
-                              <p>Nam eget dui vel quam sodales semper quis porttitor <br> tortor. Vivamus quis ex nulla ...Nam eget dui vel quam <br> sodales semper quis porttitor tortor.</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6">
-                        <div class="tp-footer-widget footer-2-col-2 mb-40 wow fadeInUp" data-wow-delay=".4s">
-                           <span class="tp-footer-widget__title mb-15">Useful links</span>
-                           <div class="tp-footer-widget__links mb-35">
-                              <ul>
-                                 <li><a href="contact.html">Contact us</a></li>
-                                 <li><a href="about.html">Help & About us</a></li>
-                                 <li><a href="shop-details.html">Shipping & Returns</a></li>
-                                 <li><a href="#">Refund Policy</a></li>
-                                 <li><a href="about.html">About us</a></li>
-                                 <li><a href="services-details.html">Services</a></li>
-                              </ul>
-                           </div>
-                           <div class="tp-footer-widget__sub-sec">
-                              <span class="tp-footer-widget__sub-title mb-10">Opening Hours</span>
-                              <div class="tp-footer-widget__list">
-                                 <ul>
-                                    <li>Office Hours: 8AM - 11PM</li>
-                                    <li>Office Hours: 8AM - 11PM</li>
-                                    <li>Sunday - Wekend Day</li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-2 col-md-6">
-                        <div class="tp-footer-widget footer-2-col-3 mb-40 wow fadeInUp" data-wow-delay=".6s">
-                           <span class="tp-footer-widget__title mb-15">Customer Service</span>
-                           <div class="tp-footer-widget__links">
-                              <ul>
-                                 <li><a href="#">Orders</a></li>
-                                 <li><a href="#">Product</a></li>
-                                 <li><a href="shop-details.html">Shipping & Returns</a></li>
-                                 <li><a href="#">Addresses</a></li>
-                                 <li><a href="#">Account details</a></li>
-                                 <li><a href="#">Shop</a></li>
-                                 <li><a href="#">Lost password</a></li>
-                                 <li><a href="#">Account</a></li>
-                                 <li><a href="#">Downloads</a></li>
-                                 <li><a href="#">Orders</a></li>
-                                 <li><a href="#">Logout</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6">
-                        <div class="tp-footer-widget footer-2-col-4 mb-40 wow fadeInUp" data-wow-delay=".8s">
-                           <span class="tp-footer-widget__title mb-15">Contact Info</span>
-                           <div class="tp-footer-widget__links mb-120">
-                              <ul>
-                                 <li>Ta-134/A, Gulshan Badda Link </li>
-                                 <li><a href="tel:(+880)15569569365">(+880)155 69569 365</a></li>
-                                 <li><a href="mailto:support@rstheme.com">support@rstheme.com</a></li>
-                                 <li>Office Hours: 8AM - 11PM</li>
-                                 <li>Sunday - Wekend Day</li>
-                              </ul>
-                           </div>
-                           <div class="tp-footer-widget__social fw-social">
-                              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                              <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                              <a href="#"><i class="fa-light fa-basketball"></i></a>
-                              <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                           </div>
+         <div class="footer-area theme-bg pt-100 pb-50">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="footer-widget footer-col-1 mb-50 wow fadeInUp" data-wow-delay=".2s">
+                        <h4 class="footer-widget__title mb-30">
+                           <a href="../../../../"><img src="{% static 'assets/img/logo/white-logo.png' %}" alt="logo"></a>
+                        </h4>
+                        <p>Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem itamconse quat.Exerci tation ullamcorper.</p>
+                        <div class="footer-widget__social">
+                           <a class="tp-f-youtube" href="#"><i class="fa-brands fa-youtube"></i></a>
+                           <a class="tp-f-twitter" href="#"><i class="fa-brands fa-twitter"></i></a>
+                           <a class="tp-f-fb" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<!--                           <a class="tp-f-skype" href="#"><i class="fa-brands fa-skype"></i></a>-->
                         </div>
                      </div>
                   </div>
-               </div>
-            </div>
-            <div class="footer-area-bottom fw-border">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                        <div class="footer-widget__copyright copyright-white">
-                           <span> © Copyright ©2022. <i>All Rights Reserved Copyright</i></span>
-                        </div>
-                     </div>
-                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">
-                        <div class="footer-widget__copyright-info info-direction">
-                           <ul class="d-flex align-items-center">
-                              <li><a href="#">Terms and conditions</a></li>
-                              <li><a href="#">Privacy policy</a></li>
-                              <li><a href="#">Pricing</a></li>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="footer-widget footer-col-2 mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <h4 class="footer-widget__title mb-20">Products</h4>
+                        <div class="footer-widget__links">
+                           <ul>
+                              <li><a href="{% url 'ui:about_us' %}">About us</a></li>
+                              <li><a href="{% url 'ui:shop' %}">GAIA Products Gallery</a></li>
+                              <li><a href="{% url 'ui:shop_all' 'Pediatrics' %}">Pediatrics</a></li>
+                              <li><a href="{% url 'ui:shop_all' 'Gynaecology' %}">Gynaecology</a></li>
+                              <li><a href="{% url 'ui:shop_all' 'Cardiology-Diabetes' %}">Cardiology/Diabetes</a></li>
+                              <li><a href="{% url 'ui:shop_all' 'General-Practice' %}">General Practice</a></li>
+                              <li><a href="{% url 'ui:shop_all' 'Gastroenterology' %}">Gastroenterology</a></li>
+                              <li><a href="{% url 'ui:shop_all' 'Dermatology' %}">Dermatology</a></li>
+                              <li><a href="{% url 'ui:shop_all' 'Opthalmology' %}">Opthalmology</a></li>
+                              <li><a href="{% url 'ui:md_message' %}">MD's Message</a></li>
                            </ul>
                         </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="footer-widget footer-col-2 mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <h4 class="footer-widget__title mb-20">Useful links</h4>
+                        <div class="footer-widget__links">
+                           <ul>
+                              <li><a href="{% url 'ui:strategy' %}">Our Strategy</a></li>
+                              <li><a href="{% url 'ui:business' 'Business-Partners' %}">Business Partners</a></li>
+                              <li><a href="{% url 'ui:business' 'GAIA-Healthcare-DMCC' %}">GAIA Healthcare DMCC</a></li>
+                              <li><a href="{% url 'ui:business' 'GAIA-Healthcare-FZ-LLC' %}">GAIA Healthcare FZ LLC</a></li>
+                              <li><a href="{% url 'ui:business' 'PDC-Drug-Store' %}">PDC Drug Store</a></li>
+                              <li><a href="{% url 'ui:business' 'Retail-Pharma' %}">Retail Pharma</a></li>
+                              <li><a href="{% url 'ui:partnering' 'Pre-Licensing-GCC' %}">Pre-Licensing (GCC)</a></li>
+                              <li><a href="{% url 'ui:partnering' 'Out-Licensing' %}">Out Licensing</a></li>
+                              <li><a href="{% url 'ui:contact_us' 'Query-related-to-Product' %}">Contact us</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="footer-widget footer-col-3 mb-50 wow fadeInUp" data-wow-delay=".6s">
+                        <h4 class="footer-widget__title mb-20">Contact info</h4>
+                        <div class="footer-widget__links">
+                           <ul>
+                              <li><a href="#">Ta-134/A, Gulshan Badda Link </a></li>
+                              <li><a href="tel:+9159008855">(+880)155 69569 365</a></li>
+                              <li><a href="mailto:support@rstheme.com">support@rstheme.com</a></li>
+                              <li>Office Hours: 8AM - 11PM</li>
+                              <li>Sunday - Wekend Day</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+<!--                  <div class="col-xl-3 col-lg-6 col-md-6">-->
+<!--                     <div class="footer-widget footer-col-4 mb-50 wow fadeInUp" data-wow-delay=".8s">-->
+<!--                        <h4 class="footer-widget__title mb-20">Subscribe Newslatter</h4>-->
+<!--                        <p>Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo </p>-->
+<!--                        <div class="footer-widget__newsletter p-relative">-->
+<!--                           <form action="#">-->
+<!--                              <input type="email" placeholder="Enter Mail">-->
+<!--                              <button class="footer-widget__fw-news-btn"><i class="fa-solid fa-paper-plane"></i></button>-->
+<!--                           </form>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+               </div>
+            </div>
+         </div>
+         <div class="footer-area-bottom theme-bg">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                     <div class="footer-widget__copyright">
+                        <span> © Copyright ©2022 <a href="index.html">Theme_pure</a>. <i>All Rights Reserved Copyright</i></span>
+                     </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                     <div class="footer-widget__copyright-info info-direction">
+                        <ul class="d-flex align-items-center">
+                           <li><a href="#">Terms and conditions</a></li>
+                           <li><a href="#">Privacy policy</a></li>
+                           <li><a href="shop.html">Pricing</a></li>
+                        </ul>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </footer>
+      <!-- footer-area-end -->
+
+      <!-- footer-area -->
+<!--      <footer>-->
+<!--         <div class="footer-area pt-105">-->
+<!--            <div class="tp-footer-top pb-25">-->
+<!--               <div class="container">-->
+<!--                  <div class="row">-->
+<!--                     <div class="col-lg-4 col-md-6">-->
+<!--                        <div class="tp-footer-widget footer-2-col-1 mb-40 wow fadeInUp" data-wow-delay=".2s">-->
+<!--                           <div class="tp-footer-widget__content mb-95">-->
+<!--                              <i>FEEL FREE TO CONTACT US</i>-->
+<!--                              <h4 class="tp-footer-widget__contact mb-20"><a href="tel:61383766284">61 383 766 284</a></h4>-->
+<!--                              <a href="mailto:noreply@envato.com">noreply@envato.com</a>-->
+<!--                           </div>-->
+<!--                           <div class="tp-footer-widget__sub-sec">-->
+<!--                              <span class="tp-footer-widget__sub-title mb-5">Career</span>-->
+<!--                              <p>Nam eget dui vel quam sodales semper quis porttitor <br> tortor. Vivamus quis ex nulla ...Nam eget dui vel quam <br> sodales semper quis porttitor tortor.</p>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="col-lg-3 col-md-6">-->
+<!--                        <div class="tp-footer-widget footer-2-col-2 mb-40 wow fadeInUp" data-wow-delay=".4s">-->
+<!--                           <span class="tp-footer-widget__title mb-15">Useful links</span>-->
+<!--                           <div class="tp-footer-widget__links mb-35">-->
+<!--                              <ul>-->
+<!--                                 <li><a href="contact.html">Contact us</a></li>-->
+<!--                                 <li><a href="about.html">Help & About us</a></li>-->
+<!--                                 <li><a href="shop-details.html">Shipping & Returns</a></li>-->
+<!--                                 <li><a href="#">Refund Policy</a></li>-->
+<!--                                 <li><a href="about.html">About us</a></li>-->
+<!--                                 <li><a href="services-details.html">Services</a></li>-->
+<!--                              </ul>-->
+<!--                           </div>-->
+<!--                           <div class="tp-footer-widget__sub-sec">-->
+<!--                              <span class="tp-footer-widget__sub-title mb-10">Opening Hours</span>-->
+<!--                              <div class="tp-footer-widget__list">-->
+<!--                                 <ul>-->
+<!--                                    <li>Office Hours: 8AM - 11PM</li>-->
+<!--                                    <li>Office Hours: 8AM - 11PM</li>-->
+<!--                                    <li>Sunday - Wekend Day</li>-->
+<!--                                 </ul>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="col-lg-2 col-md-6">-->
+<!--                        <div class="tp-footer-widget footer-2-col-3 mb-40 wow fadeInUp" data-wow-delay=".6s">-->
+<!--                           <span class="tp-footer-widget__title mb-15">Customer Service</span>-->
+<!--                           <div class="tp-footer-widget__links">-->
+<!--                              <ul>-->
+<!--                                 <li><a href="#">Orders</a></li>-->
+<!--                                 <li><a href="#">Product</a></li>-->
+<!--                                 <li><a href="shop-details.html">Shipping & Returns</a></li>-->
+<!--                                 <li><a href="#">Addresses</a></li>-->
+<!--                                 <li><a href="#">Account details</a></li>-->
+<!--                                 <li><a href="#">Shop</a></li>-->
+<!--                                 <li><a href="#">Lost password</a></li>-->
+<!--                                 <li><a href="#">Account</a></li>-->
+<!--                                 <li><a href="#">Downloads</a></li>-->
+<!--                                 <li><a href="#">Orders</a></li>-->
+<!--                                 <li><a href="#">Logout</a></li>-->
+<!--                              </ul>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="col-lg-3 col-md-6">-->
+<!--                        <div class="tp-footer-widget footer-2-col-4 mb-40 wow fadeInUp" data-wow-delay=".8s">-->
+<!--                           <span class="tp-footer-widget__title mb-15">Contact Info</span>-->
+<!--                           <div class="tp-footer-widget__links mb-120">-->
+<!--                              <ul>-->
+<!--                                 <li>Ta-134/A, Gulshan Badda Link </li>-->
+<!--                                 <li><a href="tel:(+880)15569569365">(+880)155 69569 365</a></li>-->
+<!--                                 <li><a href="mailto:support@rstheme.com">support@rstheme.com</a></li>-->
+<!--                                 <li>Office Hours: 8AM - 11PM</li>-->
+<!--                                 <li>Sunday - Wekend Day</li>-->
+<!--                              </ul>-->
+<!--                           </div>-->
+<!--                           <div class="tp-footer-widget__social fw-social">-->
+<!--                              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                              <a href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                              <a href="#"><i class="fa-brands fa-instagram"></i></a>-->
+<!--                              <a href="#"><i class="fa-light fa-basketball"></i></a>-->
+<!--                              <a href="#"><i class="fa-brands fa-youtube"></i></a>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--            <div class="footer-area-bottom fw-border">-->
+<!--               <div class="container">-->
+<!--                  <div class="row">-->
+<!--                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">-->
+<!--                        <div class="footer-widget__copyright copyright-white">-->
+<!--                           <span> © Copyright ©2022. <i>All Rights Reserved Copyright</i></span>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">-->
+<!--                        <div class="footer-widget__copyright-info info-direction">-->
+<!--                           <ul class="d-flex align-items-center">-->
+<!--                              <li><a href="#">Terms and conditions</a></li>-->
+<!--                              <li><a href="#">Privacy policy</a></li>-->
+<!--                              <li><a href="#">Pricing</a></li>-->
+<!--                           </ul>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--      </footer>-->
       <!-- footer-area-end -->
 
       <!-- JS here -->
@@ -442,7 +543,6 @@
     {% block ScriptBlock %}
 
     {% endblock %}
-
 
    </body>
 </html>

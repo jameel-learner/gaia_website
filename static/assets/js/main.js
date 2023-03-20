@@ -166,7 +166,7 @@
 				slidesPerView: 4,
 			},
 			'1200': {
-				slidesPerView: 3,
+				slidesPerView: 2,
 			},
 			'992': {
 				slidesPerView: 2,
@@ -179,6 +179,68 @@
 			},
 			'0': {
 				slidesPerView: 1,
+			},
+		},
+	  });
+
+	var galleryswiper = new Swiper('.gall-active4', {
+		// Optional parameters
+		loop: true,
+		slidesPerView: 4,
+        spaceBetween: 30,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: true,
+		},
+		breakpoints: {
+			'1400': {
+				slidesPerView: 4,
+			},
+			'1200': {
+				slidesPerView: 4,
+			},
+			'992': {
+				slidesPerView: 3,
+			},
+			'768': {
+				slidesPerView: 3,
+			},
+			'576': {
+				slidesPerView: 2,
+			},
+			'0': {
+				slidesPerView: 2,
+			},
+		},
+	  });
+
+	var galleryswiper = new Swiper('.gall-active3', {
+		// Optional parameters
+		loop: true,
+		slidesPerView: 4,
+        spaceBetween: 30,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: true,
+		},
+		breakpoints: {
+			'1400': {
+				slidesPerView: 4,
+			},
+			'1200': {
+				slidesPerView: 3,
+			},
+			'992': {
+				slidesPerView: 3,
+			},
+			'768': {
+				slidesPerView: 3,
+			},
+			'576': {
+				slidesPerView: 2,
+			},
+			'0': {
+				slidesPerView: 2,
 			},
 		},
 	  });

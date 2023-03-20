@@ -1,0 +1,343 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/img/banner/breadcrumb-06.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title"><a href="{% url 'ui:media_all' %}"> MEDIA & NEWS</a></h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <b href="shop.html"> {{mtitle|upper}}</b></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- breadcrumb-area-end -->
+
+
+         <!-- postbox area start -->
+         <div class="postbox__area pt-130 pb-110 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xxl-8 col-xl-8 col-lg-7 col-md-12">
+                     <div class="postbox__wrapper pr-20">
+                        <article class="postbox__item format-image mb-50 transition-3">
+                           <div class="postbox__thumb w-img mb-30">
+                              <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}">
+                                 <img src="{% static 'assets/img/blog/blog-in-01.jpg' %}" alt="">
+                              </a>
+                           </div>
+                           <div class="postbox__content">
+                              <div class="row">
+                                 <div class="col-lg-12">
+                                    <div class="postbox__content-area pb-20">
+                                       <div class="postbox__meta mb-40">
+                                          <span><a href="team-details.html"><i class="fa-regular fa-user"></i> Alextina</a></span>
+                                          <span><i class="fa-regular fa-clock"></i> Dec 28, 2022</span>
+                                          <span><a href="#"><i class="fa-regular fa-message-dots"></i> (04) Coments</a></span>
+                                          <span><i class="fa-light fa-eye"></i> 1,526 views</span>
+                                       </div>
+                                       <h3 class="postbox__title mb-35">
+                                          <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}">Lavoratories used for scientic reseach take many froms.</a>
+                                       </h3>
+                                       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, aperiam ipsquae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim voluptatem voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                                       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, aperiam ipsquae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-lg-6 col-md-6">
+                                    <div class="postbox__content-area mb-60">
+                                       <h4>Our Approach</h4>
+                                       <div class="postbox__text mb-30">
+                                          <p>Must explain to you how all praising uts pain was <br> born and I will gives you a itself completed <br> account of the system, and sed expounds the ut <br> actual teachings of that greater </p>
+                                          <div class="postbox__text-list">
+                                             <ul>
+                                                <li><i class="fa-solid fa-check"></i>Extramural Funding</li>
+                                                <li><i class="fa-solid fa-check"></i>Bacteria Markers</li>
+                                                <li><i class="fa-solid fa-check"></i>Nam nec mi euismod euismod</li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6 col-md-6">
+                                    <div class="postbox__meta-img w-img mb-60"><img src="{% static 'assets/img/blog/blog-details-meta-03.jpg' %}" alt=""></div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-lg-12">
+                                    <div class="postbox__content-area mb-40">
+                                       <h4 class="mb-25"><a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}">What Is A Business Technology Roadmap?</a></h4>
+                                       <p>Unlike detailed blueprints that lay out all tasks, deadlines, bug reports, and more along the way, technology roadmaps are high-level visual summaries highlighting a company’s vision or plans.
+                                       </p>
+                                       <p>In an Agile approach, a technology roadmap feeds the sprint and grooming processes, providing insight into how the product will travel from start to finish. It makes it easier for development teams to:</p>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6 col-md-6">
+                                    <div class="postbox__meta-img mb-60">
+                                       <img src="{% static 'assets/img/blog/blog-details-meta-01.jpg' %}" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6 col-md-6">
+                                    <div class="postbox__meta-img mb-60">
+                                       <img src="{% static 'assets/img/blog/blog-details-meta-02.jpg' %}" alt="">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="postbox__tag-border">
+                                 <div class="row align-items-center">
+                                    <div class="col-xl-7 col-md-12">
+                                       <div class="postbox__tag">
+                                          <div class="postbox__tag-list tagcloud">
+                                             <span>Tag</span>
+                                             <a href="blog.html">Covid-19</a>
+                                             <a href="blog.html">Bacteria</a>
+                                             <a href="blog.html">Medicine</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-xl-5 col-md-12">
+                                       <div class="postbox__social-tag">
+                                          <span>Share</span>
+                                          <a class="blog-d-lnkd" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                          <a class="blog-d-pin" href="#"><i class="fa-brands fa-pinterest"></i></a>
+                                          <a class="blog-d-fb" href="#"><i class="fa-brands fa-facebook"></i></a>
+                                          <a class="blog-d-tweet" href="#"><i class="fa-brands fa-twitter"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </article>
+                        <div class="postbox__comment mb-65">
+                           <h3 class="postbox__comment-title">(04) Comment</h3>
+                           <ul>
+                              <li>
+                                 <div class="postbox__comment-box d-flex">
+                                    <div class="postbox__comment-info">
+                                       <div class="postbox__comment-avater mr-25">
+                                          <img src="{% static 'assets/img/blog/comments/comment-1.jpg' %}" alt="">
+                                       </div>
+                                    </div>
+                                    <div class="postbox__comment-text">
+                                       <div class="postbox__comment-name">
+                                          <h5>Kristin Watson</h5>
+                                          <span class="post-meta">MARCH 10, 2020</span>
+                                       </div>
+                                       <p>Patient Comments are a collection of comments submitted by viewers in response to <br> a question posed by a MedicineNet doctor.</p>
+                                       <div class="postbox__comment-reply">
+                                          <a href="#"><i class="fas fa-reply-all"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="children mb-30">
+                                 <div class="postbox__comment-box d-flex">
+                                    <div class="postbox__comment-info">
+                                       <div class="postbox__comment-avater mr-25">
+                                          <img src="{% static 'assets/img/blog/comments/comment-2.jpg' %}" alt="">
+                                       </div>
+                                    </div>
+                                    <div class="postbox__comment-text">
+                                       <div class="postbox__comment-name">
+                                          <h5>Brooklyn Simmons</h5>
+                                          <span class="post-meta">MARCH 10, 2020</span>
+                                       </div>
+                                       <p>Include anecdotal examples of your experience, or things you took notice of that you <br> feel others would find useful.</p>
+                                       <div class="postbox__comment-reply">
+                                          <a href="#"><i class="fas fa-reply-all"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="postbox__comment-form">
+                           <h3 class="postbox__comment-form-title">Leave a Reply</h3>
+                           <p>Your email address will not be published. Required fields are marked *</p>
+                           <form action="#">
+                              <div class="row">
+                                 <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                    <div class="postbox__comment-input">
+                                       <input type="text" placeholder="Enter your Name">
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                    <div class="postbox__comment-input">
+                                       <input type="email" placeholder="Enter your email">
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                    <div class="postbox__comment-input">
+                                       <input type="text" placeholder="Enter your number">
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                    <div class="postbox__comment-input">
+                                       <input type="text" placeholder="Enter your website">
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-12">
+                                    <div class="postbox__comment-input">
+                                       <textarea placeholder="Type your comment"></textarea>
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-12">
+                                    <div class="postbox__comment-btn">
+                                       <button type="submit" class="tp-btn">Post Comment</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-12">
+                     <div class="sidebar__wrapper pl-25 pb-50">
+                        <div class="sidebar__widget mb-45">
+                           <div class="sidebar__widget-content mb-50">
+                              <h3 class="sidebar__widget-title mb-25">Search</h3>
+                                 <form action="#">
+                              <div class="sidebar__search">
+                                    <div class="sidebar__search-input-2 p-relative">
+                                       <input type="text" placeholder="Search post">
+                                       <button type="submit"><i class="far fa-search p-absolute" ></i></button>
+                                    </div>
+                              </div>
+                              <select class="visitor-form__input_select">
+                                 <option>-- Category --</option>
+                                 <option value="Pediatrics">Pediatrics</option>
+                                 <option value="Gynaecology">Gynaecology</option>
+                                 <option value="Cardiology-Diabetes">Cardiology/Diabetes</option>
+                                 <option value="General-Practice">General Practice</option>
+                                 <option value="Gastroenterology">Gastroenterology</option>
+                                 <option value="Dermatology">Dermatology</option>
+                                 <option value="Opthalmology">Opthalmology</option>
+
+                                 <option value="Business-Partners">Business Partners</option>
+                                 <option value="GAIA-Healthcare-DMCC">GAIA Healthcare DMCC</option>
+                                 <option value="GAIA-Healthcare-FZ-LLC">GAIA Healthcare FZ LLC</option>
+                                 <option value="PDC-Drug-Store">PDC Drug Store</option>
+                                 <option value="Retail-Pharma">Retail Pharma</option>
+                                 <option value="Pre-Licensing-GCC">Pre-Licensing (GCC)</option>
+                                 <option value="Out-Licensing">Out Licensing</option>
+                              </select>
+                                 </form>
+
+                           </div>
+                        </div>
+                        <div class="sidebar__widget mb-55">
+                           <h3 class="sidebar__widget-title mb-25">Recent Post</h3>
+                           <div class="sidebar__widget-content">
+                              <div class="sidebar__post rc__post">
+                                 <div class="rc__post mb-20 d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                       <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}"><img src="{% static 'assets/img/blog/sidebar/blog-sm-1.jpg' %}" alt="blog-sidebar"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                       <div class="rc__meta">
+                                          <span>4 March. 2022</span>
+                                       </div>
+                                       <h3 class="rc__post-title">
+                                          <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}">Don't Underestimate Tree for Medicine</a>
+                                       </h3>
+                                    </div>
+                                 </div>
+                                 <div class="rc__post mb-20 d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                       <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}"><img src="{% static 'assets/img/blog/sidebar/blog-sm-2.jpg' %}" alt="blog-sidebar"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                       <div class="rc__meta">
+                                          <span>12 February. 2022</span>
+                                       </div>
+                                       <h3 class="rc__post-title">
+                                          <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}">Equipping Researchers in the Developing World</a>
+                                       </h3>
+                                    </div>
+                                 </div>
+                                 <div class="rc__post mb-20 d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                       <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}"><img src="{% static 'assets/img/blog/sidebar/blog-sm-3.jpg' %}" alt="blog-sidebar"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                       <div class="rc__meta">
+                                          <span>14 January. 2022</span>
+                                       </div>
+                                       <h3 class="rc__post-title">
+                                          <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}">Role of Genetics in treating Heigh-grade glioma</a>
+                                       </h3>
+                                    </div>
+                                 </div>
+                                 <div class="rc__post d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                       <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}"><img src="{% static 'assets/img/blog/sidebar/blog-sm-4.jpg' %}" alt="blog-sidebar"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                       <div class="rc__meta">
+                                          <span>18 March. 2021</span>
+                                       </div>
+                                       <h3 class="rc__post-title">
+                                          <a href="{% url 'ui:media' 'Dont-Underestimate-Tree-for-Medicine' %}">Research And Verify of a Covid-19 Virus</a>
+                                       </h3>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- postbox area end -->
+
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

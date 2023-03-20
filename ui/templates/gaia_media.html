@@ -1,0 +1,558 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/img/banner/breadcrumb-06.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">MEDIA & NEWS</h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <b href="shop.html"> All Category</b></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- blog-area -->
+         <section id="section_media" class="blog-area pt-125 pb-100"  data-background="{% static 'assets/img/shape/shape-bg-01.png' %}">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-md-8 col-12">
+                     <div class="tp-section">
+                        <span class="tp-section__sub-title left-line mb-25">Waht’s New</span>
+                        <h3 class="slider-content__title tp-ab-sm-title mb-45">Media & Article</h3>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-12">
+                     <div class="tp-blog-arrow d-flex align-items-center">
+                        <div class="tp-blog-p"><i class="fa-regular fa-arrow-left"></i></div>
+                        <div class="tp-blog-n"><i class="fa-regular fa-arrow-right"></i></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-container tp-blog-active wow fadeInUp" data-wow-delay=".3s">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}"><img src="{% static 'assets/img/blog/blog-thumb-01.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Pediatrics</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="blog.html">Read moRe</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}"><img src="{% static 'assets/img/blog/blog-thumb-02.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">GAIA Healthcare DMCC</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="blog.html">Read moRe</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}"><img src="{% static 'assets/img/blog/blog-thumb-03.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Retail Pharma</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Identifying bases of disease <br> pathophysio</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'ui:media' 'Identifying-bases-of-disease' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}"><img src="{% static 'assets/img/blog/blog-thumb-04.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Out Licensing</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Coronavirus global health emergency</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'ui:media' 'Coronavirus-global-health-emergency' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}"><img src="{% static 'assets/img/blog/blog-thumb-05.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Retail Pharma</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Identifying bases of disease <br> pathophysio</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'ui:media' 'Coronavirus-global-health-emergency' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}"><img src="{% static 'assets/img/blog/blog-thumb-06.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Out Licensing</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Coronavirus global health emergency</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'ui:media' 'Coronavirus-global-health-emergency' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}"><img src="{% static 'assets/img/blog/blog-thumb-01.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Pediatrics</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'ui:media' 'Coronavirus-global-health-emergency' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}"><img src="{% static 'assets/img/blog/blog-thumb-02.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">GAIA Healthcare DMCC</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'ui:media' 'Coronavirus-global-health-emergency' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- blog-area-end -->
+
+         <!-- postbox area start -->
+         <div class="postbox-area pt-120 pb-80">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xxl-8 col-xl-8 col-lg-7 col-md-12">
+                     <div class="postbox pr-20 pb-50">
+                        <article class="postbox__item format-image mb-60 transition-3">
+                           <div class="postbox__thumb w-img mb-35">
+                              <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">
+                                 <img src="{% static 'assets/img/blog/blog-in-01.jpg' %}" alt="blog-thumg">
+                              </a>
+                           </div>
+                           <div class="postbox__content">
+                              <div class="postbox__meta mb-40">
+                                 <span><a href="team-details.html"><i class="fa-regular fa-user"></i> Alextina</a></span>
+                                 <span><i class="fa-regular fa-clock"></i> Dec 28, 2022</span>
+                                 <span><a href="about.html"><i class="fa-regular fa-message-dots"></i> (04) Coments</a></span>
+                                 <span><i class="fa-light fa-eye"></i> 1,526 views</span>
+                              </div>
+                              <h3 class="postbox__title mb-40">
+                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Lavoratories used for scientic reseach take many froms.</a>
+                              </h3>
+                              <div class="postbox__text mb-40">
+                                 <p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and engineering. A physics laboratory</p>
+                              </div>
+                              <div class="postbox__read-more">
+                                 <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}" class="tp-btn">Reade more</a>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="postbox__item format-image mb-60 transition-3">
+                           <div class="postbox__thumb postbox-active swiper-container w-img p-relative mb-35">
+                              <div class="swiper-wrapper">
+                                 <div class="postbox__slider-item swiper-slide">
+                                    <img src="{% static 'assets/img/blog/blog-in-02.jpg' %}" alt="">
+                                 </div>
+                                 <div class="postbox__slider-item swiper-slide">
+                                    <img src="{% static 'assets/img/blog/blog-in-01.jpg' %}" alt="">
+                                 </div>
+                                 <div class="postbox__slider-item swiper-slide">
+                                    <img src="{% static 'assets/img/blog/blog-in-03.jpg' %}" alt="">
+                                 </div>
+                              </div>
+                              <div class="postbox-nav">
+                                 <button class="postbox-slider-button-next"><i class="fa-solid fa-chevron-right"></i></button>
+                                 <button class="postbox-slider-button-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                              </div>
+                           </div>
+                           <div class="postbox__content">
+                              <div class="postbox__meta mb-40">
+                                 <span><a href="team-details.html"><i class="fa-regular fa-user"></i> Alextina</a></span>
+                                 <span><i class="fa-regular fa-clock"></i> Dec 28, 2022</span>
+                                 <span><a href="about.html"><i class="fa-regular fa-message-dots"></i> (04) Coments</a></span>
+                                 <span><i class="fa-light fa-eye"></i> 1,526 views</span>
+                              </div>
+                              <h3 class="postbox__title mb-40">
+                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Lavoratories used for scientic reseach take many froms.</a>
+                              </h3>
+                              <div class="postbox__text mb-40">
+                                 <p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and engineering. A physics laboratory</p>
+                              </div>
+                              <div class="postbox__read-more">
+                                 <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}" class="tp-btn">read more</a>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="postbox__item format-video mb-60 transition-3">
+                           <div class="postbox__thumb postbox__video p-relative w-img mb-35">
+                              <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">
+                                 <img src="{% static 'assets/img/blog/blog-in-03.jpg' %}" alt="">
+                              </a>
+                              <a href="https://www.youtube.com/watch?v=OMqWRlxo1oQ" class="play-btn popup-video"><i class="fas fa-play"></i></a>
+                           </div>
+                           <div class="postbox__content">
+                              <div class="postbox__meta mb-40">
+                                 <span><a href="team-details.html"><i class="fa-regular fa-user"></i> Alextina</a></span>
+                                 <span><i class="fa-regular fa-clock"></i> Dec 28, 2022</span>
+                                 <span><a href="about.html"><i class="fa-regular fa-message-dots"></i> (04) Coments</a></span>
+                                 <span><i class="fa-light fa-eye"></i> 1,526 views</span>
+                              </div>
+                              <h3 class="postbox__title mb-40">
+                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Four Ways to Fullfill Your Task For Makes Parents Happy and Healthy</a>
+                              </h3>
+                              <div class="postbox__text mb-40">
+                                 <p>Compellingly exploit B2B vortals with emerging total linkage. Appropriately pursue strategic leadership whe intermandated ideas. Proactively revolutionize interoperable "outside the box" thinking with fully researched innovation. Dramatically facilitate exceptional architectures and bricks-and-clicks data. Progressively genera extensible e-services for.</p>
+                              </div>
+                              <div class="postbox__read-more">
+                                 <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}" class="tp-btn">read more</a>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="postbox__item format-image mb-60 transition-3">
+                           <div class="postbox__thumb postbox-active swiper-container w-img p-relative mb-35">
+                              <div class="swiper-wrapper">
+                                 <div class="postbox__slider-item swiper-slide">
+                                    <img src="{% static 'assets/img/blog/blog-in-02.jpg' %}" alt="">
+                                 </div>
+                                 <div class="postbox__slider-item swiper-slide">
+                                    <img src="{% static 'assets/img/blog/blog-in-01.jpg' %}" alt="">
+                                 </div>
+                                 <div class="postbox__slider-item swiper-slide">
+                                    <img src="{% static 'assets/img/blog/blog-in-03.jpg' %}" alt="">
+                                 </div>
+                              </div>
+                              <div class="postbox-nav">
+                                 <button class="postbox-slider-button-next"><i class="fa-solid fa-chevron-right"></i></button>
+                                 <button class="postbox-slider-button-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                              </div>
+                           </div>
+                           <div class="postbox__content">
+                              <div class="postbox__meta mb-40">
+                                 <span><a href="team-details.html"><i class="fa-regular fa-user"></i> Alextina</a></span>
+                                 <span><i class="fa-regular fa-clock"></i> Dec 28, 2022</span>
+                                 <span><a href="about.html"><i class="fa-regular fa-message-dots"></i> (04) Coments</a></span>
+                                 <span><i class="fa-light fa-eye"></i> 1,526 views</span>
+                              </div>
+                              <h3 class="postbox__title mb-40">
+                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Lavoratories used for scientic reseach take many froms.</a>
+                              </h3>
+                              <div class="postbox__text mb-40">
+                                 <p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and engineering. A physics laboratory</p>
+                              </div>
+                              <div class="postbox__read-more">
+                                 <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}" class="tp-btn">read more</a>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="postbox__item format-image mb-60 transition-3">
+                           <div class="postbox__thumb w-img mb-35">
+                              <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">
+                                 <img src="{% static 'assets/img/blog/blog-in-01.jpg' %}" alt="blog-thumg">
+                              </a>
+                           </div>
+                           <div class="postbox__content">
+                              <div class="postbox__meta mb-40">
+                                 <span><a href="team-details.html"><i class="fa-regular fa-user"></i> Alextina</a></span>
+                                 <span><i class="fa-regular fa-clock"></i> Dec 28, 2022</span>
+                                 <span><a href="about.html"><i class="fa-regular fa-message-dots"></i> (04) Coments</a></span>
+                                 <span><i class="fa-light fa-eye"></i> 1,526 views</span>
+                              </div>
+                              <h3 class="postbox__title mb-40">
+                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Lavoratories used for scientic reseach take many froms.</a>
+                              </h3>
+                              <div class="postbox__text mb-40">
+                                 <p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and engineering. A physics laboratory</p>
+                              </div>
+                              <div class="postbox__read-more">
+                                 <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}" class="tp-btn">Reade more</a>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="postbox__item format-video mb-60 transition-3">
+                           <div class="postbox__thumb postbox__video p-relative w-img mb-35">
+                              <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">
+                                 <img src="{% static 'assets/img/blog/blog-in-03.jpg' %}" alt="">
+                              </a>
+                              <a href="https://www.youtube.com/watch?v=OMqWRlxo1oQ" class="play-btn popup-video"><i class="fas fa-play"></i></a>
+                           </div>
+                           <div class="postbox__content">
+                              <div class="postbox__meta mb-40">
+                                 <span><a href="team-details.html"><i class="fa-regular fa-user"></i> Alextina</a></span>
+                                 <span><i class="fa-regular fa-clock"></i> Dec 28, 2022</span>
+                                 <span><a href="about.html"><i class="fa-regular fa-message-dots"></i> (04) Coments</a></span>
+                                 <span><i class="fa-light fa-eye"></i> 1,526 views</span>
+                              </div>
+                              <h3 class="postbox__title mb-40">
+                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Four Ways to Fullfill Your Task For Makes Parents Happy and Healthy</a>
+                              </h3>
+                              <div class="postbox__text mb-40">
+                                 <p>Compellingly exploit B2B vortals with emerging total linkage. Appropriately pursue strategic leadership whe intermandated ideas. Proactively revolutionize interoperable "outside the box" thinking with fully researched innovation. Dramatically facilitate exceptional architectures and bricks-and-clicks data. Progressively genera extensible e-services for.</p>
+                              </div>
+                              <div class="postbox__read-more">
+                                 <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}" class="tp-btn">read more</a>
+                              </div>
+                           </div>
+                        </article>
+                        <div class="basic-pagination">
+                           <nav>
+                              <ul>
+                                 <li>
+                                    <a href="blog.html">
+                                       <i class="fa-light fa-arrow-left-long"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="blog.html">1</a>
+                                 </li>
+                                 <li>
+                                    <span class="current">2</span>
+                                 </li>
+                                 <li>
+                                    <a href="blog.html">3</a>
+                                 </li>
+                                 <li>
+                                    <a href="blog.html">...</a>
+                                 </li>
+                                 <li>
+                                    <a href="blog.html">
+                                       <i class="fa-light fa-arrow-right-long"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-12">
+                     <div class="sidebar__wrapper pl-25 pb-50">
+                        <div class="sidebar__widget mb-45">
+                           <div class="sidebar__widget-content mb-50">
+                              <h3 class="sidebar__widget-title mb-25">Search</h3>
+                                 <form action="#">
+                              <div class="sidebar__search">
+                                    <div class="sidebar__search-input-2 p-relative">
+                                       <input type="text" placeholder="Search post">
+                                       <button type="submit"><i class="far fa-search p-absolute" ></i></button>
+                                    </div>
+                              </div>
+                              <select class="visitor-form__input_select">
+                                 <option>-- Category --</option>
+                                 <option value="Pediatrics">Pediatrics</option>
+                                 <option value="Gynaecology">Gynaecology</option>
+                                 <option value="Cardiology-Diabetes">Cardiology/Diabetes</option>
+                                 <option value="General-Practice">General Practice</option>
+                                 <option value="Gastroenterology">Gastroenterology</option>
+                                 <option value="Dermatology">Dermatology</option>
+                                 <option value="Opthalmology">Opthalmology</option>
+
+                                 <option value="Business-Partners">Business Partners</option>
+                                 <option value="GAIA-Healthcare-DMCC">GAIA Healthcare DMCC</option>
+                                 <option value="GAIA-Healthcare-FZ-LLC">GAIA Healthcare FZ LLC</option>
+                                 <option value="PDC-Drug-Store">PDC Drug Store</option>
+                                 <option value="Retail-Pharma">Retail Pharma</option>
+                                 <option value="Pre-Licensing-GCC">Pre-Licensing (GCC)</option>
+                                 <option value="Out-Licensing">Out Licensing</option>
+                              </select>
+                                 </form>
+
+                           </div>
+                        </div>
+                        <div class="sidebar__widget mb-55">
+                           <h3 class="sidebar__widget-title mb-25">Recent Post</h3>
+                           <div class="sidebar__widget-content">
+                              <div class="sidebar__post rc__post">
+                                 <div class="rc__post mb-20 d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                       <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}"><img src="{% static 'assets/img/blog/sidebar/blog-sm-1.jpg' %}" alt="blog-sidebar"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                       <div class="rc__meta">
+                                          <span>4 March. 2022</span>
+                                       </div>
+                                       <h3 class="rc__post-title">
+                                          <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Don't Underestimate Tree for Medicine</a>
+                                       </h3>
+                                    </div>
+                                 </div>
+                                 <div class="rc__post mb-20 d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                       <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}"><img src="{% static 'assets/img/blog/sidebar/blog-sm-2.jpg' %}" alt="blog-sidebar"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                       <div class="rc__meta">
+                                          <span>12 February. 2022</span>
+                                       </div>
+                                       <h3 class="rc__post-title">
+                                          <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Equipping Researchers in the Developing World</a>
+                                       </h3>
+                                    </div>
+                                 </div>
+                                 <div class="rc__post mb-20 d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                       <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}"><img src="{% static 'assets/img/blog/sidebar/blog-sm-3.jpg' %}" alt="blog-sidebar"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                       <div class="rc__meta">
+                                          <span>14 January. 2022</span>
+                                       </div>
+                                       <h3 class="rc__post-title">
+                                          <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Role of Genetics in treating Heigh-grade glioma</a>
+                                       </h3>
+                                    </div>
+                                 </div>
+                                 <div class="rc__post d-flex align-items-center">
+                                    <div class="rc__post-thumb">
+                                       <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}"><img src="{% static 'assets/img/blog/sidebar/blog-sm-4.jpg' %}" alt="blog-sidebar"></a>
+                                    </div>
+                                    <div class="rc__post-content">
+                                       <div class="rc__meta">
+                                          <span>18 March. 2021</span>
+                                       </div>
+                                       <h3 class="rc__post-title">
+                                          <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Research And Verify of a Covid-19 Virus</a>
+                                       </h3>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+<!--                        <div class="sidebar__widget mb-55">-->
+<!--                           <h3 class="sidebar__widget-title mb-25">Popular Tag</h3>-->
+<!--                           <div class="sidebar__widget-content">-->
+<!--                              <div class="tagcloud">-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Covid-19</a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Gene</a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Test</a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Lab</a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">data</a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Virus</a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Pandemic </a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Symptoms</a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Medicine</a>-->
+<!--                                 <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Bacteria</a>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- postbox area end -->
+
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

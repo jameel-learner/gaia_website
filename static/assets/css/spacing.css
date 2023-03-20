@@ -958,3 +958,13 @@
 .pr-200{
     padding-right:200px
 }
+
+
+.z0         {     z-index:0;   }
+.z10         {     z-index:10;   }
+.bg-red         {     background-color:red;   }
+.bg-purple         {     background-color:var(--tp-theme-secondary);   }
+.bg-pink         {     background-color: #FDE5F3;   }
+.p10        {     padding:10px;    }
+.cw        {     color:white;  !important;  }
+.cr        {     color:red;  !important;  }

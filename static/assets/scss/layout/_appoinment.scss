@@ -104,7 +104,8 @@
     }
 }
 .visitor-info-bg {
-    background-color: var(--tp-common-white);
+    //background-color: var(--tp-common-white);
+    background: rgba(23, 28, 143, 0.6);
     padding: 42px 62px 0px 62px;
     margin-bottom: -90px;
     @media #{$md} {

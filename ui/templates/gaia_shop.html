@@ -1,0 +1,824 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/img/banner/breadcrumb-01.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">PRODUCTS</h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <b href="shop.html"> All Category</b></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+<!--               <div style="position: absolute; ">-->
+<!--                  <h2 class="tp-breadcrumb__title">Shop</h2>-->
+<!--               </div>-->
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- shope-area -->
+         <div class="shop-area pt-120 pb-130">
+            <div class="container">
+               <div class="row mb-5">
+                  <div class="col-md-6">
+                     <div class="tp-section__sub-title">
+                        <h4>Pediatrics</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="tpfilter d-flex align-items-center">
+                        <a href="{% url 'ui:shop_all' 'Pediatrics' %}">View All</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                     <div class="swiper-container gall-active4">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-01.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/xl/shop-01.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Glucose-Monitoring' %}">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$46.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-02.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-02.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$58.10</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-03.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '34' 'Pharmaceuticals-Plant' %}">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$88.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-04.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                    <span class="tpshopitem__product-base">NEW</span>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '45' 'Digital-Thermometer' %}">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row mb-5">
+                  <div class="col-md-6">
+                     <div class="tp-section__sub-title">
+                        <h4>Gynaecology</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="tpfilter d-flex align-items-center">
+                        <a href="{% url 'ui:shop_all' 'Gynaecology' %}">View All</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                     <div class="swiper-container gall-active4">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-03.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$46.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-04.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$58.10</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-05.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-05.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$88.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-06.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-06.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                    <span class="tpshopitem__product-base">NEW</span>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row mb-5">
+                  <div class="col-md-6">
+                     <div class="tp-section__sub-title">
+                        <h4>Cardiology/Diabetes</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="tpfilter d-flex align-items-center">
+                        <a href="{% url 'ui:shop_all' 'Cardiology-Diabetes' %}">View All</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                     <div class="swiper-container gall-active4">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-05.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-05.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$88.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-06.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-06.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                    <span class="tpshopitem__product-base">NEW</span>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-07.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-07.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$46.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-08.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-08.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$58.10</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row mb-5">
+                  <div class="col-md-6">
+                     <div class="tp-section__sub-title">
+                        <h4>General Practice</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="tpfilter d-flex align-items-center">
+                        <a href="{% url 'ui:shop_all' 'General-Practice' %}">View All</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                     <div class="swiper-container gall-active4">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-07.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-07.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$46.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-08.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-08.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$58.10</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-09.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-09.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$88.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-10.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-10.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                    <span class="tpshopitem__product-base">NEW</span>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row mb-5">
+                  <div class="col-md-6">
+                     <div class="tp-section__sub-title">
+                        <h4>Gastroenterology</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="tpfilter d-flex align-items-center">
+                        <a href="{% url 'ui:shop_all' 'Gastroenterology' %}">View All</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                     <div class="swiper-container gall-active4">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-09.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-09.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$88.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-10.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-10.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                    <span class="tpshopitem__product-base">NEW</span>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-11.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-11.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$46.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-12.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-12.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$58.10</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row mb-5">
+                  <div class="col-md-6">
+                     <div class="tp-section__sub-title">
+                        <h4>Dermatology</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="tpfilter d-flex align-items-center">
+                        <a href="{% url 'ui:shop_all' 'Dermatology' %}">View All</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                     <div class="swiper-container gall-active4">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-01.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-01.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$46.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-02.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-02.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$58.10</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-03.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$88.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-04.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                    <span class="tpshopitem__product-base">NEW</span>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row mb-5">
+                  <div class="col-md-6">
+                     <div class="tp-section__sub-title">
+                        <h4>Opthalmology</h4>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="tpfilter d-flex align-items-center">
+                        <a href="{% url 'ui:shop_all' 'Opthalmology' %}">View All</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                     <div class="swiper-container gall-active4">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-03.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$46.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-04.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$58.10</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-05.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-05.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$88.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-06.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-06.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                    <span class="tpshopitem__product-base">NEW</span>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'Single-Hand-Gloves' %}">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+            </div>
+         </div>
+         <!-- shope-area-end -->
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

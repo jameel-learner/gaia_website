@@ -1,0 +1,135 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/img/banner/breadcrumb-06.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title"><a href="{% url 'ui:history_all' %}">GLIPMSES</a></h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <b> {{service_name|upper}}</b></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- project-area -->
+         <section class="project-area pt-125 pb-35">
+            <div class="container">
+               <div class="row mb-40">
+                  <div class="col-12">
+                     <div class="tpoverview mb-60 wow fadeInLeft" data-wow-delay=".2s">
+                        <h5 class="tpproject-title mb-50">Project Overview</h5>
+<!--                        <p>Client:<span> Rasalina De Willam (USA)</span></p>-->
+<!--                        <p>Date:<span> March 21, 2020</span></p>-->
+<!--                        <p>Category:<span>  Laboratory & Science Research</span></p>-->
+<!--                        <div class="tpoverview__social pt-30">-->
+<!--                           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                           <a class="tpover-social-prn" href="#"><i class="fa-brands fa-pinterest-p"></i></a>-->
+<!--                           <a class="tpover-social-tweet" href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                           <a class="tpover-social-tube" href="#"><i class="fa-brands fa-youtube"></i></a>-->
+<!--                        </div>-->
+                     </div>
+                  </div>
+                  <div class="col-12">
+                     <div class="tpviewtext mb-60 wow fadeInRight" data-wow-delay=".2s">
+                        <p class="tpviewtext__para">When faced with a supply chain disruption, proactive and reactive supply chain risk management can in fact make or break a company’s existence. One of the most famous (or rather infamous) cases is the fire at the Philips microchip plant in Albuquerque, New Mexico, in 2000, which simultaneously affected both Noki and Ericsson. However, both companies took a very different approach toward the incident, and in hindsight,</p>
+                        <p>Clearly displayed how to and how not to handle supply chain disruptions. New Mexico, in 2000, which simultaneously affected both Nokia and Ericsson</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-12 col-md-12">
+                     <div class="tpprothumb mb-120 wow fadeInUp" data-wow-delay=".2s">
+                        <img src="{% static 'assets/img/gallery/project-01.jpg' %}" alt="projrct-thumb">
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="tpprosolution mb-40 wow fadeInUp" data-wow-delay=".2s">
+                        <h5 class="tpproject-title mb-50">Challenge & Solution</h5>
+                     </div>
+                  </div>
+                  <div class="col-12">
+                     <div class="tpprosolution pb-40 wow fadeInUp" data-wow-delay=".2s">
+                        <p>Being a top us private facility for any kind of  scientific research, we are proud of the overall amount of work we`ve done so far. Excepteur sint occaecat cupidatat non dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p>When faced with a supply chain disruption, proactive and reactive supply chain risk management can in fact make or break a company’s existence. One of the most famous (or rather infamous) cases is the fire at the Philips microchip plant in Albuquerque, New Mexico, in 2000, which simultaneously affected both Nokia and Ericsson. However, both companies took a very different approach toward the incident, and in hindsight.</p>
+                        <p>Clearly displayed how to and how not to handle supply chain disruptions. New Mexico, in 2000, which simultaneously affected both Nokia and Ericsson</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="tpprovideo p-relative mb-115 wow fadeInUp" data-wow-delay=".2s">
+                        <img src="{% static 'assets/img/gallery/project-02.jpg' %}" alt="projrct-thumb-video">
+                        <a class="play-btn popup-video" href="https://www.youtube.com/watch?v=OMqWRlxo1oQ"><i class="fas fa-play"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="tpprosolution mb-40 wow fadeInUp" data-wow-delay=".2s">
+                        <h5 class="tpproject-title mb-40">Our Process</h5>
+                     </div>
+                  </div>
+                  <div class="col-12">
+                     <div class="tpprosolution pb-30 wow fadeInUp" data-wow-delay=".2s">
+                        <p>Being a top us private facility for any kind of  scientific research, we are proud of the overall amount of work we`ve done so far. Excepteur sint occaecat cupidatat non dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p>When faced with a supply chain disruption, proactive and reactive supply chain risk management can in fact make or break a company’s existence. One of the most famous (or rather infamous) cases is the fire at the Philips microchip plant in Albuquerque, New Mexico, in 2000, which simultaneously affected both Nokia and Ericsson. However, both companies took a very different approach toward the incident, and in hindsight.</p>
+                        <p>Clearly displayed how to and how not to handle supply chain disruptions. New Mexico, in 2000, which simultaneously affected both Nokia and Ericsson</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- project-area-end -->
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

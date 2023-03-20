@@ -1,0 +1,587 @@
+{%  extends 'ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/img/banner/breadcrumb-04.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">{{product_name|upper}}</h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <a href="{% url 'ui:shop' %}"> PRODUCT DETAILS</a></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+<!--               <div style="position: absolute; ">-->
+<!--                  <h2 class="tp-breadcrumb__title">Shop</h2>-->
+<!--               </div>-->
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- shope-details-area -->
+         <section class="shop-area pt-120 pb-70">
+            <div class="container">
+               <div class="shop-left-right ml-130 mr-130">
+                  <div class="row">
+                     <div class="col-lg-6 col-md-6">
+                        <div class="productthumb mb-40 wow fadeInRighLeft" data-wow-delay=".4s">
+                           <img src="{% static 'assets/img/shop/product-01.jpg' %}" alt="product-thumb">
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="product mb-40 ml-20 wow fadeInRighRight" data-wow-delay=".4s">
+                           <div class="product__details-content mb-40">
+                              <h5 class="product-dtitle mb-20">Medical Hand Glabs</h5>
+                              <p>Rorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore.</p>
+                              <div class="product-dinfo mt-25">
+                                 <div class="product-rating">
+                                    <a href="#"><i class="fa-solid fa-star"></i></a>
+                                    <a href="#"><i class="fa-solid fa-star"></i></a>
+                                    <a href="#"><i class="fa-solid fa-star"></i></a>
+                                    <a href="#"><i class="fa-light fa-star"></i></a>
+                                    <a href="#"><i class="fa-light fa-star"></i></a>
+                                 </div>
+                                 <span class="review-count">(4 customer review)</span>
+                              </div>
+                              <h5 class="product-dprice mt-30">$28.00 <del>/38</del></h5>
+                              <h6 class="product-model-title mt-30 mb-15">Choose Color</h6>
+                              <div class="product-model-list mb-20">
+                                 <a href="#">tyk</a>
+                                 <a href="#">ffd2</a>
+                                 <a href="#">23tt</a>
+                                 <a href="#">r454</a>
+                                 <a href="#">45hy</a>
+                              </div>
+<!--                              <div class="pro-quan-area d-sm-flex align-items-center mb-15">-->
+<!--                                 <div class="product-quantity-title mr-25">-->
+<!--                                    <label>Quantity</label>-->
+<!--                                 </div>-->
+<!--                                 <div class="tp-product-quantity mt-10 mb-10">-->
+<!--                                    <span class="cart-minus"><i class="fa-solid fa-arrow-left"></i></span>-->
+<!--                                    <input class="tp-cart-input" type="text" value="1"/>-->
+<!--                                    <span class="cart-plus"><i class="fa-solid fa-arrow-right"></i></span>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                              <div class="product-button">-->
+<!--                                 <a href="cart.html" class="tp-btn mr-20">Add to cart</a>-->
+<!--                                 <a href="cart.html" class="tp-btn-second">Buy now</a>-->
+<!--                              </div>-->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="productdetails pt-35 pb-75">
+                     <div class="row">
+                        <div class="col-lg-12">
+                           <div class="product-additional-tab">
+                              <div class="pro-details-nav mb-40">
+                                 <ul class="nav nav-tabs pro-details-nav-btn" id="myTabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                       <button class="nav-links active" id="home-tab-1" data-bs-toggle="tab" data-bs-target="#home-1" type="button" role="tab" aria-controls="home-1" aria-selected="true">Prodcut Details</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                       <button class="nav-links" id="information-tab" data-bs-toggle="tab" data-bs-target="#additional-information" type="button" role="tab" aria-controls="additional-information" aria-selected="false">Additional Info</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                       <button class="nav-links" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Review (08)</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                       <button class="nav-links" id="size-chart-tab" data-bs-toggle="tab" data-bs-target="#chart" type="button" role="tab" aria-controls="chart" aria-selected="false">Faq</button>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="tab-content tp-content-tab" id="myTabContent-2">
+                                 <div class="tab-para tab-pane fade show active" id="home-1" role="tabpanel" aria-labelledby="home-tab-1">
+                                    <p class="mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate vestibulum Phasellus rhoncus, dolor eget viverra pretium, dolor tellus aliquet nunc, vitae ultricies erat elit eu lacus. Vestibulum non justo consectetur, cursus ante, tincidunt sapien. Nulla quis diam sit amet turpis interdum accumsan quis nec enim. Vivamus faucibus ex sed nibh egestas elementum. Mauris et bibendum dui. Aenean consequat pulvinar luctus. Suspendisse consectetur tristique tortor</p>
+                                    <p>We have covered many special events such as fireworks, fairs, parades, races, walks, awards ceremonies, fashion shows, sporting events, and even a memorial service.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate vestibulum Phasellus rhoncus, dolor eget viverra pretium, dolor tellus aliquet nunc, vitae ultricies erat elit eu lacus. Vestibulum non justo consectetur, cursus ante, tincidunt sapien. Nulla quis diam sit amet turpis interdum accumsan quis nec enim. Vivamus faucibus ex sed nibh egestas elementum. Mauris et bibendum dui. Aenean consequat pulvinar luctus. Suspendisse consectetur</p>
+                                 </div>
+                                 <div class="tab-pane fade" id="additional-information" role="tabpanel"
+                                 aria-labelledby="information-tab">
+                                    <div class="product__details-info table-responsive">
+                                       <table class="table table-striped">
+                                          <tbody>
+                                             <tr>
+                                                <td class="add-info">Weight</td>
+                                                <td class="add-info-list"> 2 lbs</td>
+                                             </tr>
+                                             <tr>
+                                                <td class="add-info">Dimensions</td>
+                                                <td class="add-info-list"> 12 × 16 × 19 in</td>
+                                             </tr>
+                                             <tr>
+                                                <td class="add-info">Product</td>
+                                                <td class="add-info-list"> Purchase this product on rag-bone.com</td>
+                                             </tr>
+                                             <tr>
+                                                <td class="add-info">Color</td>
+                                                <td class="add-info-list"> Gray, Black</td>
+                                             </tr>
+                                             <tr>
+                                                <td class="add-info">Size</td>
+                                                <td class="add-info-list"> S, M, L, XL</td>
+                                             </tr>
+                                             <tr>
+                                                <td class="add-info">Model</td>
+                                                <td class="add-info-list"> Model </td>
+                                             </tr>
+                                             <tr>
+                                                <td class="add-info">Shipping</td>
+                                                <td class="add-info-list"> Standard shipping: $5,95L</td>
+                                             </tr>
+                                             <tr>
+                                                <td class="add-info">Care Info</td>
+                                                <td class="add-info-list"> Machine Wash up to 40ºC/86ºF Gentle Cycle</td>
+                                             </tr>
+                                             <tr>
+                                                <td class="add-info">Brand</td>
+                                                <td  class="add-info-list">  Kazen</td>
+                                             </tr>
+                                          </tbody>
+                                      </table>
+                                    </div>
+                                 </div>
+                                 <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                                    <div class="product-details-review">
+                                       <h3 class="tp-comments-title mb-35">3 reviews for “Wide Cotton Tunic extreme hammer”</h3>
+                                       <div class="latest-comments mb-55">
+                                          <ul>
+                                             <li>
+                                                <div class="comments-box d-flex">
+                                                   <div class="comments-avatar mr-25">
+                                                      <img src="{% static 'assets/img/shop/reviewer-01.png' %}" alt="">
+                                                   </div>
+                                                   <div class="comments-text">
+                                                      <div class="comments-top d-sm-flex align-items-start justify-content-between mb-5">
+                                                         <div class="avatar-name">
+                                                            <b>Siarhei Dzenisenka</b>
+                                                            <div class="comments-date mb-20">
+                                                               <span>March 27, 2018 9:51 am</span>
+                                                            </div>
+                                                         </div>
+                                                         <div class="user-rating">
+                                                            <ul>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                      <p class="m-0">This is cardigan is a comfortable warm classic piece. Great to layer with a light top and you can dress up or down given the jewel buttons. I'm 5'8” 128lbs a 34A and the Small fit fine.</p>
+                                                   </div>
+                                                </div>
+                                             </li>
+                                             <li>
+                                                <div class="comments-box d-flex">
+                                                   <div class="comments-avatar mr-25">
+                                                      <img src="{% static 'assets/img/shop/reviewer-02.png' %}" alt="">
+                                                   </div>
+                                                   <div class="comments-text">
+                                                      <div class="comments-top d-sm-flex align-items-start justify-content-between mb-5">
+                                                         <div class="avatar-name">
+                                                            <b>Tommy Jarvis </b>
+                                                            <div class="comments-date mb-20">
+                                                               <span>March 27, 2018 9:51 am</span>
+                                                            </div>
+                                                         </div>
+                                                         <div class="user-rating">
+                                                            <ul>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                      <p class="m-0">This is cardigan is a comfortable warm classic piece. Great to layer with a light top and you can dress up or down given the jewel buttons. I'm 5'8” 128lbs a 34A and the Small fit fine.</p>
+                                                   </div>
+                                                </div>
+                                             </li>
+                                             <li>
+                                                <div class="comments-box d-flex">
+                                                   <div class="comments-avatar mr-25">
+                                                      <img src="{% static 'assets/img/shop/reviewer-03.png' %}" alt="">
+                                                   </div>
+                                                   <div class="comments-text">
+                                                      <div class="comments-top d-sm-flex align-items-start justify-content-between mb-5">
+                                                         <div class="avatar-name">
+                                                            <b>Johnny Cash</b>
+                                                            <div class="comments-date mb-20">
+                                                               <span>March 27, 2018 9:51 am</span>
+                                                            </div>
+                                                         </div>
+                                                         <div class="user-rating">
+                                                            <ul>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                               <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                            </ul>
+                                                         </div>
+                                                      </div>
+                                                      <p class="m-0">This is cardigan is a comfortable warm classic piece. Great to layer with a light top and you can dress up or down given the jewel buttons. I'm 5'8” 128lbs a 34A and the Small fit fine.</p>
+                                                   </div>
+                                                </div>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="product-details-comment pb-100">
+                                          <div class="comment-title mb-20">
+                                             <h3>Add a review</h3>
+                                             <p>Your email address will not be published. Required fields are marked*</p>
+                                          </div>
+                                          <div class="comment-rating mb-20 d-flex">
+                                             <span>Overall ratings</span>
+                                             <ul>
+                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                             </ul>
+                                          </div>
+                                          <div class="comment-input-box">
+                                             <form action="#">
+                                                <div class="row">
+                                                   <div class="col-xxl-12">
+                                                      <div class="comment-input">
+                                                         <textarea placeholder="Your review..."></textarea>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-xxl-6">
+                                                      <div class="comment-input">
+                                                         <input type="text" placeholder="Your Name*">
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-xxl-6">
+                                                      <div class="comment-input">
+                                                         <input type="email" placeholder="Your Email*">
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-xxl-12">
+                                                      <div class="comment-submit">
+                                                         <button type="submit" class="tp-btn">Submit</button>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="size-chart-tab">
+                                    <div class="shop-faq">
+                                       <div class="faq-accordion">
+                                          <div class="accordion" id="accordionExample">
+                                             <div class="accordion-items">
+                                               <h2 class="accordion-header" id="headingOne">
+                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What payment do you except?</button>
+                                               </h2>
+                                               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                 <div class="accordion-content"><p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and <br>engineering. A physics laboratory might contain a particle accelerator or vacuum chamber, while a metallurgy laboratory could have apparatus for <br>casting or refining metals or for testing their strength.</p></div>
+                                               </div>
+                                             </div>
+                                             <div class="accordion-items">
+                                               <h2 class="accordion-header" id="headingTwo">
+                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Who performs the testing on laboratory specimens?</button>
+                                               </h2>
+                                               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                 <div class="accordion-content"><p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and <br>engineering. A physics laboratory might contain a particle accelerator or vacuum chamber, while a metallurgy laboratory could have apparatus for <br>casting or refining metals or for testing their strength.</p></div>
+                                               </div>
+                                             </div>
+                                             <div class="accordion-items">
+                                               <h2 class="accordion-header" id="headingThree">
+                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">What are laboratory tests?</button>
+                                               </h2>
+                                               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                 <div class="accordion-content"><p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and <br>engineering. A physics laboratory might contain a particle accelerator or vacuum chamber, while a metallurgy laboratory could have apparatus for <br>casting or refining metals or for testing their strength.</p></div>
+                                               </div>
+                                             </div>
+                                             <div class="accordion-items">
+                                               <h2 class="accordion-header" id="headingFour">
+                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Who performs the testing on laboratory specimens?</button>
+                                               </h2>
+                                               <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                 <div class="accordion-content"><p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and <br>engineering. A physics laboratory might contain a particle accelerator or vacuum chamber, while a metallurgy laboratory could have apparatus for <br>casting or refining metals or for testing their strength.</p></div>
+                                               </div>
+                                             </div>
+                                             <div class="accordion-items">
+                                               <h2 class="accordion-header" id="headingFive">
+                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">How can I be sure that my property is in good hands?</button>
+                                               </h2>
+                                               <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                                 <div class="accordion-content"><p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and <br>engineering. A physics laboratory might contain a particle accelerator or vacuum chamber, while a metallurgy laboratory could have apparatus for <br>casting or refining metals or for testing their strength.</p></div>
+                                               </div>
+                                             </div>
+                                             <div class="accordion-items">
+                                               <h2 class="accordion-header" id="headingSix">
+                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Do I have tp fast before my laboratory</button>
+                                               </h2>
+                                               <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                                 <div class="accordion-content"><p>Laboratories used for scientific research take many forms because of the differing requirements of specialists in the various fields of science and <br>engineering. A physics laboratory might contain a particle accelerator or vacuum chamber, while a metallurgy laboratory could have apparatus for <br>casting or refining metals or for testing their strength.</p></div>
+                                               </div>
+                                             </div>
+                                           </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tpproductitem">
+                     <div class="row">
+                        <div class="col-lg-12">
+                           <h5 class="product-dtitle mb-50">Related Product</h5>
+                        </div>
+                     </div>
+                  </div>
+
+                                 <div class="container">
+                  <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                     <div class="swiper-container gall-active3">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-01.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/xl/shop-01.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="portfolio-details.html">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="services-details.html">$46.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-02.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-02.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="portfolio-details.html">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="services-details.html">$58.10</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-03.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="portfolio-details.html">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="services-details.html">$88.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="tp-gallery__item p-relative mb-70">
+                                 <div class="tp-gallery__img p-relative">
+                                    <img src="{% static 'assets/img/shop/shop-04.jpg' %}" alt="gallery-img">
+                                    <div class="tp-gallery__info">
+                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                    </div>
+                                    <span class="tpshopitem__product-base">NEW</span>
+                                 </div>
+                                 <div class="tp-gallery__content">
+                                    <h4 class="tp-gallery__title"><a href="portfolio-details.html">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="services-details.html">$70.00</a></span>
+                                    <div class="tpshopitem__review">
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-regular fa-star"></i>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+<!--                  <div class="swiper-container shop-slider-active">-->
+<!--                     <div class="swiper-wrapper">-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="tpshopitem mb-50">-->
+<!--                              <div class="tpshopitem__thumb p-relative fix mb-35">-->
+<!--                                 <a href="shop.html"><img src="{% static 'assets/img/shop/shop-09.jpg' %}" alt="shop-thumb"></a>-->
+<!--                                 <div class="tpshopitem__thumb-icon">-->
+<!--                                    <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                                    <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                                    <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                              <div class="tpshopitem__content text-center">-->
+<!--                                 <span class="tpshopitem__title mb-5"><a href="shop.html">Sphygmomanometer</a></span>-->
+<!--                                 <p>$66.00</p>-->
+<!--                                 <div class="tpshopitem__review">-->
+<!--                                    <i class="fa-solid fa-star"></i>-->
+<!--                                    <i class="fa-solid fa-star"></i>-->
+<!--                                    <i class="fa-solid fa-star"></i>-->
+<!--                                    <i class="fa-solid fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="tpshopitem mb-50">-->
+<!--                              <div class="tpshopitem__thumb p-relative fix mb-35">-->
+<!--                                 <a href="shop.html"><img src="{% static 'assets/img/shop/shop-10.jpg' %}" alt="shop-thumb"></a>-->
+<!--                                 <div class="tpshopitem__thumb-icon">-->
+<!--                                    <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                                    <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                                    <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                              <div class="tpshopitem__content text-center">-->
+<!--                                 <span class="tpshopitem__title mb-5"><a href="shop.html">Glucometer</a></span>-->
+<!--                                 <p>$46.00</p>-->
+<!--                                 <div class="tpshopitem__review">-->
+<!--                                    <i class="fa-solid fa-star"></i>-->
+<!--                                    <i class="fa-solid fa-star"></i>-->
+<!--                                    <i class="fa-solid fa-star"></i>-->
+<!--                                    <i class="fa-solid fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="tpshopitem mb-50">-->
+<!--                              <div class="tpshopitem__thumb p-relative fix mb-35">-->
+<!--                                 <a href="shop.html"><img src="{% static 'assets/img/shop/shop-11.jpg' %}" alt="shop-thumb"></a>-->
+<!--                                 <div class="tpshopitem__thumb-icon">-->
+<!--                                    <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                                    <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                                    <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                              <div class="tpshopitem__content text-center">-->
+<!--                                 <span class="tpshopitem__title mb-5"><a href="shop.html">Oxygen Breathing Machine</a></span>-->
+<!--                                 <p>$70.00</p>-->
+<!--                                 <div class="tpshopitem__review">-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="tpshopitem mb-50">-->
+<!--                              <div class="tpshopitem__thumb p-relative fix mb-35">-->
+<!--                                 <a href="shop.html"><img src="{% static 'assets/img/shop/shop-12.jpg' %}" alt="shop-thumb"></a>-->
+<!--                                 <div class="tpshopitem__thumb-icon">-->
+<!--                                    <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                                    <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                                    <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                              <div class="tpshopitem__content text-center">-->
+<!--                                 <span class="tpshopitem__title mb-5"><a href="shop.html">Oxygen Breathing Machine</a></span>-->
+<!--                                 <p>$70.00</p>-->
+<!--                                 <div class="tpshopitem__review">-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                    <i class="fa-regular fa-star"></i>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+
+               </div>
+            </div>
+         </section>
+         <!-- shope-details-area-end -->
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}
