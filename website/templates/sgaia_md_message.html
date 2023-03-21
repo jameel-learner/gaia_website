@@ -1,0 +1,183 @@
+{%  extends 'sgaia_ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/sizes/img/banner/breadcrumb-04.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">MD's MESSAGE</h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <b href="{% url 'website:shop' %}"> LEADERSHIP</b></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+<!--               <div style="position: absolute; ">-->
+<!--                  <h2 class="tp-breadcrumb__title">Shop</h2>-->
+<!--               </div>-->
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- video-area -->
+         <div class="video-area ">
+            <div class="video-bg p-relative">
+               <img src="{% static 'assets/sizes/img/banner/video-bg-01.jpg' %}" alt="video-bg">
+               <div class="video-bg-icon">
+                  <a class="popup-video" href="https://www.youtube.com/watch?v=bqSt7wLxCDQ"><i class="fa-solid fa-play"></i></a>
+               </div>
+            </div>
+         </div>
+         <!-- video-area-end -->
+
+         <!-- postbox area start -->
+         <div class="postbox__area pt-130 pb-110 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s" data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="postbox__wrapper pr-20">
+                        <article class="postbox__item format-image mb-50 transition-3">
+                           <div class="postbox__thumb w-img mb-30">
+                              <a href="{% url 'website:media' 'Dont-Underestimate-Tree-for-Medicine' %}">
+                                 <img src="{% static 'assets/sizes/img/blog/blog-in-01.jpg' %}" alt="">
+                              </a>
+                           </div>
+                           <div class="postbox__content">
+                              <div class="row">
+                                 <div class="col-lg-12">
+                                    <div class="postbox__content-area pb-20">
+<!--                                       <div class="postbox__meta mb-40">-->
+<!--                                          <span><a href="team-details.html"><i class="fa-regular fa-user"></i> Alextina</a></span>-->
+<!--                                          <span><i class="fa-regular fa-clock"></i> Dec 28, 2022</span>-->
+<!--                                          <span><a href="#"><i class="fa-regular fa-message-dots"></i> (04) Coments</a></span>-->
+<!--                                          <span><i class="fa-light fa-eye"></i> 1,526 views</span>-->
+<!--                                       </div>-->
+                                       <h3 class="postbox__title mb-35">
+                                          <a href="{% url 'website:media' 'Dont-Underestimate-Tree-for-Medicine' %}">Lavoratories used for scientic reseach take many froms.</a>
+                                       </h3>
+                                       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, aperiam ipsquae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim voluptatem voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                                       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, aperiam ipsquae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-lg-6 col-md-6">
+                                    <div class="postbox__content-area mb-60">
+                                       <h4>Our Approach</h4>
+                                       <div class="postbox__text mb-30">
+                                          <p>Must explain to you how all praising uts pain was <br> born and I will gives you a itself completed <br> account of the system, and sed expounds the ut <br> actual teachings of that greater </p>
+                                          <div class="postbox__text-list">
+                                             <ul>
+                                                <li><i class="fa-solid fa-check"></i>Extramural Funding</li>
+                                                <li><i class="fa-solid fa-check"></i>Bacteria Markers</li>
+                                                <li><i class="fa-solid fa-check"></i>Nam nec mi euismod euismod</li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6 col-md-6">
+                                    <div class="postbox__meta-img w-img mb-60"><img src="{% static 'assets/sizes/img/blog/blog-details-meta-03.jpg' %}" alt=""></div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-lg-12">
+                                    <div class="postbox__content-area mb-40">
+                                       <h4 class="mb-25"><a href="{% url 'website:media' 'Dont-Underestimate-Tree-for-Medicine' %}">What Is A Business Technology Roadmap?</a></h4>
+                                       <p>Unlike detailed blueprints that lay out all tasks, deadlines, bug reports, and more along the way, technology roadmaps are high-level visual summaries highlighting a company’s vision or plans.
+                                       </p>
+                                       <p>In an Agile approach, a technology roadmap feeds the sprint and grooming processes, providing insight into how the product will travel from start to finish. It makes it easier for development teams to:</p>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6 col-md-6">
+                                    <div class="postbox__meta-img mb-60">
+                                       <img src="{% static 'assets/sizes/img/blog/blog-details-meta-01.jpg' %}" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6 col-md-6">
+                                    <div class="postbox__meta-img mb-60">
+                                       <img src="{% static 'assets/sizes/img/blog/blog-details-meta-02.jpg' %}" alt="">
+                                    </div>
+                                 </div>
+                              </div>
+<!--                              <div class="postbox__tag-border">-->
+<!--                                 <div class="row align-items-center">-->
+<!--                                    <div class="col-xl-7 col-md-12">-->
+<!--                                       <div class="postbox__tag">-->
+<!--                                          <div class="postbox__tag-list tagcloud">-->
+<!--                                             <span>Tag</span>-->
+<!--                                             <a href="blog.html">Covid-19</a>-->
+<!--                                             <a href="blog.html">Bacteria</a>-->
+<!--                                             <a href="blog.html">Medicine</a>-->
+<!--                                          </div>-->
+<!--                                       </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-xl-5 col-md-12">-->
+<!--                                       <div class="postbox__social-tag">-->
+<!--                                          <span>Share</span>-->
+<!--                                          <a class="blog-d-lnkd" href="#"><i class="fa-brands fa-linkedin"></i></a>-->
+<!--                                          <a class="blog-d-pin" href="#"><i class="fa-brands fa-pinterest"></i></a>-->
+<!--                                          <a class="blog-d-fb" href="#"><i class="fa-brands fa-facebook"></i></a>-->
+<!--                                          <a class="blog-d-tweet" href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                       </div>-->
+<!--                                    </div>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+
+                           </div>
+                        </article>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- postbox area end -->
+
+
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

@@ -1,0 +1,227 @@
+{%  extends 'sgaia_ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/sizes/img/banner/breadcrumb-04.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">HISTORY</h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <a href="{% url 'website:history_all' %}"> Glimpses of our Journey</a></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+<!--               <div style="position: absolute; ">-->
+<!--                  <h2 class="tp-breadcrumb__title">Shop</h2>-->
+<!--               </div>-->
+         </section>
+         <!-- breadcrumb-area-end -->
+
+
+         <!-- research-area -->
+         <section class="research-area pt-130 pb-130" data-background="{% static 'assets/sizes/img/shape/shape-bg-05.png' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item mb-50 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-01.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Oncology</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">Catalysis Processes</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item tp-pink mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-02.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Pathology</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">Organic Synthesis</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item tp-green mb-50 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-03.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Biosafety, Incubator</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">Hemoglobin Test</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item tp-sky mb-50 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-04.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Hemoglobin</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">Surface Cleaning</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item tp-green mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-05.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Oncology</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">Hemoglobin Test</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item mb-50 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-06.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Incubator</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">Polymer Science</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item tp-pink mb-50 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-07.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Hemoglobin</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">Cancer Cell Biology</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>                  
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item tp-sky mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-08.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Hemoglobin</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">DNA Vaccines</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <div class="research-item tp-green mb-50 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="research-item__thum fix mb-20">
+                           <img src="{% static 'assets/sizes/img/research/research-thumb-09.jpg' %}" alt="research-thumb">
+                        </div>
+                        <div class="research-item__content">
+                           <span>Hemoglobin</span>
+                           <h4 class="research-item__title mb-20"><a href="{% url 'website:history' 'Organic-Synthesis' %}">Hemoglobin Test</a></h4>
+                           <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                           <a href="{% url 'website:history' 'Catalysis-Processes' %}" class="research-item__btn">Read mORe</a>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="basic-pagination text-center mt-30">
+                        <nav>
+                           <ul>
+                              <li>
+                                 <a href="research.html">
+                                    <i class="fa-light fa-arrow-left-long"></i>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="research.html">1</a>
+                              </li>
+                              <li>
+                                 <span class="current">2</span>
+                              </li>
+                              <li>
+                                 <a href="research.html">3</a>
+                              </li>
+                              <li>
+                                 <a href="research.html">...</a>
+                              </li>
+                              <li>
+                                 <a href="research.html">
+                                    <i class="fa-light fa-arrow-right-long"></i>
+                                 </a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- research-area-end -->
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

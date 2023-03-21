@@ -1,0 +1,1444 @@
+{%  extends 'sgaia_ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- slider-arae -->
+         <section id="section_slider" class="slider-area slider-tp-top pt-100 p-relative"  >
+            <div class="slider-social ">
+               <div class="container">
+                  <div class="row">
+<!--                     <div class="col-lg-6 col-md-10 d-none d-md-block">-->
+<!--                        <div class="slider-content__social">-->
+<!--                           <a class="facebook-2" href="#"><i class="fab fa-facebook-f"></i>Facebook</a>-->
+<!--                           <a class="youtub-2" href="#"><i class="fab fa-youtube"></i>Youtube</a>-->
+<!--                           <a class="twitter-2" href="#"><i class="fab fa-twitter"></i>Twitter</a>-->
+<!--                        </div>-->
+<!--                     </div>-->
+                     <div class="col-lg-6 col-md-2 col-12 d-none d-md-block">
+                        <div class="slider-content__arrow d-flex align-items-center">
+                           <div class="slider-p"><i class="fa-regular fa-arrow-left"></i></div>
+                           <div class="slider-n"><i class="fa-regular fa-arrow-right"></i></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="swiper-container tp-slider slider-active" >
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide bg-white"  data-background="{% static 'assets/sizes/img/shape/shape-bg-05.png' %}">
+                     <div class="container">
+                        <div class="row align-items-center">
+                           <div class="col-lg-6 col-md-12 col-12 order-2 order-lg-1">
+                              <div class="slider-content pt-60">
+                                 <h2 class="slider-content__title mb-45">Our Passion is to Give you Better Service</h2>
+                                 <p>Your full service lab for clinical trials. Our mission is to ensure the <br> generation of accurate and precise findings</p>
+                                 <div class="slider-content__btn mb-165">
+                                    <a class="tp-btn" href="{% url 'website:contact_us' 'Contact-Details' %}">Appointment</a>
+                                    <a class="tp-btn-second ml-25" href="{% url 'website:about_us' %}">About us</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6 col-12 order-1 order-lg-2" style="position: relative;">
+                              <div class="slider-content__bg">
+                                 <img src="{% static 'assets/sizes/img/slider/slider-bg-1.png' %}" alt="slider-img">
+                              </div>
+                              <div id="left_slider01" class="slider-content__shape d-md-block">
+                                 <img id="" src="{% static 'assets/sizes/img/slider/slider-bg-2.png' %}" alt="slider-shape" >
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide bg-white"  data-background="{% static 'assets/sizes/img/shape/shape-bg-05.png' %}">
+                     <div class="container">
+                        <div class="row align-items-center">
+                           <div class="col-lg-6 col-md-12 col-12 order-2 order-lg-1">
+                              <div class="slider-content pt-60">
+                                 <h2 class="slider-content__title mb-45">Our Passion is to <br> Give you Better <br> Service</h2>
+                                 <p>Your full service lab for clinical trials. Our mission is to ensure the <br> generation of accurate and precise findings</p>
+                                 <div class="slider-content__btn mb-165">
+                                    <a class="tp-btn" href="{% url 'website:contact_us' 'Contact-Details' %}">Appointment</a>
+                                    <a class="tp-btn-second ml-25" href="{% url 'website:about_us' %}">About us</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 col-md-6 col-12 order-1 order-lg-2" style="position: relative;">
+                              <div class="slider-content__bg">
+                                 <img src="{% static 'assets/sizes/img/slider/slider-bg-3.png' %}" alt="slider-img">
+                              </div>
+                              <div id="right_slider01" class="slider-content__shape  d-md-block">
+                                 <img src="{% static 'assets/sizes/img/slider/slider-bg-2.png' %}" alt="slider-shape">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- slider-arae-end -->
+
+         <!-- about-area -->
+         <section id="section_about" class="about-area grey-bg pt-100 pb-70" data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-12">
+                     <div class="about__thumb mb-60 wow fadeInLeft" data-wow-delay=".4s">
+                        <div class="about__img">
+                           <div class="about-video">
+                              <a class="popup-video" href="https://www.youtube.com/watch?v=-BpXNPHiB2U"><i class="fa-solid fa-play"></i></a>
+                           </div>
+                           <img src="{% static 'assets/sizes/img/about/about-bg-01.png' %}" alt="about-bg-img">
+                           <div class="about__exprience">
+                              <h3 class="counter">12</h3>
+                              <i>Years of <br>Experience</i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-12">
+                     <div class="tp-about__content pt-125 ml-60 mb-50 wow fadeInRight" data-wow-delay=".4s"  >
+                        <div class="tp-section">
+                           <span class="tp-section__sub-title left-line mb-25">About Us</span>
+                           <h2 class="slider-content__title tp-ab-sm-title mb-45">Best Laboratory For Testing And Research</h2>
+                           <i>Your full service lab for clinical trials. Our mission is to ensure the generation of accurate and precise findings</i>
+                           <p class=" mr-20 mb-45">Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem insitamconse quat.Exerci tation ullamcorper suscipit loborti excommodo habent claritatem insitamconse quat.Exerci tationlobortis nisl aliquip ex ea commodo habent claritatem insitamconse quat.</p>
+                        </div>
+                        <div class="tp-about__info-list mb-55">
+                           <ul>
+                              <li><i class="fa-solid fa-check"></i>Extramural Funding</li>
+                              <li><i class="fa-solid fa-check"></i>Bacteria Markers</li>
+                              <li><i class="fa-solid fa-check"></i>Nam nec mi euismod euismod</li>
+                              <li><i class="fa-solid fa-check"></i>In aliquet dui nec lectus</li>
+                           </ul>
+                        </div>
+                        <div class="tp-about__btn">
+                           <a class="tp-btn" href="{% url 'website:history' 'Our-Journey' %}">Our History</a>
+                           <a class="tp-btn-second ml-25" href="{% url 'website:about_us' %}">About us</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- about-area-end -->
+
+         <!-- about-area -->
+<!--         <section class="about-area grey-bg pt-130 tp-box-space pb-130 ml-30 mr-30" data-background="{% static 'assets/sizes/img/shape/shape-bg-05.png' %}">-->
+<!--            <div class="about-wrapper">-->
+<!--               <div class="container">-->
+<!--                  <div class="row">-->
+<!--                     <div class="col-xl-6 col-lg-12 col-12">-->
+<!--                        <div class="about-thumb text-lg-center p-relative ml-85 mb-60 wow fadeInLeft" data-wow-delay=".3s">-->
+<!--                           <img src="{% static 'assets/sizes/img/about/about-bg-02.png' %}" alt="about-thumb">-->
+<!--                           <div class="about-video">-->
+<!--                              <a class="popup-video" href="https://www.youtube.com/watch?v=-BpXNPHiB2U"><i class="fa-solid fa-play"></i></a>-->
+<!--                           </div>-->
+<!--                           <div class="about-thumb-shape d-none d-md-block">-->
+<!--                              <img src="{% static 'assets/sizes/img/about/about-bg-03.png' %}" alt="about-shape">-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="col-xl-6 col-lg-12 col-12">-->
+<!--                        <div class="about-content ml-60 mb-60 wow fadeInRight" data-wow-delay=".3s">-->
+<!--                           <div class="tp-section">-->
+<!--                              <span class="tp-section__sub-title left-line mb-25">About Us</span>-->
+<!--                              <h3 class="tp-section__title mb-45">Best Laboratory For Testing And Research</h3>-->
+<!--                              <i>Your full service lab for clinical trials. Our mission is to ensure the generation of accurate and precise findings</i>-->
+<!--                              <p class=" mr-20 mb-35">Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem insitamconse quat.Exerci tation ullamcorper suscipit loborti excommodo habent claritatem insitamconse quat.Exerci tationlobortis nisl aliquip ex ea commodo habent claritatem insitamconse quat.</p>-->
+<!--                           </div>-->
+<!--                           <div class="about-content__btn"><a href="about.html" class="tp-btn">Talk with Expart</a></div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--            <div class="cta-area pt-75 ">-->
+<!--               <div class="container">-->
+<!--                  <div class="row wow fadeInUp" data-wow-delay=".3s">-->
+<!--                     <div class="col-lg-12">-->
+<!--                        <div class="tp-cta-bg p-relative theme-light-bg pt-65 pb-70" data-background="{% static 'assets/sizes/img/shape/shape-bg-04.png' %}">-->
+<!--                           <div class="cta-content ml-90">-->
+<!--                              <div class="tp-section">-->
+<!--                                 <span class="tp-section__sub-title sub-title-white left-line-white mb-20">book Free sampling</span>-->
+<!--                              </div>-->
+<!--                              <h2 class="cta-title mb-30">Free Sampling at your <br> Home Adress</h2>-->
+<!--                              <div class="cta-btn">-->
+<!--                                 <button class="tp-btn-second">Book Now</button>-->
+<!--                              </div>-->
+<!--                              <div class="cta-shape d-none d-md-block">-->
+<!--                                 <img src="{% static 'assets/sizes/img/shape/logo-shape-1.png' %}" alt="cta-logo-shape">-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+         <!-- about-area-end -->
+
+         <!-- gallery-area -->
+         <section id="section_product" class="gallery-area pb-50">
+            <div class="gallery-bg-title theme-light-bg tp-box-space pt-125 pb-200 " data-background="{% static 'assets/sizes/img/shape/shape-bg-06.png' %}">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="tp-section text-center">
+                           <span class="tp-section__sub-title sub-title-white left-line-white right-line-white mb-25">Products</span>
+                           <h2 class="slider-content__title tp-ab-sm-title title-white mb-45">GAIA Product Gallery</h2>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="gallery-item-bg wow fadeInUp" data-wow-delay=".3s"  data-background="{% static 'assets/sizes/img/shape/shape-bg-10.png' %}">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-4 col-md-6">
+                        <div class="gallery-item p-relative mb-30">
+                           <img src="{% static 'assets/sizes/img/gallery/gallery-thumb-bg-1.jpg' %}" alt="gallery-thumb">
+                           <div class="gallery-item__content" >
+                              <h4 class="gallery-item__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Pediatrics</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:shop_all' 'Pediatric' %}">Pediatrics</a></span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-8 col-md-6 d-none d-lg-block">
+                        <div class="gallery-item p-relative mb-30">
+                           <img src="{% static 'assets/sizes/img/gallery/gallery-thumb-bg-2.jpg' %}" alt="gallery-thumb">
+                           <div class="gallery-item__content">
+                              <h4 class="gallery-item__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Gynaecology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:shop_all' 'Gynaecology' %}">Gynaecology</a></span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="gallery-item p-relative mb-30">
+                           <img src="{% static 'assets/sizes/img/gallery/gallery-thumb-bg-3.jpg' %}" alt="gallery-thumb">
+                           <div class="gallery-item__content">
+                              <h4 class="gallery-item__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Cardiology/Diabetes</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:shop_all' 'Cardiology' %}">Cardiology/Diabetes</a></span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="gallery-item p-relative mb-30">
+                           <img src="{% static 'assets/sizes/img/gallery/gallery-thumb-bg-4.jpg' %}" alt="gallery-thumb">
+                           <div class="gallery-item__content">
+                              <h4 class="gallery-item__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of General Practice</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:shop_all' 'General-Practice' %}">General Practice</a></span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="gallery-item p-relative mb-30">
+                           <img src="{% static 'assets/sizes/img/gallery/gallery-thumb-bg-5.jpg' %}" alt="gallery-thumb">
+                           <div class="gallery-item__content">
+                              <h4 class="gallery-item__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Gastroenterology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:shop_all' 'Gastroenterology' %}">Gastroenterology</a></span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-8 col-md-12 d-lg-none">
+                        <div class="gallery-item p-relative mb-30">
+                           <img src="{% static 'assets/sizes/img/gallery/gallery-thumb-bg-2.jpg' %}" alt="gallery-thumb">
+                           <div class="gallery-item__content">
+                              <h4 class="gallery-item__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Dermatology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:shop_all' 'Dermatology' %}">Dermatology</a></span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="col-lg-8 col-md-6 d-none d-lg-block">
+                        <div class="gallery-item p-relative mb-30">
+                           <img src="{% static 'assets/sizes/img/gallery/gallery-thumb-bg-2.jpg' %}" alt="gallery-thumb">
+                           <div class="gallery-item__content">
+                              <h4 class="gallery-item__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Dermatology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:shop_all' 'Dermatology' %}">Dermatology</a></span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="gallery-item p-relative mb-30">
+                           <img src="{% static 'assets/sizes/img/gallery/gallery-thumb-bg-1.jpg' %}" alt="gallery-thumb">
+                           <div class="gallery-item__content" >
+                              <h4 class="gallery-item__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Opthalmology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:shop_all' 'Opthalmology' %}">Opthalmology</a></span>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="gallery-btn text-center mt-30">
+                           <a href="{% url 'website:shop' %}" class="tp-btn">Explore More</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- gallery-area-end -->
+
+
+         <!-- services-area -->
+         <section id="section_business" class="services-area pt-95 pb-90 grey-bg mt-60 fix" data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">
+            <div class="container">
+<!--               <div class="row mb-125">-->
+<!--                  <div class="col-lg-12">-->
+<!--                     <div class="search-form">-->
+<!--                        <form action="#">-->
+<!--                           <input type="text" placeholder="What are you looking for?">-->
+<!--                           <button class="tp-btn search-btn" type="submit">Search Here <i class="fa-light fa-magnifying-glass ml-5"></i></button>-->
+<!--                        </form>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+               <div class="row align-items-center">
+                  <div class="col-lg-8 col-md-8 col-12">
+                     <div class="tp-section">
+                        <span class="tp-section__sub-title left-line mb-20">BUSINESS</span>
+                        <h3 class="slider-content__title tp-ab-sm-title mb-45">Our Services</h3>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-12">
+                     <div class="tp-services d-flex align-items-center">
+                        <div class="services-p"><i class="fa-regular fa-arrow-left"></i></div>
+                        <div class="services-n"><i class="fa-regular fa-arrow-right"></i></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="services-slider  wow fadeInUp" data-wow-delay=".3s">
+                  <div class="swiper-container service-active">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+
+                           <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                              <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                                 <div class="services-thumb-box__thumb fix fix">
+                                    <img src="{% static 'assets/sizes/img/services/services-thumb-01.jpg' %}" alt="services-thumb">
+                                 </div>
+                                 <div class="services-item mb-40 p15">
+<!--                                    <div class="services-item__icon mb-30">-->
+<!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
+<!--                                    </div>-->
+                                    <div class="services-item__content">
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'website:business' 'BUSINESS-PARTNERS' %}"><b>BUSINESS PARTNERS</b></a></h4>
+                                       <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                                       <div class="services-item__btn">
+                                          <a class="btn-hexa" href="{% url 'website:business' 'BUSINESS-PARTNERS' %}"><i></i>Read More</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </div>
+
+                        </div>
+                        <div class="swiper-slide">
+
+                           <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                              <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                                 <div class="services-thumb-box__thumb fix fix">
+                                    <img src="{% static 'assets/sizes/img/services/services-thumb-02.jpg' %}" alt="services-thumb">
+                                 </div>
+                                 <div class="services-item mb-40 p15">
+<!--                                    <div class="services-item__icon mb-30">-->
+<!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
+<!--                                    </div>-->
+                                    <div class="services-item__content">
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'website:business' 'GAIA-HEALTHCARE-DMCC' %}"><b>GAIA HEALTHCARE DMCC</b></a></h4>
+                                       <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                                       <div class="services-item__btn">
+                                          <a class="btn-hexa pink-hexa" href="{% url 'website:business' 'GAIA-HEALTHCARE-DMCC' %}"><i></i>Read More</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </div>
+
+                        </div>
+                        <div class="swiper-slide">
+
+                           <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                              <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                                 <div class="services-thumb-box__thumb fix fix">
+                                    <img src="{% static 'assets/sizes/img/services/services-thumb-03.jpg' %}" alt="services-thumb">
+                                 </div>
+                                 <div class="services-item mb-40 p15">
+<!--                                    <div class="services-item__icon mb-30">-->
+<!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
+<!--                                    </div>-->
+                                    <div class="services-item__content">
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'website:business' 'GAIA-HEALTHCARE-FZ-LLC' %}"><b>GAIA HEALTHCARE FZ LLC</b></a></h4>
+                                       <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                                       <div class="services-item__btn">
+                                          <a class="btn-hexa green-hexa" href="{% url 'website:business' 'GAIA-HEALTHCARE-FZ-LLC' %}"><i></i>Read More</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </div>
+
+                        </div>
+                        <div class="swiper-slide">
+
+                           <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                              <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                                 <div class="services-thumb-box__thumb fix fix">
+                                    <img src="{% static 'assets/sizes/img/services/services-thumb-04.jpg' %}" alt="services-thumb">
+                                 </div>
+                                 <div class="services-item mb-40 p15">
+<!--                                    <div class="services-item__icon mb-30">-->
+<!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
+<!--                                    </div>-->
+                                    <div class="services-item__content">
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'website:business' 'PDC-DRUG-STORE' %}"><b>PDC DRUG STORE</b></a></h4>
+                                       <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                                       <div class="services-item__btn">
+                                          <a class="btn-hexa pink-hexa" href="{% url 'website:business' 'PDC-DRUG-STORE' %}"><i></i>Read More</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                        </div>
+                     </div>
+                        <div class="swiper-slide">
+
+                           <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                              <div class="services-thumb-box mb-30 wow fadeInLeft" data-wow-delay=".3s">
+                                 <div class="services-thumb-box__thumb fix fix">
+                                    <img src="{% static 'assets/sizes/img/services/services-thumb-05.jpg' %}" alt="services-thumb">
+                                 </div>
+                                 <div class="services-item mb-40 p15">
+<!--                                    <div class="services-item__icon mb-30">-->
+<!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
+<!--                                    </div>-->
+                                    <div class="services-item__content">
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'website:business' 'RETAIL-PHARMA' %}"><b>RETAIL PHARMA</b></a></h4>
+                                       <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
+                                       <div class="services-item__btn">
+                                          <a class="btn-hexa sky-hexa" href="{% url 'website:business' 'RETAIL-PHARMA' %}"><i></i>Read More</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div>
+         </section>
+         <!-- services-area-end -->
+
+         <!-- gallery-area -->
+         <section id="section_partnering" class="gallery-area grey-bg pt-120 pb-130" data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">
+            <div class="container">
+              <div class="row">
+               <div class="col-lg-12">
+                  <div class="tp-section text-center">
+                     <span class="tp-section__sub-title left-line right-line mb-25">PARTNERING</span>
+                     <h3 class="tp-section__title mb-70">GAIA Partnering</h3>
+                  </div>
+               </div>
+              </div>
+            </div>
+            <div class="container">
+               <div class="tp-gallery ml-15 mr-15 wow fadeInUp" data-wow-delay=".4s">
+                  <div class="swiper-container gall-active">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <div class="tp-gallery__item p-relative mb-70">
+                              <div class="tp-gallery__img p-relative">
+                                 <img src="{% static 'assets/sizes/img/gallery/gal-thum-01.jpg' %}" alt="gallery-img">
+<!--                                 <div class="tp-gallery__info">-->
+<!--                                    <a class="popup-image" href="{% static 'assets/sizes/img/gallery/gal-thum-01.jpg' %}"><i class="fa-solid fa-plus"></i></a>-->
+<!--                                 </div>-->
+                              </div>
+                              <div class="tp-gallery__content">
+                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">Some Heading text</a></h4>
+                                 <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:business' 'PRE-LICENSING-GCC' %}">PRE-LICENSING GCC</a></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="tp-gallery__item p-relative mb-70">
+                              <div class="tp-gallery__img p-relative">
+                                 <img src="{% static 'assets/sizes/img/gallery/gal-thum-02.jpg' %}" alt="gallery-img">
+<!--                                 <div class="tp-gallery__info">-->
+<!--                                    <a class="popup-image" href="{% static 'assets/sizes/img/gallery/gal-thum-02.jpg' %}"><i class="fa-solid fa-plus"></i></a>-->
+<!--                                 </div>-->
+                              </div>
+                              <div class="tp-gallery__content">
+                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">Some heading text</a></h4>
+                                 <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:business' 'OUT-LICENSING' %}">OUT LICENSING</a></span>
+                              </div>
+                           </div>
+                        </div>
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="tp-gallery__item p-relative mb-70">-->
+<!--                              <div class="tp-gallery__img p-relative">-->
+<!--                                 <img src="{% static 'assets/sizes/img/gallery/gal-thum-03.jpg' %}" alt="gallery-img">-->
+<!--                                 <div class="tp-gallery__info">-->
+<!--                                    <a class="popup-image" href="{% static 'assets/sizes/img/gallery/gal-thum-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                              <div class="tp-gallery__content">-->
+<!--                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">Zyrtec Analysis</a></h4>-->
+<!--                                 <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Gynaecologist</a></span>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="tp-gallery__item p-relative mb-70">-->
+<!--                              <div class="tp-gallery__img p-relative">-->
+<!--                                 <img src="{% static 'assets/sizes/img/gallery/gal-thum-04.jpg' %}" alt="gallery-img">-->
+<!--                                 <div class="tp-gallery__info">-->
+<!--                                    <a class="popup-image" href="{% static 'assets/sizes/img/gallery/gal-thum-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                              <div class="tp-gallery__content">-->
+<!--                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">Asthma Apply</a></h4>-->
+<!--                                 <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Genetics</a></span>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="tp-gallery__item p-relative mb-70">-->
+<!--                              <div class="tp-gallery__img p-relative">-->
+<!--                                 <img src="{% static 'assets/sizes/img/gallery/gal-thum-05.jpg' %}" alt="gallery-img">-->
+<!--                                 <div class="tp-gallery__info">-->
+<!--                                    <a class="popup-image" href="{% static 'assets/sizes/img/gallery/gal-thum-01.jpg' %}"><i class="fa-solid fa-plus"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                              <div class="tp-gallery__content">-->
+<!--                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">neurological ANALYSIS</a></h4>-->
+<!--                                 <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Forensic</a></span>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+                     </div>
+                  </div>
+               </div>
+            </div>
+<!--            <div class="container">-->
+<!--               <div class="row text-center">-->
+<!--                  <div class="col-lg-12">-->
+<!--                     <a class="tp-btn-second" href="{% url 'website:product' '23' 'HERO-Product-of-Pediatric' %}">Explore More</a>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+         </section>
+         <!-- gallery-area-end -->
+
+         <!-- services-area -->
+<!--         <section class="services-area pt-120 pb-75">-->
+<!--            <div class="container">-->
+<!--               <div class="row align-items-end  mb-45">-->
+<!--                  <div class="col-lg-5 col-md-12 col-12">-->
+<!--                     <div class="tp-section">-->
+<!--                        <span class="tp-section__sub-title left-line mb-20">our Services</span>-->
+<!--                        <h3 class="tp-section__title mb-30">Service Area</h3>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-lg-7 col-md-12 col-12">-->
+<!--                     <div class="services-link text-md-start text-lg-end mb-30">-->
+<!--                        <span>We'll ensure you always get the best results:<a href="contact.html">Contact us<i class="fa-solid fa-arrow-right"></i></a></span>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               <div class="row">-->
+<!--                  <div class="col-xl-3 col-lg-4 col-md-6">-->
+<!--                     <div class="services-item tp-services-item mb-50 wow fadeInUp" data-wow-delay=".2s">-->
+<!--                        <div class="services-item__icon mb-30">-->
+<!--                           <i class="flaticon-hemoglobin-test-meter"></i>-->
+<!--                        </div>-->
+<!--                        <div class="services-item__content">-->
+<!--                           <h5 class="services-item__tp-title mb-30"><a href="services-details.html">Hemoglobin Test</a></h5>-->
+<!--                           <p>Nam eget dui vel quam sodales <br> semper quis porttitor tortor. Vivamus <br> quis ex nulla.</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-lg-4 col-md-6">-->
+<!--                     <div class="services-item tp-services-item mb-50 ml-20 wow fadeInUp" data-wow-delay=".4s">-->
+<!--                        <div class="services-item__icon pink-icon mb-30">-->
+<!--                           <i class="flaticon-blood-test"></i>-->
+<!--                        </div>-->
+<!--                        <div class="services-item__content">-->
+<!--                           <h5 class="services-item__tp-title mb-30"><a href="services-details.html">Blood Testing</a></h5>-->
+<!--                           <p>Nam eget dui vel quam sodales <br> semper quis porttitor tortor. Vivamus <br> quis ex nulla.</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-lg-4 col-md-6">-->
+<!--                     <div class="services-item tp-services-item mb-50 ml-35 wow fadeInUp" data-wow-delay=".6s">-->
+<!--                        <div class="services-item__icon sky-icon mb-30">-->
+<!--                           <i class="flaticon-biochemistry"></i>-->
+<!--                        </div>-->
+<!--                        <div class="services-item__content">-->
+<!--                           <h5 class="services-item__tp-title mb-30"><a href="services-details.html">Biochemistry</a></h5>-->
+<!--                           <p>Nam eget dui vel quam sodales <br> semper quis porttitor tortor. Vivamus <br> quis ex nulla.</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-lg-4 col-md-6">-->
+<!--                     <div class="services-item tp-services-item mb-50 ml-55 wow fadeInUp" data-wow-delay=".8s">-->
+<!--                        <div class="services-item__icon green-icon mb-30">-->
+<!--                           <i class="flaticon-bacteria"></i>-->
+<!--                        </div>-->
+<!--                        <div class="services-item__content">-->
+<!--                           <h5 class="services-item__tp-title mb-30"><a href="services-details.html">Microbiology</a></h5>-->
+<!--                           <p>Nam eget dui vel quam sodales <br> semper quis porttitor tortor. Vivamus <br> quis ex nulla.</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-lg-4 col-md-6">-->
+<!--                     <div class="services-item tp-services-item mb-50 wow fadeInUp" data-wow-delay=".2s">-->
+<!--                        <div class="services-item__icon green-icon mb-30">-->
+<!--                           <i class="flaticon-heart"></i>-->
+<!--                        </div>-->
+<!--                        <div class="services-item__content">-->
+<!--                           <h5 class="services-item__tp-title mb-30"><a href="services-details.html">Histopatology</a></h5>-->
+<!--                           <p>Nam eget dui vel quam sodales <br> semper quis porttitor tortor. Vivamus <br> quis ex nulla.</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-lg-4 col-md-6">-->
+<!--                     <div class="services-item tp-services-item mb-50 ml-20 wow fadeInUp" data-wow-delay=".4s">-->
+<!--                        <div class="services-item__icon sky-icon mb-30">-->
+<!--                           <i class="flaticon-dna"></i>-->
+<!--                        </div>-->
+<!--                        <div class="services-item__content">-->
+<!--                           <h5 class="services-item__tp-title mb-30"><a href="services-details.html">Biochemistry</a></h5>-->
+<!--                           <p>Nam eget dui vel quam sodales <br> semper quis porttitor tortor. Vivamus <br> quis ex nulla.</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-lg-4 col-md-6">-->
+<!--                     <div class="services-item tp-services-item mb-50 ml-35 wow fadeInUp" data-wow-delay=".6s">-->
+<!--                        <div class="services-item__icon mb-30">-->
+<!--                           <i class="flaticon-dna-1"></i>-->
+<!--                        </div>-->
+<!--                        <div class="services-item__content">-->
+<!--                           <h5 class="services-item__tp-title mb-30"><a href="services-details.html">Genetics</a></h5>-->
+<!--                           <p>Nam eget dui vel quam sodales <br> semper quis porttitor tortor. Vivamus <br> quis ex nulla.</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-lg-4 col-md-6">-->
+<!--                     <div class="services-item tp-services-item mb-50 ml-55 wow fadeInUp" data-wow-delay=".8s">-->
+<!--                        <div class="services-item__icon pink-icon mb-30">-->
+<!--                           <i class="flaticon-ct-scan"></i>-->
+<!--                        </div>-->
+<!--                        <div class="services-item__content">-->
+<!--                           <h5 class="services-item__tp-title mb-30"><a href="services-details.html">Blood Testing</a></h5>-->
+<!--                           <p>Nam eget dui vel quam sodales <br> semper quis porttitor tortor. Vivamus <br> quis ex nulla.</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+         <!-- services-area-end -->
+
+         <!-- counter-area -->
+<!--         <section class="counter-area pt-80 pb-100">-->
+<!--            <div class="container">-->
+<!--               <div class="row">-->
+<!--                  <div class="col-xl-3 col-md-6">-->
+<!--                     <div class="counter__item blue-border mb-30 wow fadeInUp" data-wow-delay=".2s">-->
+<!--                        <div class="counter__icon mb-15">-->
+<!--                           <i></i>-->
+<!--                        </div>-->
+<!--                        <div class="counter__content">-->
+<!--                           <h4 class="counter__title"><span class="counter">1492</span></h4>-->
+<!--                           <p>Laboratories in 100+ states</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-md-6">-->
+<!--                     <div class="counter__item pink-border mb-30 wow fadeInUp" data-wow-delay=".4s">-->
+<!--                        <div class="counter__icon pink-hard mb-15">-->
+<!--                           <i></i>-->
+<!--                        </div>-->
+<!--                        <div class="counter__content">-->
+<!--                           <h4 class="counter__title"><span class="counter">152</span></h4>-->
+<!--                           <p>Laboratory specialists</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-md-6">-->
+<!--                     <div class="counter__item sky-border mb-30 wow fadeInUp" data-wow-delay=".6s">-->
+<!--                        <div class="counter__icon sky-hard mb-15">-->
+<!--                           <i></i>-->
+<!--                        </div>-->
+<!--                        <div class="counter__content">-->
+<!--                           <h4 class="counter__title"><span class="counter">1022</span></h4>-->
+<!--                           <p>Material collection points</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-xl-3 col-md-6">-->
+<!--                     <div class="counter__item green-border mb-30 wow fadeInUp" data-wow-delay=".8s">-->
+<!--                        <div class="counter__icon green-hard mb-15">-->
+<!--                           <i></i>-->
+<!--                        </div>-->
+<!--                        <div class="counter__content">-->
+<!--                           <h4 class="counter__title"><span class="counter">24332</span></h4>-->
+<!--                           <p>Patients diagnosed in 2022</p>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+         <!-- counter-area-end -->
+
+         <!-- testimonial-area -->
+         <section id="section_testimonial" class="news-letter-area pt-110 pb-110 news-round-shape p-relative tp-box-space theme-dark-bg fix" data-background="{% static 'assets/sizes/img/shape/shape-bg-06.png' %}">
+<!--         <section class="testimonial-area theme-light-bg news-round-shape pt-125 pb-130" data-background="{% static 'assets/sizes/img/shape/shape-bg-06.png' %}">-->
+            <div class="container">
+               <div class="row wow fadeInUp" data-wow-delay=".3s">
+                  <div class="col-lg-12">
+                     <div class="tp-section text-center">
+                        <span class="tp-section__sub-title sub-title-white left-line-white right-line-white mb-25">Testimonial</span>
+                        <h3 class="slider-content__title tp-ab-sm-title title-white mb-45">Customer Feedback</h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-container tp-test-active pt-40">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <div class="tp-testi p-relative mb-70">
+                           <div class="tp-testi__avata">
+                              <img src="{% static 'assets/sizes/img/icon/testi-ava-01.jpg' %}" alt="testimonial-avata">
+                           </div>
+                           <div class="tp-testi__content text-center">
+                              <p>GAIA Healthcare is another theme that is beautiful and professinally constructed by the Developers. The price for the template is checp but not qualityh of product.what a bargain , This theme works for many types of web sites and seems to be durble dows nt break and it.</p>
+                              <h5 class="tp-testi__avata-title">Darlene Robertson</h5>
+                              <span class="tp-testi__ava-position">Secretary of (FlaxStudio)</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-testi p-relative mb-70">
+                           <div class="tp-testi__avata">
+                              <img src="{% static 'assets/sizes/img/icon/testi-ava-02.jpg' %}" alt="testimonial-avata">
+                           </div>
+                           <div class="tp-testi__content text-center">
+                              <p>GAIA Healthcare is another theme that is beautiful and professinally constructed by the Developers. The price for the template is checp but not qualityh of product.what a bargain , This theme works for many types of web sites and seems to be durble dows nt break and it.</p>
+                              <h5 class="tp-testi__avata-title">Courtney Henry</h5>
+                              <span class="tp-testi__ava-position">CEO of (FlaxStudio)</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-testi p-relative mb-70">
+                           <div class="tp-testi__avata">
+                              <img src="{% static 'assets/sizes/img/icon/testi-ava-03.jpg' %}" alt="testimonial-avata">
+                           </div>
+                           <div class="tp-testi__content text-center">
+                              <p>GAIA Healthcare is another theme that is beautiful price for the template is checp but not qualityh of product.what a bargain , This theme works for many types of web sites and seems to be durble dows nt break and it.</p>
+                              <h5 class="tp-testi__avata-title">Kathryn Murphy</h5>
+                              <span class="tp-testi__ava-position">Manager of (FlaxStudio)</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-testi p-relative mb-70">
+                           <div class="tp-testi__avata">
+                              <img src="{% static 'assets/sizes/img/icon/testi-ava-07.png' %}" alt="testimonial-avata">
+                           </div>
+                           <div class="tp-testi__content text-center">
+                              <p>GAIA Healthcare is The price for the template is checp but not qualityh of product.what a bargain , This theme works for many types of web sites and seems to be durble dows nt break and it.</p>
+                              <h5 class="tp-testi__avata-title">Darlene Robertson</h5>
+                              <span class="tp-testi__ava-position">Programmer of (FlaxStudio)</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row text-center">
+                  <div class="col-lg-12">
+                     <div class="tp-test-arrow d-flex align-items-center justify-content-center">
+                        <div class="tp-test-prv cw"><i class="fa-regular fa-arrow-left"></i></div>
+                        <div class="tp-test-nxt cw"><i class="fa-regular fa-arrow-right"></i></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- testimonial-area-end -->
+
+         <!-- brand-area -->
+         <div id="section_brands" class="brand-area pt-10 pb-10">
+            <div class="container">
+               <div class="brand-border pt-60 pb-60">
+                  <div class="swiper-container brand-active">
+                     <div class="swiper-wrapper brand-items">
+                        <div class="swiper-slide">
+                           <a href="#"><img src="{% static 'assets/sizes/img/brand/brand-01.png' %}" alt="brand"></a>
+                        </div>
+                        <div class="swiper-slide">
+                           <a href="#"><img src="{% static 'assets/sizes/img/brand/brand-02.png' %}" alt="brand"></a>
+                        </div>
+                        <div class="swiper-slide">
+                           <a href="#"><img src="{% static 'assets/sizes/img/brand/brand-03.png' %}" alt="brand"></a>
+                        </div>
+                        <div class="swiper-slide">
+                           <a href="#"><img src="{% static 'assets/sizes/img/brand/brand-04.png' %}" alt="brand"></a>
+                        </div>
+                        <div class="swiper-slide">
+                           <a href="#"><img src="{% static 'assets/sizes/img/brand/brand-05.png' %}" alt="brand"></a>
+                        </div>
+                        <div class="swiper-slide">
+                           <a href="#"><img src="{% static 'assets/sizes/img/brand/brand-04.png' %}" alt="brand"></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- brand-area-end -->
+
+
+         <!-- choose-area -->
+<!--         <section class="services-area pt-95 pb-90 grey-bg mt-60 fix" data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">-->
+<!--         <section class="choose-area grey-bg pt-125 pb-70 tp-box-space ml-30 mr-30" data-background="{% static 'assets/sizes/img/shape/shape-bg-07.png' %}">-->
+         <section id="section_why_choose" class="choose-area pt-90 pb-90 grey-bg fix" data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="tp-section text-center">
+                        <span class="tp-section__sub-title left-line right-line mb-25">who we are</span>
+                        <h3 class="slider-content__title tp-ab-sm-title mb-45">Why Choose Us</h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="row ">
+                  <div class="col-xl-3 col-lg-6 col-md-6">
+                     <div class="experience-item text-center mb-50 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="progress-circular tl-progress">
+                           <input type="text" class="knob" value="0" data-rel="80" data-linecap="round"
+                              data-width="165" data-height="165" data-bgcolor="#ECEEF3" data-fgcolor="#171C8F" data-thickness=".07" data-readonly="true" disabled/>
+                        </div>
+                        <span class="skill-item-title">MEDICAL RESEARCH</span>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6">
+                     <div class="experience-item text-center mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="progress-circular tl-progress">
+                           <input type="text" class="knob" value="0" data-rel="75" data-linecap="round"
+                              data-width="165" data-height="165" data-bgcolor="#ECEEF3" data-fgcolor="#E5097F" data-thickness=".07" data-readonly="true" disabled/>
+                        </div>
+                        <span class="skill-item-title">BIOTECHNOLOGY</span>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6">
+                     <div class="experience-item text-center mb-50 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="progress-circular tl-progress">
+                           <input type="text" class="knob" value="0" data-rel="90" data-linecap="round"
+                              data-width="165" data-height="165" data-bgcolor="#ECEEF3" data-fgcolor="#0E63FF" data-thickness=".07" data-readonly="true" disabled/>
+                        </div>
+                        <span class="skill-item-title">HISTOPATOLOGY</span>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6">
+                     <div class="experience-item text-center mb-50 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="progress-circular tl-progress">
+                           <input type="text" class="knob" value="0" data-rel="55" data-linecap="round"
+                              data-width="165" data-height="165" data-bgcolor="#ECEEF3" data-fgcolor="#8D2E82" data-thickness=".07" data-readonly="true" disabled/>
+                        </div>
+                        <span class="skill-item-title">ALLERGOLOGY</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- choose-area-end -->
+
+         <!-- appoinment-area    mb-50 tp-box-space ml-30 mr-30   -->
+         <section id="section_form" class="appoinment-area grey-bg pt-95 pb-90 grey-bg " data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">
+            <div class="container">
+               <div class="row align-items-end">
+                  <div class="col-xl-4 col-lg-12 col-md-12">
+                     <div class="appoint-thumb">
+                        <img src="{% static 'assets/sizes/img/banner/appoinment-02.png' %}" alt="appoinment-img">
+                     </div>
+                  </div>
+                  <div class="col-xl-8 col-lg-12 col-md-12">
+                     <div class="visitor-info visitor-info-bg">
+                        <h4 class="slider-content__title tp-ab-sm-title title-white mb-45"><i class="fa-light fa-file-signature" style="color:white;"></i>&nbsp;Book your visit</h4>
+                        <div class="visitor-form">
+                           <form action="#" id="xxx" method="post" enctype="multipart/form-data">
+                              <div class="row">
+                                 <div class="col-lg-6">
+                                    <div class="visitor-form__input">
+                                       <select id="contact_purpose" class="visitor-form__input_select" name="contact_purpose">
+                                          <option >-- select a purpose --</option>
+                                          <option value="product">Query related to Product</option>
+                                          <option value="pdc">PDC Design Store</option>
+                                          <option value="vigilance">Query related to Pharmaco Vigilance (PV)</option>
+                                          <option value="job">Applying for Job</option>
+                                          <option value="contact">Contact Details</option>
+                                       </select>
+<!--                                       <input type="text" placeholder="Medical Research">-->
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                    <div class="visitor-form__input">
+                                       <input type="text" placeholder="Your name">
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                    <div class="visitor-form__input">
+                                       <input type="email" placeholder="Your mail">
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                    <div class="visitor-form__input">
+                                       <input name="number" type="text" placeholder="Enter your number">
+                                    </div>
+                                 </div>
+<!--                                 <div class="col-lg-6">-->
+<!--                                    <div class="visitor-form__input">-->
+<!--                                       <input type="date">-->
+<!--                                    </div>-->
+<!--                                 </div>-->
+                                 <div class="col-lg-12">
+                                    <div class="visitor-form__input">
+                                       <textarea placeholder="Type your massage" name="message"></textarea>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="visit-btn mt-20">
+                                       <button class="tp-btn">Book Now</button>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-8 col-md-8 col-12">
+                                    <div class="visit-serial mt-45">
+                                       <span style="color:white;">24/7 Emergency Service : <a href="tel:+88978897">+88 978 897 6545<i class="fa-regular fa-arrow-right"></i></a></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- appoinment-area-end -->
+
+         <!-- team-area -->
+<!--         <section class="team-area grey-bg pt-120 pb-80" data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">-->
+<!--            <div class="container">-->
+<!--               <div class="row align-items-center">-->
+<!--                  <div class="col-lg-8 col-md-8 col-12">-->
+<!--                     <div class="tp-section">-->
+<!--                        <span class="tp-section__sub-title left-line mb-25">Our Team</span>-->
+<!--                        <h3 class="tp-section__title mb-75">Meet Specialist</h3>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-lg-4 col-md-4 col-12">-->
+<!--                     <div class="tp-team-arrow d-flex align-items-center">-->
+<!--                        <div class="team-p"><i class="fa-regular fa-arrow-left"></i></div>-->
+<!--                        <div class="team-n"><i class="fa-regular fa-arrow-right"></i></div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               <div class="swiper-container team-active wow fadeInUp" data-wow-delay=".3s">-->
+<!--                  <div class="swiper-wrapper">-->
+<!--                     <div class="swiper-slide">-->
+<!--                        <div class="tp-team mb-50">-->
+<!--                           <div class="tp-team__thumb fix">-->
+<!--                              <a href="#"><img src="{% static 'assets/sizes/img/team/team-thumb-01.jpg' %}" alt="team-thumb"></a>-->
+<!--                           </div>-->
+<!--                           <div class="tp-team__content">-->
+<!--                              <h4 class="tp-team__title mb-15"><a href="team-details.html">Cameron Williamson</a></h4>-->
+<!--                              <span class="tp-team__position mb-30">Genetic Specialist</span>-->
+<!--                              <p>Providing insight-driven transformation to investment banks, wealth and asset mana, exchanges, Finance </p>-->
+<!--                              <div class="tp-team__social">-->
+<!--                                 <a class="tp-youtube" href="#"><i class="fa-brands fa-youtube"></i></a>-->
+<!--                                 <a class="tp-twitter" href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                 <a class="tp-fb" href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                 <a class="tp-skype" href="#"><i class="fa-brands fa-skype"></i></a>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="swiper-slide">-->
+<!--                        <div class="tp-team mb-50">-->
+<!--                           <div class="tp-team__thumb fix">-->
+<!--                              <a href="#"><img src="{% static 'assets/sizes/img/team/team-thumb-02.jpg' %}" alt="team-thumb"></a>-->
+<!--                           </div>-->
+<!--                           <div class="tp-team__content">-->
+<!--                              <h4 class="tp-team__title mb-15"><a href="team-details.html">Savannah Nguyen</a></h4>-->
+<!--                              <span class="tp-team__position mb-30">Anaesthetist Specialist</span>-->
+<!--                              <p>Providing insight-driven transformation to investment banks, wealth and asset mana, exchanges, Finance </p>-->
+<!--                              <div class="tp-team__social">-->
+<!--                                 <a class="tp-youtube" href="#"><i class="fa-brands fa-youtube"></i></a>-->
+<!--                                 <a class="tp-twitter" href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                 <a class="tp-fb" href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                 <a class="tp-skype" href="#"><i class="fa-brands fa-skype"></i></a>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="swiper-slide">-->
+<!--                        <div class="tp-team mb-50">-->
+<!--                           <div class="tp-team__thumb fix">-->
+<!--                              <a href="#"><img src="{% static 'assets/sizes/img/team/team-thumb-03.jpg' %}" alt="team-thumb"></a>-->
+<!--                           </div>-->
+<!--                           <div class="tp-team__content">-->
+<!--                              <h4 class="tp-team__title mb-15"><a href="team-details.html">Darlene Robertson</a></h4>-->
+<!--                              <span class="tp-team__position mb-30">Gynaecologist Specialist</span>-->
+<!--                              <p>Providing insight-driven transformation to investment banks, wealth and asset mana, exchanges, Finance </p>-->
+<!--                              <div class="tp-team__social">-->
+<!--                                 <a class="tp-youtube" href="#"><i class="fa-brands fa-youtube"></i></a>-->
+<!--                                 <a class="tp-twitter" href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                 <a class="tp-fb" href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                 <a class="tp-skype" href="#"><i class="fa-brands fa-skype"></i></a>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="swiper-slide">-->
+<!--                        <div class="tp-team mb-50">-->
+<!--                           <div class="tp-team__thumb fix">-->
+<!--                              <a href="#"><img src="{% static 'assets/sizes/img/team/team-thumb-04.jpg' %}" alt="team-thumb"></a>-->
+<!--                           </div>-->
+<!--                           <div class="tp-team__content">-->
+<!--                              <h4 class="tp-team__title mb-15"><a href="team-details.html">Jhon Methweu</a></h4>-->
+<!--                              <span class="tp-team__position mb-30">Radiologist Specialist</span>-->
+<!--                              <p>Providing insight-driven transformation to investment banks, wealth and asset mana, exchanges, Finance </p>-->
+<!--                              <div class="tp-team__social">-->
+<!--                                 <a class="tp-youtube" href="#"><i class="fa-brands fa-youtube"></i></a>-->
+<!--                                 <a class="tp-twitter" href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                 <a class="tp-fb" href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                 <a class="tp-skype" href="#"><i class="fa-brands fa-skype"></i></a>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+         <!-- team-area-end -->
+         <!-- team-area -->
+<!--         <section class="team-area pb-55">-->
+<!--            <div class="container">-->
+<!--               <div class="p-relative">-->
+<!--                  <div class="row">-->
+<!--                     <div class="col-lg-12">-->
+<!--                        <div class="tp-section text-center">-->
+<!--                           <span class="tp-section__sub-title left-line right-line mb-25">OUr Team</span>-->
+<!--                           <h3 class="tp-section__title mb-70">Our Specialist</h3>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="swiper-container tp-team-active wow fadeInUp" data-wow-delay=".3s">-->
+<!--                     <div class="swiper-wrapper">-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="team-item mb-30">-->
+<!--                              <div class="team-item__thumb mb-40">-->
+<!--                                 <img src="{% static 'assets/sizes/img/team/team-thumb-05.png' %}" alt="team-thumb">-->
+<!--                              </div>-->
+<!--                              <div class="team-item__content">-->
+<!--                                 <h5 class="team-item__title mb-15"><a href="team-details.html">Cameron Williamson</a></h5>-->
+<!--                                 <span>Genetic Specialist</span>-->
+<!--                                 <div class="team-item__social-info">-->
+<!--                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>-->
+<!--                                    <a href="#"><i class="fa-light fa-basketball"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="team-item mb-30">-->
+<!--                              <div class="team-item__thumb mb-40">-->
+<!--                                 <img src="{% static 'assets/sizes/img/team/team-thumb-06.png' %}" alt="team-thumb">-->
+<!--                              </div>-->
+<!--                              <div class="team-item__content">-->
+<!--                                 <h5 class="team-item__title mb-15"><a href="team-details.html">Savannah Nguyen</a></h5>-->
+<!--                                 <span>Microbiology Expart</span>-->
+<!--                                 <div class="team-item__social-info">-->
+<!--                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>-->
+<!--                                    <a href="#"><i class="fa-light fa-basketball"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="team-item mb-30">-->
+<!--                              <div class="team-item__thumb mb-40">-->
+<!--                                 <img src="{% static 'assets/sizes/img/team/team-thumb-07.png' %}" alt="team-thumb">-->
+<!--                              </div>-->
+<!--                              <div class="team-item__content">-->
+<!--                                 <h5 class="team-item__title mb-15"><a href="team-details.html">Darlene Robertson</a></h5>-->
+<!--                                 <span>Genetic Specialist</span>-->
+<!--                                 <div class="team-item__social-info">-->
+<!--                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>-->
+<!--                                    <a href="#"><i class="fa-light fa-basketball"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide">-->
+<!--                           <div class="team-item mb-30">-->
+<!--                              <div class="team-item__thumb mb-40">-->
+<!--                                 <img src="{% static 'assets/sizes/img/team/team-thumb-08.png' %}" alt="team-thumb">-->
+<!--                              </div>-->
+<!--                              <div class="team-item__content">-->
+<!--                                 <h5 class="team-item__title mb-15"><a href="team-details.html">Marvin McKinney</a></h5>-->
+<!--                                 <span>MEDICAL DOCTOR</span>-->
+<!--                                 <div class="team-item__social-info">-->
+<!--                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>-->
+<!--                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>-->
+<!--                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>-->
+<!--                                    <a href="#"><i class="fa-light fa-basketball"></i></a>-->
+<!--                                 </div>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="team-arrow">-->
+<!--                     <div class="team-prv"><i class="fa-regular fa-arrow-left"></i></div>-->
+<!--                     <div class="team-nxt"><i class="fa-regular fa-arrow-right"></i></div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+         <!-- team-area-end -->
+
+         <!-- testimonial-aerea -->
+<!--         <div class="testimonial-area pt-130 pb-125 testi-bg theme-light-bg" data-background="{% static 'assets/sizes/img/shape/shape-bg-05.png' %}">-->
+<!--            <div class="container p-relative  wow fadeInUp" data-wow-delay=".3s">-->
+<!--               <div class="row justify-content-center">-->
+<!--                  <div class="col-lg-4 col-md-6">-->
+<!--                     <div class="testi-thumb text-center">-->
+<!--                        <div class="swiper-container swiper  test-ava-active">-->
+<!--                           <div class="swiper-wrapper testi-avta-bottom pb-70">-->
+<!--                              <div class="swiper-slide">-->
+<!--                                 <img src="{% static 'assets/sizes/img/icon/testi-ava-04.png' %}" alt="testi-avata">-->
+<!--                              </div>-->
+<!--                              <div class="swiper-slide">-->
+<!--                                 <img src="{% static 'assets/sizes/img/icon/testi-ava-05.png' %}" alt="testi-avata">-->
+<!--                              </div>-->
+<!--                              <div class="swiper-slide">-->
+<!--                                 <img src="{% static 'assets/sizes/img/icon/testi-ava-06.png' %}" alt="testi-avata">-->
+<!--                              </div>-->
+<!--                              <div class="swiper-slide">-->
+<!--                                 <img src="{% static 'assets/sizes/img/icon/testi-ava-07.png' %}" alt="testi-avata">-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="testi-arrow">-->
+<!--                     <div class="testi-button-next"><i class="fa-regular fa-arrow-right"></i></div>-->
+<!--                     <div class="testi-button-prev"><i class="fa-regular fa-arrow-left"></i></div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               <div class="row justify-content-center">-->
+<!--                  <div class="col-xl-9 col-lg-10 col-md-11 col-12">-->
+<!--                     <div class="swiper-container swiper test-active">-->
+<!--                        <div class="swiper-wrapper">-->
+<!--                           <div class="swiper-slide">-->
+<!--                              <div class="testi-content text-center">-->
+<!--                                 <p>“GAIA Healthcare is another theme that is beautiful and professionally constructed by the developers. The price for the template is cheap but not the quality of the product. What a bargain. This theme works for many types of web sites and seems to be durable. Does not break and its easy to work with.</p>-->
+<!--                                 <i>Darlene Robertson</i>-->
+<!--                                 <span>Programmer of (FlaxStudio)</span>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                           <div class="swiper-slide">-->
+<!--                              <div class="testi-content text-center">-->
+<!--                                 <p>“GAIA Healthcare is another theme that is beautiful and professionally constructed by the developers. The price for the template is cheap but not the quality of the product. What a bargain. This theme works for many types of web sites and seems to be durable. Does not break and its easy to work with.</p>-->
+<!--                                 <i>Courtney Henry</i>-->
+<!--                                 <span>Programmer of (FlaxStudio)</span>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                           <div class="swiper-slide">-->
+<!--                              <div class="testi-content text-center">-->
+<!--                                 <p>“GAIA Healthcare is another theme that is beautiful and professionally constructed by the developers. The price for the template is cheap but not the quality of the product. What a bargain. This theme works for many types of web sites and seems to be durable. Does not break and its easy to work with.</p>-->
+<!--                                 <i>Kathryn Murphy</i>-->
+<!--                                 <span>Manager of (FlaxStudio)</span>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                           <div class="swiper-slide">-->
+<!--                              <div class="testi-content text-center">-->
+<!--                                 <p>“GAIA Healthcare is another theme that is beautiful and professionally constructed by the developers. The price for the template is cheap but not the quality of the product. What a bargain. This theme works for many types of web sites and seems to be durable. Does not break and its easy to work with.</p>-->
+<!--                                 <i>Robertson JR</i>-->
+<!--                                 <span>CEO of (FlaxStudio)</span>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </div>-->
+         <!-- testimonial-aerea-end -->
+
+         <!-- blog-area -->
+         <section id="section_media" class="blog-area pt-125 pb-100"  data-background="{% static 'assets/sizes/img/shape/shape-bg-01.png' %}">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-md-8 col-12">
+                     <div class="tp-section">
+                        <span class="tp-section__sub-title left-line mb-25">Waht’s New</span>
+                        <h3 class="slider-content__title tp-ab-sm-title mb-45">Media & Article</h3>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-12">
+                     <div class="tp-blog-arrow d-flex align-items-center">
+                        <div class="tp-blog-p"><i class="fa-regular fa-arrow-left"></i></div>
+                        <div class="tp-blog-n"><i class="fa-regular fa-arrow-right"></i></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-container tp-blog-active wow fadeInUp" data-wow-delay=".3s">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="#"><img src="{% static 'assets/sizes/img/blog/blog-thumb-01.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Pediatrics</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'website:media' 'Heart-Diseases-Tests-Ordered' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="#"><img src="{% static 'assets/sizes/img/blog/blog-thumb-02.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">GAIA Healthcare DMCC</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'website:media' 'Heart-Diseases-Tests-Ordered' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="#"><img src="{% static 'assets/sizes/img/blog/blog-thumb-03.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Retail Pharma</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Identifying bases of disease <br> pathophysio</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'website:media' 'Identifying-bases-of-disease' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="tp-blog mb-30">
+                           <div class="tp-blog__thumb p-relative fix">
+                              <a href="#"><img src="{% static 'assets/sizes/img/blog/blog-thumb-04.jpg' %}" alt="blog-item"></a>
+                              <div class="tp-blog__date text-center">
+                                 <h4>26<span>Dec</span></h4>
+                              </div>
+                           </div>
+                           <div class="tp-blog__content bg-purple cw">
+                              <span class="tp-blog__category mb-30"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Out Licensing</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Coronavirus global health emergency</a></h5>
+                               <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
+                              <div class="tp-blog__btn">
+                                 <a href="{% url 'website:media' 'Coronavirus-global-health-emergency' %}">Read more</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+                <div class="row">
+                 <div class="col-lg-12">
+                    <div class="gallery-btn text-center mt-30">
+                       <a href="{% url 'website:media_all' %}" class="tp-btn">Explore More</a>
+                    </div>
+                 </div>
+                </div>
+            </div>
+         </section>
+         <!-- blog-area-end -->
+
+         <!-- blog-area -->
+<!--         <section class="blog-area pt-125 pb-120">-->
+<!--            <div class="container  wow fadeInUp" data-wow-delay=".3s">-->
+<!--               <div class="row align-items-center">-->
+<!--                  <div class="col-md-8 col-12">-->
+<!--                     <div class="tp-section">-->
+<!--                        <span class="tp-section__sub-title left-line mb-25">Waht’s New</span>-->
+<!--                        <h3 class="tp-section__title mb-65">Blog & Article</h3>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--                  <div class="col-md-4 col-12">-->
+<!--                     <div class="blog-arrow d-flex align-items-center">-->
+<!--                        <div class="blog-prv"><i class="fa-regular fa-arrow-left"></i></div>-->
+<!--                        <div class="blog-nxt"><i class="fa-regular fa-arrow-right"></i></div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               <div class="swiper-container blog-active">-->
+<!--                  <div class="swiper-wrapper">-->
+<!--                     <div class="swiper-slide pb-50">-->
+<!--                        <div class="blog-item">-->
+<!--                           <div class="blog-item__thumb fix">-->
+<!--                              <img src="{% static 'assets/sizes/img/blog/blog-thumb-04.jpg' %}" alt="blog-thumb">-->
+<!--                           </div>-->
+<!--                           <div class="blog-item__content">-->
+<!--                              <h5 class="blog-item__title mb-15"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Coronavirus global health emergency</a></h5>-->
+<!--                              <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</p>-->
+<!--                              <div class="blog-item__date-info">-->
+<!--                                 <ul class="d-flex align-items-center">-->
+<!--                                    <li><i class="fa-light fa-clock"></i>Dec 28, 2022</li>-->
+<!--                                    <li><i class="fa-light fa-eye"></i>1,526 views</li>-->
+<!--                                 </ul>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="swiper-slide pb-50">-->
+<!--                        <div class="blog-item">-->
+<!--                           <div class="blog-item__thumb fix">-->
+<!--                              <img src="{% static 'assets/sizes/img/blog/blog-thumb-05.jpg' %}" alt="blog-thumb">-->
+<!--                           </div>-->
+<!--                           <div class="blog-item__content">-->
+<!--                              <h5 class="blog-item__title mb-15"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">The Healthy Ageing 50 organ (Secound Part)</a></h5>-->
+<!--                              <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</p>-->
+<!--                              <div class="blog-item__date-info">-->
+<!--                                 <ul class="d-flex align-items-center">-->
+<!--                                    <li><i class="fa-light fa-clock"></i>Dec 28, 2022</li>-->
+<!--                                    <li><i class="fa-light fa-eye"></i>1,526 views</li>-->
+<!--                                 </ul>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                     <div class="swiper-slide pb-50">-->
+<!--                        <div class="blog-item">-->
+<!--                           <div class="blog-item__thumb fix">-->
+<!--                              <img src="{% static 'assets/sizes/img/blog/blog-thumb-06.jpg' %}" alt="blog-thumb">-->
+<!--                           </div>-->
+<!--                           <div class="blog-item__content">-->
+<!--                              <h5 class="blog-item__title mb-15"><a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">The Healthy Ageing 50 organ (First Part)</a></h5>-->
+<!--                              <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</p>-->
+<!--                              <div class="blog-item__date-info">-->
+<!--                                 <ul class="d-flex align-items-center">-->
+<!--                                    <li><i class="fa-light fa-clock"></i>Dec 28, 2022</li>-->
+<!--                                    <li><i class="fa-light fa-eye"></i>1,526 views</li>-->
+<!--                                 </ul>-->
+<!--                              </div>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               <div class="row">-->
+<!--                  <div class="col-lg-12">-->
+<!--                     <div class="blog-link text-center">-->
+<!--                        <span>Join our Community for Get  Update :  <a href="{% url 'website:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">JOin our Community <i class="fa-regular fa-arrow-right"></i></a></span>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+         <!-- blog-area-end -->
+
+         <!-- news-letter-area -->
+<!--         <section class="news-letter-area pt-110 pb-110 news-round-shape p-relative tp-box-space mr-30 ml-30 theme-light-bg fix" data-background="{% static 'assets/sizes/img/shape/shape-bg-05.png' %}">-->
+<!--            <div class="container">-->
+<!--               <div class="row justify-content-center">-->
+<!--                  <div class="col-xl-6 col-lg-8 col-md-10 col-12">-->
+<!--                     <div class="newsletter-content text-center">-->
+<!--                        <h3 class="newsletter-title mb-15">Newslatter</h3>-->
+<!--                        <span>#Subscribe newsletter for get every update</span>-->
+<!--                        <div class="newsletter-form p-relative ml-10 mr-10">-->
+<!--                           <form action="#">-->
+<!--                              <input type="email" placeholder="info.yourwebmail@gmail.com">-->
+<!--                              <button class="newsletter-btn">Subscribe<i class="fa-solid fa-paper-plane"></i></button>-->
+<!--                           </form>-->
+<!--                        </div>-->
+<!--                     </div>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </section>-->
+         <!-- news-letter-area-end -->
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

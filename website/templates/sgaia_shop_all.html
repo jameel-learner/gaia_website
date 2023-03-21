@@ -1,0 +1,449 @@
+{%  extends 'sgaia_ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/sizes/img/banner/breadcrumb-04.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">{{category|upper}}</h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <a href="{% url 'website:shop' %}"> ALL PRODUCTS</a></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+<!--               <div style="position: absolute; ">-->
+<!--                  <h2 class="tp-breadcrumb__title">Shop</h2>-->
+<!--               </div>-->
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- shope-area -->
+         <div class="shop-area pt-120 pb-130">
+            <div class="container">
+               <div class="row mb-5">
+                  <div class="col-md-6">
+                     <div class="tpproduct">
+                        <span>Showing 1-12 of 54 results</span>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="tpfilter d-flex align-items-center">
+                        <span>Short by</span>
+                        <select>
+                           <option>New</option>
+                           <option>Popularity</option>
+                           <option>Average rating</option>
+                           <option>Latest</option>
+                           <option>Price: low to high</option>
+                           <option>Price: high to low</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".2s">
+                           <div class="tp-gallery__item p-relative mb-70">
+                              <div class="tp-gallery__img p-relative">
+                                 <img src="{% static 'assets/sizes/img/shop/shop-01.jpg' %}" alt="gallery-img">
+                                 <div class="tp-gallery__info">
+                                    <a class="popup-image" href="{% static 'assets/sizes/img/shop/xl/shop-01.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                 </div>
+                              </div>
+                              <div class="tp-gallery__content">
+                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '4' 'Glucose-Monitoring' %}">Glucose Monitoring</a></h4>
+                                 <span><i class="fa-solid fa-tag"></i><a href="#">$46.00</a></span>
+                                 <div class="tpshopitem__review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                 </div>
+                              </div>
+                           </div>
+                     </div>
+                  </div>
+
+
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".2s">
+                           <div class="tp-gallery__item p-relative mb-70">
+                              <div class="tp-gallery__img p-relative">
+                                 <img src="{% static 'assets/sizes/img/shop/shop-02.jpg' %}" alt="gallery-img">
+                                 <div class="tp-gallery__info">
+                                    <a class="popup-image" href="{% static 'assets/sizes/img/shop/shop-02.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                 </div>
+                              </div>
+                              <div class="tp-gallery__content">
+                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '45' 'Digital-Thermometer' %}">Single Hand Gloves</a></h4>
+                                 <span><i class="fa-solid fa-tag"></i><a href="#">$58.10</a></span>
+                                 <div class="tpshopitem__review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                 </div>
+                              </div>
+                           </div>
+
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".4s">
+                           <div class="tp-gallery__item p-relative mb-70">
+                              <div class="tp-gallery__img p-relative">
+                                 <img src="{% static 'assets/sizes/img/shop/shop-03.jpg' %}" alt="gallery-img">
+                                 <div class="tp-gallery__info">
+                                    <a class="popup-image" href="{% static 'assets/sizes/img/shop/shop-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                 </div>
+                              </div>
+                              <div class="tp-gallery__content">
+                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '45' 'Digital-Thermometer' %}">Pharmaceuticals Plant</a></h4>
+                                 <span><i class="fa-solid fa-tag"></i><a href="#">$88.00</a></span>
+                                 <div class="tpshopitem__review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                 </div>
+                              </div>
+                           </div>
+
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".6s">
+                           <div class="tp-gallery__item p-relative mb-70">
+                              <div class="tp-gallery__img p-relative">
+                                 <img src="{% static 'assets/sizes/img/shop/shop-04.jpg' %}" alt="gallery-img">
+                                 <div class="tp-gallery__info">
+                                    <a class="popup-image" href="{% static 'assets/sizes/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                 </div>
+                                 <span class="tpshopitem__product-base">NEW</span>
+                              </div>
+                              <div class="tp-gallery__content">
+                                 <h4 class="tp-gallery__title"><a href="{% url 'website:product' '45' 'Digital-Thermometer' %}">Digital Thermometer</a></h4>
+                                 <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                                 <div class="tpshopitem__review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                 </div>
+                              </div>
+                           </div>
+
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem tp-gallery__item mb-50 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="tpshopitem__thumb tp-gallery__img p-relative fix p-relative mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-04.jpg' %}" alt="shop-thumb"></a>
+                           <span class="tpshopitem__product-base">NEW</span>
+                           <div class="tp-gallery__info">
+                              <a class="popup-image" href="{% static 'assets/sizes/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                           </div>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tp-gallery__content">
+                           <h4 class="tp-gallery__title"><a href="{% url 'website:product' '45' 'Digital-Thermometer' %}">Digital Thermometer</a></h4>
+                           <span><i class="fa-solid fa-tag"></i><a href="#">$70.00</a></span>
+                           <div class="tpshopitem__review">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Digital Thermometer</a></span>
+                           <p>$70.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="tpshopitem__thumb p-relative fix mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-05.jpg' %}" alt="shop-thumb"></a>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Stethoscope Superb</a></span>
+                           <p>$96.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="tpshopitem__thumb p-relative fix mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-06.jpg' %}" alt="shop-thumb"></a>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Sphygmomanometer ECO</a></span>
+                           <p>$69.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="tpshopitem__thumb p-relative fix mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-07.jpg' %}" alt="shop-thumb"></a>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Sphygmomanometer LEO</a></span>
+                           <p>$70.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-regular fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="tpshopitem__thumb p-relative fix mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-08.jpg' %}" alt="shop-thumb"></a>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Hand Gloves</a></span>
+                           <p>$52.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="tpshopitem__thumb p-relative fix mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-09.jpg' %}" alt="shop-thumb"></a>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Sphygmomanometer</a></span>
+                           <p>$66.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="tpshopitem__thumb p-relative fix mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-10.jpg' %}" alt="shop-thumb"></a>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Glucometer</a></span>
+                           <p>$85.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="tpshopitem__thumb p-relative fix mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-11.jpg' %}" alt="shop-thumb"></a>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Oxygen Breathing Machine</a></span>
+                           <p>$70.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-regular fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-4">
+                     <div class="tpshopitem mb-50 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="tpshopitem__thumb p-relative fix mb-35">
+                           <a href="shop-details.html"><img src="{% static 'assets/sizes/img/shop/shop-12.jpg' %}" alt="shop-thumb"></a>
+<!--                           <div class="tpshopitem__thumb-icon">-->
+<!--                              <a href="#"><i class="fal fa-eye"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
+<!--                              <a href="#"><i class="fal fa-heart"></i></a>-->
+<!--                           </div>-->
+                        </div>
+                        <div class="tpshopitem__content text-center">
+                           <span class="tpshopitem__title mb-5"><a href="shop-details.html">Surgical Latex Gloves</a></span>
+                           <p>$90.00</p>
+                           <div class="tpshopitem__review">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="basic-pagination text-center mt-15">
+                        <nav>
+                           <ul>
+                              <li>
+                                 <a href="shop-details.html">
+                                    <i class="fa-light fa-arrow-left-long"></i>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="shop-details.html">1</a>
+                              </li>
+                              <li>
+                                 <span class="current">2</span>
+                              </li>
+                              <li>
+                                 <a href="shop-details.html">3</a>
+                              </li>
+                              <li>
+                                 <a href="shop-details.html">...</a>
+                              </li>
+                              <li>
+                                 <a href="shop-details.html">
+                                    <i class="fa-light fa-arrow-right-long"></i>
+                                 </a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- shope-area-end -->
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

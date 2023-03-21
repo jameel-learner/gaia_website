@@ -1,0 +1,199 @@
+{%  extends 'sgaia_ui_base.html' %}
+{%  load static  %}
+
+   {% block styleBlock %}
+         #left_slider01       {      position:absolute;       left: 140px;         }
+         #right_slider01       {      position:absolute;       left: 140px;         }
+         @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            #left_slider01       {             left: 140px;         }
+            #right_slider01       {             left: 140px;         }
+         }
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            #left_slider01       {              left: 80px;         }
+            #right_slider01       {             left: 80px;         }
+         }
+         @media screen and (max-width: 767px) {
+            #left_slider01 img      {             width:140%;        }
+            #right_slider01 img      {       width:140%;       }
+            #right_slider01       {       left: 80px;       }
+         }
+
+   {% endblock %}
+
+	{%  block content    %}
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/sizes/img/banner/breadcrumb-05.jpg' %}">
+
+            <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
+               <div class="row align-items-center">
+                  <div class="col-xl-5 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">BUSINESS</h2>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                     <div class="tp-breadcrumb__link ">
+                        <span>GAIA Healthcare : <b href="{% url 'website:shop' %}"> {{service_name|upper}}</b></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- services-details-area -->
+         <section class="services-details pt-130 pb-120">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                     <div class="services-thumb-img mb-50 wow fadeInLeft" data-wow-delay=".4s">
+                        <img src="{% static 'assets/sizes/img/services/services-thumb-07.jpg' %}" alt="services-thumb">
+                     </div>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                     <div class="services-thumb-img mb-50 wow fadeInRight" data-wow-delay=".4s">
+                        <img src="{% static 'assets/sizes/img/services/services-thumb-08.jpg' %}" alt="services-thumb">
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="tp-srv-process mb-50">
+                        <h4 class="tp-srv-process__title mb-30">{{service_name|upper}}</h4>
+                        <p class="mb-20">Must explain to you how all this mistaken idea of denouncing works pleasure and praising uts pain was born and I will gives you a itself completed account of the system, and sed expounds the ut actual teachings of that greater sed explores truth. Denouncing works pleasures and praising pains was us born and I will gives you a completed ut workers accounts of the system. sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <p class="mb-40">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem.</p>
+                        <div class="tp-srv-process__list">
+                           <ul>
+                              <li><i class="fa-solid fa-check"></i>Consectetur, adipisci velit, sed quia non numquam eius modi </li>
+                              <li><i class="fa-solid fa-check"></i>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremquen</li>
+                              <li><i class="fa-solid fa-check"></i>Ut enim ad minima veniam, quis nostrum exercitationem</li>
+                              <li><i class="fa-solid fa-check"></i>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="tp-srv-stap mb-40">
+                        <h4 class="tp-srv-stap__title mb-25">4 Simple Steps</h4>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                        <p>Must explain to you how all this mistaken idea of denouncing works pleasure and praising uts pain was born and I will gives you a itself completed account of the system, and sed expounds the ut actual teachings of that greater sed explores truth. Denouncing works pleasures and praising pains was us born and I will gives you a completed ut workers accounts of the system. sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem.</p>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                     <div class="tp-srv-stap__list mb-30 wow fadeInUp" data-wow-delay=".2s">
+                        <ul>
+                           <li><i class="fa-solid fa-check"></i>Extramural Funding</li>
+                           <li><i class="fa-solid fa-check"></i>Bacteria Markers</li>
+                           <li><i class="fa-solid fa-check"></i>Nam nec mi euismod euismod</li>
+                           <li><i class="fa-solid fa-check"></i>In aliquet dui nec lectus</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-6">
+                     <div class="tp-srv-stap__list ml-65 mb-30 wow fadeInUp" data-wow-delay=".4s">
+                        <ul>
+                           <li><i class="fa-solid fa-check"></i>Extramural Funding</li>
+                           <li><i class="fa-solid fa-check"></i>Bacteria Markers</li>
+                           <li><i class="fa-solid fa-check"></i>Nam nec mi euismod euismod</li>
+                           <li><i class="fa-solid fa-check"></i>In aliquet dui nec lectus</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-xl-5 col-lg-4 col-md-6">
+                     <div class="tp-srv-stap__list ml-65 ml-20 mb-30 wow fadeInUp" data-wow-delay=".6s">
+                        <ul>
+                           <li><i class="fa-solid fa-check"></i>Extramural Funding</li>
+                           <li><i class="fa-solid fa-check"></i>Bacteria Markers</li>
+                           <li><i class="fa-solid fa-check"></i>Nam nec mi euismod euismod</li>
+                           <li><i class="fa-solid fa-check"></i>In aliquet dui nec lectus</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="tp-srv-research mb-50">
+                        <h4 class="tp-srv-research__title mb-25">Our Research</h4>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="tp-srv-bg mb-70">
+                        <img src="{% static 'assets/sizes/img/services/services-thumb-09.jpg' %}" alt="services-bg">
+                     </div>
+                     <div class="services-link tp-srv-link">  
+                        <span>Laboratories Used For Scientific Research :<a href="contact.html">OUr Project<i class="fa-solid fa-arrow-right"></i></a></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- services-details-area-end -->
+
+         <!-- support-area -->
+         <section class="support-area grey-bg pt-125 pb-130">
+            <div class="container">
+               <div class="row text-center">
+                  <div class="col-lg-12 col-md-12 col-12">
+                     <div class="tp-section">
+                        <span class="tp-section__sub-title left-line right-line mb-20">Get in touch</span>
+                        <h3 class="tp-section__title mb-70">Need Any Help</h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="row justify-content-center">
+                  <div class=" col-xl-10 col-lg-12 col-md-12 col-12">
+                     <div class="tp-support-form text-center">
+                        <span>Derect Contact with us</span>
+                        <form action="#">
+                                    <div class="visitor-form__input">
+                                       <select id="contact_purpose" class="visitor-form__input_select" name="contact_purpose">
+                                          <option >-- select a purpose --</option>
+                                          <option value="partners">Business Partners</option>
+                                          <option value="gaia_dmcc">GAIA Healthcare DMCC</option>
+                                          <option value="gaia_fz_llc">GAIA Healthcare FZ LLC</option>
+                                          <option value="pdc">PDC Drug Store</option>
+                                          <option value="job">Retail Pharma</option>
+                                          <option value="contact">Contact Details</option>
+                                       </select>
+                                    </div>
+                           <input type="text" placeholder="Enter your Name">
+                           <input type="text" placeholder="Enter your Mail">
+                           <textarea name="massage" placeholder="Type your massage"></textarea>
+                        </form>
+                        <div class="tp-support-form__btn">
+                           <button class="tp-btn">Send Massage</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- support-area-end -->
+
+	{% endblock %}
+
+    {% block ScriptBlock %}
+
+   <script>
+      function contact_type(ctype)     {
+         alert(ctype+ ' -- ' +$("#contact_purpose").val());
+         //var select = document.getElementById('contact_purpose');
+
+         // ✅ set select value
+         //select.value = ctype;
+         //$("#contact_purpose").val(ctype);
+         //$("#contact_purpose").trigger('change');
+         // $("#contact_purpose").selectmenu('refresh', true);
+          $('select[name="contact_purpose"] option[value=ctype]').attr("selected","selected");
+      }
+   </script>
+
+   {% endblock %}

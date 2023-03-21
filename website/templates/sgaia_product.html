@@ -1,4 +1,4 @@
-{%  extends 'ui_base.html' %}
+{%  extends 'sgaia_ui_base.html' %}
 {%  load static  %}
 
    {% block styleBlock %}
@@ -23,7 +23,7 @@
 	{%  block content    %}
 
          <!-- breadcrumb-area -->
-         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/img/banner/breadcrumb-04.jpg' %}">
+         <section class="breadcrumb__area p-relative" data-background="{% static 'assets/sizes/img/banner/breadcrumb-04.jpg' %}">
 
             <div class="ml-30 mr-30" style="position: absolute; width:100%; bottom:10px; left:10px;">
                <div class="row align-items-center">
@@ -34,7 +34,7 @@
                   </div>
                   <div class="col-xl-7 col-lg-12 col-md-12 col-12">
                      <div class="tp-breadcrumb__link ">
-                        <span>GAIA Healthcare : <a href="{% url 'ui:shop' %}"> PRODUCT DETAILS</a></span>
+                        <span>GAIA Healthcare : <a href="{% url 'website:shop' %}"> PRODUCT DETAILS</a></span>
                      </div>
                   </div>
                </div>
@@ -53,7 +53,7 @@
                   <div class="row">
                      <div class="col-lg-6 col-md-6">
                         <div class="productthumb mb-40 wow fadeInRighLeft" data-wow-delay=".4s">
-                           <img src="{% static 'assets/img/shop/product-01.jpg' %}" alt="product-thumb">
+                           <img src="{% static 'assets/sizes/img/shop/product-01.jpg' %}" alt="product-thumb">
                         </div>
                      </div>
                      <div class="col-lg-6 col-md-6">
@@ -176,7 +176,7 @@
                                              <li>
                                                 <div class="comments-box d-flex">
                                                    <div class="comments-avatar mr-25">
-                                                      <img src="{% static 'assets/img/shop/reviewer-01.png' %}" alt="">
+                                                      <img src="{% static 'assets/sizes/img/shop/reviewer-01.png' %}" alt="">
                                                    </div>
                                                    <div class="comments-text">
                                                       <div class="comments-top d-sm-flex align-items-start justify-content-between mb-5">
@@ -203,7 +203,7 @@
                                              <li>
                                                 <div class="comments-box d-flex">
                                                    <div class="comments-avatar mr-25">
-                                                      <img src="{% static 'assets/img/shop/reviewer-02.png' %}" alt="">
+                                                      <img src="{% static 'assets/sizes/img/shop/reviewer-02.png' %}" alt="">
                                                    </div>
                                                    <div class="comments-text">
                                                       <div class="comments-top d-sm-flex align-items-start justify-content-between mb-5">
@@ -230,7 +230,7 @@
                                              <li>
                                                 <div class="comments-box d-flex">
                                                    <div class="comments-avatar mr-25">
-                                                      <img src="{% static 'assets/img/shop/reviewer-03.png' %}" alt="">
+                                                      <img src="{% static 'assets/sizes/img/shop/reviewer-03.png' %}" alt="">
                                                    </div>
                                                    <div class="comments-text">
                                                       <div class="comments-top d-sm-flex align-items-start justify-content-between mb-5">
@@ -376,14 +376,14 @@
                            <div class="swiper-slide">
                               <div class="tp-gallery__item p-relative mb-70">
                                  <div class="tp-gallery__img p-relative">
-                                    <img src="{% static 'assets/img/shop/shop-01.jpg' %}" alt="gallery-img">
+                                    <img src="{% static 'assets/sizes/img/shop/shop-01.jpg' %}" alt="gallery-img">
                                     <div class="tp-gallery__info">
-                                       <a class="popup-image" href="{% static 'assets/img/shop/xl/shop-01.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                       <a class="popup-image" href="{% static 'assets/sizes/img/shop/xl/shop-01.jpg' %}"><i class="fa-solid fa-plus"></i></a>
                                     </div>
                                  </div>
                                  <div class="tp-gallery__content">
-                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '89' 'Single-Hand-Gloves' %}">Glucose Monitoring</a></h4>
-                                    <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:product' '89' 'Single-Hand-Gloves' %}">$46.00</a></span>
+                                    <h4 class="tp-gallery__title"><a href="{% url 'website:product' '89' 'Single-Hand-Gloves' %}">Glucose Monitoring</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:product' '89' 'Single-Hand-Gloves' %}">$46.00</a></span>
                                     <div class="tpshopitem__review">
                                        <i class="fa-solid fa-star"></i>
                                        <i class="fa-solid fa-star"></i>
@@ -397,14 +397,14 @@
                            <div class="swiper-slide">
                               <div class="tp-gallery__item p-relative mb-70">
                                  <div class="tp-gallery__img p-relative">
-                                    <img src="{% static 'assets/img/shop/shop-02.jpg' %}" alt="gallery-img">
+                                    <img src="{% static 'assets/sizes/img/shop/shop-02.jpg' %}" alt="gallery-img">
                                     <div class="tp-gallery__info">
-                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-02.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                       <a class="popup-image" href="{% static 'assets/sizes/img/shop/shop-02.jpg' %}"><i class="fa-solid fa-plus"></i></a>
                                     </div>
                                  </div>
                                  <div class="tp-gallery__content">
-                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '89' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
-                                    <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:product' '89' 'Single-Hand-Gloves' %}">$58.10</a></span>
+                                    <h4 class="tp-gallery__title"><a href="{% url 'website:product' '89' 'Single-Hand-Gloves' %}">Single Hand Gloves</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:product' '89' 'Single-Hand-Gloves' %}">$58.10</a></span>
                                     <div class="tpshopitem__review">
                                        <i class="fa-solid fa-star"></i>
                                        <i class="fa-solid fa-star"></i>
@@ -418,14 +418,14 @@
                            <div class="swiper-slide">
                               <div class="tp-gallery__item p-relative mb-70">
                                  <div class="tp-gallery__img p-relative">
-                                    <img src="{% static 'assets/img/shop/shop-03.jpg' %}" alt="gallery-img">
+                                    <img src="{% static 'assets/sizes/img/shop/shop-03.jpg' %}" alt="gallery-img">
                                     <div class="tp-gallery__info">
-                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                       <a class="popup-image" href="{% static 'assets/sizes/img/shop/shop-03.jpg' %}"><i class="fa-solid fa-plus"></i></a>
                                     </div>
                                  </div>
                                  <div class="tp-gallery__content">
-                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '89' 'Single-Hand-Gloves' %}">Pharmaceuticals Plant</a></h4>
-                                    <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:product' '89' 'Single-Hand-Gloves' %}">$88.00</a></span>
+                                    <h4 class="tp-gallery__title"><a href="{% url 'website:product' '89' 'Single-Hand-Gloves' %}">Pharmaceuticals Plant</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:product' '89' 'Single-Hand-Gloves' %}">$88.00</a></span>
                                     <div class="tpshopitem__review">
                                        <i class="fa-solid fa-star"></i>
                                        <i class="fa-solid fa-star"></i>
@@ -439,15 +439,15 @@
                            <div class="swiper-slide">
                               <div class="tp-gallery__item p-relative mb-70">
                                  <div class="tp-gallery__img p-relative">
-                                    <img src="{% static 'assets/img/shop/shop-04.jpg' %}" alt="gallery-img">
+                                    <img src="{% static 'assets/sizes/img/shop/shop-04.jpg' %}" alt="gallery-img">
                                     <div class="tp-gallery__info">
-                                       <a class="popup-image" href="{% static 'assets/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
+                                       <a class="popup-image" href="{% static 'assets/sizes/img/shop/shop-04.jpg' %}"><i class="fa-solid fa-plus"></i></a>
                                     </div>
                                     <span class="tpshopitem__product-base">NEW</span>
                                  </div>
                                  <div class="tp-gallery__content">
-                                    <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '89' 'Single-Hand-Gloves' %}">Digital Thermometer</a></h4>
-                                    <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:product' '89' 'Single-Hand-Gloves' %}">$70.00</a></span>
+                                    <h4 class="tp-gallery__title"><a href="{% url 'website:product' '89' 'Single-Hand-Gloves' %}">Digital Thermometer</a></h4>
+                                    <span><i class="fa-solid fa-tag"></i><a href="{% url 'website:product' '89' 'Single-Hand-Gloves' %}">$70.00</a></span>
                                     <div class="tpshopitem__review">
                                        <i class="fa-solid fa-star"></i>
                                        <i class="fa-solid fa-star"></i>
@@ -469,7 +469,7 @@
 <!--                        <div class="swiper-slide">-->
 <!--                           <div class="tpshopitem mb-50">-->
 <!--                              <div class="tpshopitem__thumb p-relative fix mb-35">-->
-<!--                                 <a href="shop.html"><img src="{% static 'assets/img/shop/shop-09.jpg' %}" alt="shop-thumb"></a>-->
+<!--                                 <a href="shop.html"><img src="{% static 'assets/sizes/img/shop/shop-09.jpg' %}" alt="shop-thumb"></a>-->
 <!--                                 <div class="tpshopitem__thumb-icon">-->
 <!--                                    <a href="#"><i class="fal fa-eye"></i></a>-->
 <!--                                    <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
@@ -492,7 +492,7 @@
 <!--                        <div class="swiper-slide">-->
 <!--                           <div class="tpshopitem mb-50">-->
 <!--                              <div class="tpshopitem__thumb p-relative fix mb-35">-->
-<!--                                 <a href="shop.html"><img src="{% static 'assets/img/shop/shop-10.jpg' %}" alt="shop-thumb"></a>-->
+<!--                                 <a href="shop.html"><img src="{% static 'assets/sizes/img/shop/shop-10.jpg' %}" alt="shop-thumb"></a>-->
 <!--                                 <div class="tpshopitem__thumb-icon">-->
 <!--                                    <a href="#"><i class="fal fa-eye"></i></a>-->
 <!--                                    <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
@@ -515,7 +515,7 @@
 <!--                        <div class="swiper-slide">-->
 <!--                           <div class="tpshopitem mb-50">-->
 <!--                              <div class="tpshopitem__thumb p-relative fix mb-35">-->
-<!--                                 <a href="shop.html"><img src="{% static 'assets/img/shop/shop-11.jpg' %}" alt="shop-thumb"></a>-->
+<!--                                 <a href="shop.html"><img src="{% static 'assets/sizes/img/shop/shop-11.jpg' %}" alt="shop-thumb"></a>-->
 <!--                                 <div class="tpshopitem__thumb-icon">-->
 <!--                                    <a href="#"><i class="fal fa-eye"></i></a>-->
 <!--                                    <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
@@ -538,7 +538,7 @@
 <!--                        <div class="swiper-slide">-->
 <!--                           <div class="tpshopitem mb-50">-->
 <!--                              <div class="tpshopitem__thumb p-relative fix mb-35">-->
-<!--                                 <a href="shop.html"><img src="{% static 'assets/img/shop/shop-12.jpg' %}" alt="shop-thumb"></a>-->
+<!--                                 <a href="shop.html"><img src="{% static 'assets/sizes/img/shop/shop-12.jpg' %}" alt="shop-thumb"></a>-->
 <!--                                 <div class="tpshopitem__thumb-icon">-->
 <!--                                    <a href="#"><i class="fal fa-eye"></i></a>-->
 <!--                                    <a href="#"><i class="fal fa-shopping-cart"></i></a>-->
