@@ -53,8 +53,8 @@
                                  <h2 class="slider-content__title mb-45">Our Passion is to Give you Better Service</h2>
                                  <p>Your full service lab for clinical trials. Our mission is to ensure the <br> generation of accurate and precise findings</p>
                                  <div class="slider-content__btn mb-165">
-                                    <a class="tp-btn" href="contact.html">Appointment</a>
-                                    <a class="tp-btn-second ml-25" href="about.html">About us</a>
+                                    <a class="tp-btn" href="{% url 'ui:contact_us' 'Contact-Details' %}">Appointment</a>
+                                    <a class="tp-btn-second ml-25" href="{% url 'ui:about_us' %}">About us</a>
                                  </div>
                               </div>
                            </div>
@@ -77,8 +77,8 @@
                                  <h2 class="slider-content__title mb-45">Our Passion is to <br> Give you Better <br> Service</h2>
                                  <p>Your full service lab for clinical trials. Our mission is to ensure the <br> generation of accurate and precise findings</p>
                                  <div class="slider-content__btn mb-165">
-                                    <a class="tp-btn" href="contact.html">Appointment</a>
-                                    <a class="tp-btn-second ml-25" href="about.html">About us</a>
+                                    <a class="tp-btn" href="{% url 'ui:contact_us' 'Contact-Details' %}">Appointment</a>
+                                    <a class="tp-btn-second ml-25" href="{% url 'ui:about_us' %}">About us</a>
                                  </div>
                               </div>
                            </div>
@@ -133,8 +133,8 @@
                            </ul>
                         </div>
                         <div class="tp-about__btn">
-                           <a class="tp-btn" href="about.html">Our HIstory</a>
-                           <a class="tp-btn-second ml-25" href="about.html">About us</a>
+                           <a class="tp-btn" href="{% url 'ui:history' 'Our-Journey' %}">Our History</a>
+                           <a class="tp-btn-second ml-25" href="{% url 'ui:about_us' %}">About us</a>
                         </div>
                      </div>
                   </div>
@@ -219,8 +219,8 @@
                         <div class="gallery-item p-relative mb-30">
                            <img src="{% static 'assets/img/gallery/gallery-thumb-bg-1.jpg' %}" alt="gallery-thumb">
                            <div class="gallery-item__content" >
-                              <h4 class="gallery-item__title"><a href="portfolio-details.html">HERO Product of Pediatrics</a></h4>
-                              <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Pediatrics</a></span>
+                              <h4 class="gallery-item__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Pediatrics</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:shop_all' 'Pediatric' %}">Pediatrics</a></span>
                            </div>
                         </div>
                      </div>
@@ -228,8 +228,8 @@
                         <div class="gallery-item p-relative mb-30">
                            <img src="{% static 'assets/img/gallery/gallery-thumb-bg-2.jpg' %}" alt="gallery-thumb">
                            <div class="gallery-item__content">
-                              <h4 class="gallery-item__title"><a href="portfolio-details.html">HERO Product of Gynaecology</a></h4>
-                              <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Gynaecology</a></span>
+                              <h4 class="gallery-item__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Gynaecology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:shop_all' 'Gynaecology' %}">Gynaecology</a></span>
                            </div>
                         </div>
                      </div>
@@ -237,8 +237,8 @@
                         <div class="gallery-item p-relative mb-30">
                            <img src="{% static 'assets/img/gallery/gallery-thumb-bg-3.jpg' %}" alt="gallery-thumb">
                            <div class="gallery-item__content">
-                              <h4 class="gallery-item__title"><a href="portfolio-details.html">HERO Product of Cardiology/Diabetes</a></h4>
-                              <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Cardiology/Diabetes</a></span>
+                              <h4 class="gallery-item__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Cardiology/Diabetes</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:shop_all' 'Cardiology' %}">Cardiology/Diabetes</a></span>
                            </div>
                         </div>
                      </div>
@@ -246,8 +246,8 @@
                         <div class="gallery-item p-relative mb-30">
                            <img src="{% static 'assets/img/gallery/gallery-thumb-bg-4.jpg' %}" alt="gallery-thumb">
                            <div class="gallery-item__content">
-                              <h4 class="gallery-item__title"><a href="portfolio-details.html">HERO Product of General Practice</a></h4>
-                              <span><i class="fa-solid fa-tag"></i><a href="services-details.html">General Practice</a></span>
+                              <h4 class="gallery-item__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of General Practice</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:shop_all' 'General-Practice' %}">General Practice</a></span>
                            </div>
                         </div>
                      </div>
@@ -255,8 +255,8 @@
                         <div class="gallery-item p-relative mb-30">
                            <img src="{% static 'assets/img/gallery/gallery-thumb-bg-5.jpg' %}" alt="gallery-thumb">
                            <div class="gallery-item__content">
-                              <h4 class="gallery-item__title"><a href="portfolio-details.html">HERO Product of Gastroenterology</a></h4>
-                              <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Gastroenterology</a></span>
+                              <h4 class="gallery-item__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Gastroenterology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:shop_all' 'Gastroenterology' %}">Gastroenterology</a></span>
                            </div>
                         </div>
                      </div>
@@ -264,8 +264,8 @@
                         <div class="gallery-item p-relative mb-30">
                            <img src="{% static 'assets/img/gallery/gallery-thumb-bg-2.jpg' %}" alt="gallery-thumb">
                            <div class="gallery-item__content">
-                              <h4 class="gallery-item__title"><a href="portfolio-details.html">HERO Product of Dermatology</a></h4>
-                              <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Dermatology</a></span>
+                              <h4 class="gallery-item__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Dermatology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:shop_all' 'Dermatology' %}">Dermatology</a></span>
                            </div>
                         </div>
                      </div>
@@ -274,8 +274,8 @@
                         <div class="gallery-item p-relative mb-30">
                            <img src="{% static 'assets/img/gallery/gallery-thumb-bg-2.jpg' %}" alt="gallery-thumb">
                            <div class="gallery-item__content">
-                              <h4 class="gallery-item__title"><a href="portfolio-details.html">HERO Product of Dermatology</a></h4>
-                              <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Dermatology</a></span>
+                              <h4 class="gallery-item__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Dermatology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:shop_all' 'Dermatology' %}">Dermatology</a></span>
                            </div>
                         </div>
                      </div>
@@ -283,8 +283,8 @@
                         <div class="gallery-item p-relative mb-30">
                            <img src="{% static 'assets/img/gallery/gallery-thumb-bg-1.jpg' %}" alt="gallery-thumb">
                            <div class="gallery-item__content" >
-                              <h4 class="gallery-item__title"><a href="portfolio-details.html">HERO Product of Opthalmology</a></h4>
-                              <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Opthalmology</a></span>
+                              <h4 class="gallery-item__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">HERO Product of Opthalmology</a></h4>
+                              <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:shop_all' 'Opthalmology' %}">Opthalmology</a></span>
                            </div>
                         </div>
                      </div>
@@ -345,10 +345,10 @@
 <!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
 <!--                                    </div>-->
                                     <div class="services-item__content">
-                                       <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><b>BUSINESS PARTNERS</b></a></h4>
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'ui:business' 'BUSINESS-PARTNERS' %}"><b>BUSINESS PARTNERS</b></a></h4>
                                        <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
                                        <div class="services-item__btn">
-                                          <a class="btn-hexa" href="services-01.html"><i></i>Read More</a>
+                                          <a class="btn-hexa" href="{% url 'ui:business' 'BUSINESS-PARTNERS' %}"><i></i>Read More</a>
                                        </div>
                                     </div>
                                  </div>
@@ -369,10 +369,10 @@
 <!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
 <!--                                    </div>-->
                                     <div class="services-item__content">
-                                       <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><b>GAIA HEALTHCARE DMCC</b></a></h4>
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'ui:business' 'GAIA-HEALTHCARE-DMCC' %}"><b>GAIA HEALTHCARE DMCC</b></a></h4>
                                        <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
                                        <div class="services-item__btn">
-                                          <a class="btn-hexa pink-hexa" href="services-01.html"><i></i>Read More</a>
+                                          <a class="btn-hexa pink-hexa" href="{% url 'ui:business' 'GAIA-HEALTHCARE-DMCC' %}"><i></i>Read More</a>
                                        </div>
                                     </div>
                                  </div>
@@ -393,10 +393,10 @@
 <!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
 <!--                                    </div>-->
                                     <div class="services-item__content">
-                                       <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><b>GAIA HEALTHCARE FZ LLC</b></a></h4>
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'ui:business' 'GAIA-HEALTHCARE-FZ-LLC' %}"><b>GAIA HEALTHCARE FZ LLC</b></a></h4>
                                        <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
                                        <div class="services-item__btn">
-                                          <a class="btn-hexa green-hexa" href="services-01.html"><i></i>Read More</a>
+                                          <a class="btn-hexa green-hexa" href="{% url 'ui:business' 'GAIA-HEALTHCARE-FZ-LLC' %}"><i></i>Read More</a>
                                        </div>
                                     </div>
                                  </div>
@@ -417,10 +417,10 @@
 <!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
 <!--                                    </div>-->
                                     <div class="services-item__content">
-                                       <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><b>PDC DRUG STORE</b></a></h4>
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'ui:business' 'PDC-DRUG-STORE' %}"><b>PDC DRUG STORE</b></a></h4>
                                        <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
                                        <div class="services-item__btn">
-                                          <a class="btn-hexa pink-hexa" href="services-01.html"><i></i>Read More</a>
+                                          <a class="btn-hexa pink-hexa" href="{% url 'ui:business' 'PDC-DRUG-STORE' %}"><i></i>Read More</a>
                                        </div>
                                     </div>
                                  </div>
@@ -440,10 +440,10 @@
 <!--                                       <i class="flaticon-hemoglobin-test-meter"></i>-->
 <!--                                    </div>-->
                                     <div class="services-item__content">
-                                       <h4 class="services-item__tp-title mb-30"><a href="services-details.html"><b>RETAIL PHARMA</b></a></h4>
+                                       <h4 class="services-item__tp-title mb-30"><a href="{% url 'ui:business' 'RETAIL-PHARMA' %}"><b>RETAIL PHARMA</b></a></h4>
                                        <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla.Nam eget dui vel quam</p>
                                        <div class="services-item__btn">
-                                          <a class="btn-hexa sky-hexa" href="services-01.html"><i></i>Read More</a>
+                                          <a class="btn-hexa sky-hexa" href="{% url 'ui:business' 'RETAIL-PHARMA' %}"><i></i>Read More</a>
                                        </div>
                                     </div>
                                  </div>
@@ -483,8 +483,8 @@
 <!--                                 </div>-->
                               </div>
                               <div class="tp-gallery__content">
-                                 <h4 class="tp-gallery__title"><a href="portfolio-details.html">Some Heading text</a></h4>
-                                 <span><i class="fa-solid fa-tag"></i><a href="services-details.html">PRE-LICENSING GCC</a></span>
+                                 <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">Some Heading text</a></h4>
+                                 <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:business' 'PRE-LICENSING-GCC' %}">PRE-LICENSING GCC</a></span>
                               </div>
                            </div>
                         </div>
@@ -497,8 +497,8 @@
 <!--                                 </div>-->
                               </div>
                               <div class="tp-gallery__content">
-                                 <h4 class="tp-gallery__title"><a href="portfolio-details.html">Some heading text</a></h4>
-                                 <span><i class="fa-solid fa-tag"></i><a href="services-details.html">OUT LICENSING</a></span>
+                                 <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">Some heading text</a></h4>
+                                 <span><i class="fa-solid fa-tag"></i><a href="{% url 'ui:business' 'OUT-LICENSING' %}">OUT LICENSING</a></span>
                               </div>
                            </div>
                         </div>
@@ -511,7 +511,7 @@
 <!--                                 </div>-->
 <!--                              </div>-->
 <!--                              <div class="tp-gallery__content">-->
-<!--                                 <h4 class="tp-gallery__title"><a href="portfolio-details.html">Zyrtec Analysis</a></h4>-->
+<!--                                 <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">Zyrtec Analysis</a></h4>-->
 <!--                                 <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Gynaecologist</a></span>-->
 <!--                              </div>-->
 <!--                           </div>-->
@@ -525,7 +525,7 @@
 <!--                                 </div>-->
 <!--                              </div>-->
 <!--                              <div class="tp-gallery__content">-->
-<!--                                 <h4 class="tp-gallery__title"><a href="portfolio-details.html">Asthma Apply</a></h4>-->
+<!--                                 <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">Asthma Apply</a></h4>-->
 <!--                                 <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Genetics</a></span>-->
 <!--                              </div>-->
 <!--                           </div>-->
@@ -539,7 +539,7 @@
 <!--                                 </div>-->
 <!--                              </div>-->
 <!--                              <div class="tp-gallery__content">-->
-<!--                                 <h4 class="tp-gallery__title"><a href="portfolio-details.html">neurological ANALYSIS</a></h4>-->
+<!--                                 <h4 class="tp-gallery__title"><a href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">neurological ANALYSIS</a></h4>-->
 <!--                                 <span><i class="fa-solid fa-tag"></i><a href="services-details.html">Forensic</a></span>-->
 <!--                              </div>-->
 <!--                           </div>-->
@@ -551,7 +551,7 @@
 <!--            <div class="container">-->
 <!--               <div class="row text-center">-->
 <!--                  <div class="col-lg-12">-->
-<!--                     <a class="tp-btn-second" href="portfolio-details.html">Explore More</a>-->
+<!--                     <a class="tp-btn-second" href="{% url 'ui:product' '23' 'HERO-Product-of-Pediatric' %}">Explore More</a>-->
 <!--                  </div>-->
 <!--               </div>-->
 <!--            </div>-->
@@ -1243,8 +1243,8 @@
                               </div>
                            </div>
                            <div class="tp-blog__content bg-purple cw">
-                              <span class="tp-blog__category mb-30"><a href="blog-details.html">Pediatrics</a></span>
-                              <h5 class="tp-blog__title_w mb-20"><a href="blog-details.html">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Pediatrics</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
                                <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
                               <div class="tp-blog__btn">
                                  <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}">Read more</a>
@@ -1261,8 +1261,8 @@
                               </div>
                            </div>
                            <div class="tp-blog__content bg-purple cw">
-                              <span class="tp-blog__category mb-30"><a href="blog-details.html">GAIA Healthcare DMCC</a></span>
-                              <h5 class="tp-blog__title_w mb-20"><a href="blog-details.html">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">GAIA Healthcare DMCC</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Heart Diseases Tests Ordered <br> By Doctors</a></h5>
                                <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
                               <div class="tp-blog__btn">
                                  <a href="{% url 'ui:media' 'Heart-Diseases-Tests-Ordered' %}">Read more</a>
@@ -1279,8 +1279,8 @@
                               </div>
                            </div>
                            <div class="tp-blog__content bg-purple cw">
-                              <span class="tp-blog__category mb-30"><a href="blog-details.html">Retail Pharma</a></span>
-                              <h5 class="tp-blog__title_w mb-20"><a href="blog-details.html">Identifying bases of disease <br> pathophysio</a></h5>
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Retail Pharma</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Identifying bases of disease <br> pathophysio</a></h5>
                                <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
                               <div class="tp-blog__btn">
                                  <a href="{% url 'ui:media' 'Identifying-bases-of-disease' %}">Read more</a>
@@ -1297,8 +1297,8 @@
                               </div>
                            </div>
                            <div class="tp-blog__content bg-purple cw">
-                              <span class="tp-blog__category mb-30"><a href="blog-details.html">Out Licensing</a></span>
-                              <h5 class="tp-blog__title_w mb-20"><a href="blog-details.html">Coronavirus global health emergency</a></h5>
+                              <span class="tp-blog__category mb-30"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Out Licensing</a></span>
+                              <h5 class="tp-blog__title_w mb-20"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Coronavirus global health emergency</a></h5>
                                <p><span class="cw">Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</span></p>
                               <div class="tp-blog__btn">
                                  <a href="{% url 'ui:media' 'Coronavirus-global-health-emergency' %}">Read more</a>
@@ -1344,7 +1344,7 @@
 <!--                              <img src="{% static 'assets/img/blog/blog-thumb-04.jpg' %}" alt="blog-thumb">-->
 <!--                           </div>-->
 <!--                           <div class="blog-item__content">-->
-<!--                              <h5 class="blog-item__title mb-15"><a href="blog-details.html">Coronavirus global health emergency</a></h5>-->
+<!--                              <h5 class="blog-item__title mb-15"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">Coronavirus global health emergency</a></h5>-->
 <!--                              <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</p>-->
 <!--                              <div class="blog-item__date-info">-->
 <!--                                 <ul class="d-flex align-items-center">-->
@@ -1361,7 +1361,7 @@
 <!--                              <img src="{% static 'assets/img/blog/blog-thumb-05.jpg' %}" alt="blog-thumb">-->
 <!--                           </div>-->
 <!--                           <div class="blog-item__content">-->
-<!--                              <h5 class="blog-item__title mb-15"><a href="blog-details.html">The Healthy Ageing 50 organ (Secound Part)</a></h5>-->
+<!--                              <h5 class="blog-item__title mb-15"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">The Healthy Ageing 50 organ (Secound Part)</a></h5>-->
 <!--                              <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</p>-->
 <!--                              <div class="blog-item__date-info">-->
 <!--                                 <ul class="d-flex align-items-center">-->
@@ -1378,7 +1378,7 @@
 <!--                              <img src="{% static 'assets/img/blog/blog-thumb-06.jpg' %}" alt="blog-thumb">-->
 <!--                           </div>-->
 <!--                           <div class="blog-item__content">-->
-<!--                              <h5 class="blog-item__title mb-15"><a href="blog-details.html">The Healthy Ageing 50 organ (First Part)</a></h5>-->
+<!--                              <h5 class="blog-item__title mb-15"><a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">The Healthy Ageing 50 organ (First Part)</a></h5>-->
 <!--                              <p>Nam eget dui vel quam sodales semper quis porttitor tortor. Vivamus quis ex nulla ...</p>-->
 <!--                              <div class="blog-item__date-info">-->
 <!--                                 <ul class="d-flex align-items-center">-->
@@ -1394,7 +1394,7 @@
 <!--               <div class="row">-->
 <!--                  <div class="col-lg-12">-->
 <!--                     <div class="blog-link text-center">-->
-<!--                        <span>Join our Community for Get  Update :  <a href="blog-details.html">JOin our Community <i class="fa-regular fa-arrow-right"></i></a></span>-->
+<!--                        <span>Join our Community for Get  Update :  <a href="{% url 'ui:media' 'Research-And-Verify-of-a-Covid-19-Virus' %}">JOin our Community <i class="fa-regular fa-arrow-right"></i></a></span>-->
 <!--                     </div>-->
 <!--                  </div>-->
 <!--               </div>-->
